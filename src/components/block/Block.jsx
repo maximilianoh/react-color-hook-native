@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import reactCSS from 'reactcss';
 import merge from 'lodash/merge';
 import { isValidHex, getContrastingColor } from '../../helpers/color';
-import Checkboard from '../common/Checkboard';
 import ColorWrap from '../common/ColorWrap';
 import EditableInput from '../common/EditableInput';
 import BlockSwatches from './BlockSwatches';
@@ -84,9 +83,7 @@ const Block = ({
       <div style={styles.triangle} />
 
       <div style={styles.head} className="flexContentCenter">
-        { transparent && (
-          <Checkboard borderRadius="6px 6px 0 0" />
-        ) }
+        { transparent }
         <div style={styles.label}>
           { upperHex }
         </div>

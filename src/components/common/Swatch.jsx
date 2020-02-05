@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import handleFocus from '../../helpers/interaction';
-import Checkboard from './Checkboard';
 import { swatchStyle } from './commonStyles';
 
 const ENTER = 13;
@@ -32,12 +31,7 @@ const Swatch = ({
       {...optionalEvents}
     >
       { children }
-      { transparent && (
-        <Checkboard
-          borderRadius={styles.swatch.borderRadius}
-          boxShadow="inset 0 0 0 1px rgba(0,0,0,0.1)"
-        />
-      ) }
+      { transparent }
     </div>
   );
 };

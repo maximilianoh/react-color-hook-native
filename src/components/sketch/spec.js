@@ -4,7 +4,6 @@ import { simpleCheckForValidColor, red } from '../../helpers/color'
 import Sketch from './Sketch'
 import SketchFields from './SketchFields'
 import SketchPresetColors from './SketchPresetColors'
-import CanvasRenderingContext2DEvent from "jest-canvas-mock";
 import { render, fireEvent } from '@testing-library/react';
 
 test('Sketch renders correctly', () => {
@@ -16,7 +15,7 @@ test('Sketch renders correctly', () => {
 
 test('Sketch renders on server correctly', () => {
   const tree = renderer.create(
-    <Sketch renderers={CanvasRenderingContext2DEvent} {...red} />
+    <Sketch {...red} />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })

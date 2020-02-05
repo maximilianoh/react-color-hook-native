@@ -4,7 +4,6 @@ import reactCSS from 'reactcss';
 import merge from 'lodash/merge';
 
 import Alpha from '../common/Alpha';
-import Checkboard from '../common/Checkboard';
 import ColorWrap from '../common/ColorWrap';
 import Hue from '../common/Hue';
 import Saturation from '../common/Saturation';
@@ -75,6 +74,7 @@ const Chrome = ({
       alpha: {
         height: '10px',
         position: 'relative',
+        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 12px',
       },
       Alpha: {
         radius: '2px',
@@ -113,7 +113,6 @@ const Chrome = ({
           <div style={styles.color}>
             <div style={styles.swatch}>
               <div style={styles.active} />
-              <Checkboard renderers={renderers} />
             </div>
           </div>
           <div style={styles.toggles}>

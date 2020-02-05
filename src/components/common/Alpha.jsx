@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import calculateChange from '../../helpers/alpha';
 import { alphaStyle } from './commonStyles';
-import Checkboard from './Checkboard';
 
 const Alpha = (props) => {
   const inputRef = useRef(null);
@@ -24,13 +23,10 @@ const Alpha = (props) => {
 
   useEffect(() => { handleMouseUp(); }, []);
 
-  const { rgb, renderers, pointer } = props;
+  const { rgb, pointer } = props;
   const styles = alphaStyle(props, rgb);
   return (
     <div style={styles.alpha}>
-      <div style={styles.checkboard}>
-        <Checkboard renderers={renderers} />
-      </div>
       <div style={styles.gradient} />
       <div
         style={styles.container}

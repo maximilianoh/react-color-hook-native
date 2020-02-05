@@ -6,7 +6,6 @@ import ChromePointer from './ChromePointer'
 import ChromePointerCircle from './ChromePointerCircle'
 import { render, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import CanvasRenderingContext2DEvent from "jest-canvas-mock";
 
 test('Chrome renders correctly', () => {
   const tree = renderer.create(
@@ -35,7 +34,7 @@ test('Chrome onChange events correctly', () => {
   Object.defineProperty(mousedownEvent, 'pageY', { get: () => 15 });
 
   // check the Alpha component
-  const alphaPointer = flexboxFix[1].children[1].children[0].children[2];
+  const alphaPointer = flexboxFix[1].children[1].children[0].children[1];
   fireEvent(alphaPointer, mousedownEvent);
   expect(changeSpy).toHaveBeenCalledTimes(1);
 
@@ -88,7 +87,7 @@ test('Chrome view hex correctly', () => {
 
 test('Chrome renders on server correctly', () => {
   const tree = renderer.create(
-    <Chrome renderers={CanvasRenderingContext2DEvent} {...red} />
+    <Chrome {...red} />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })

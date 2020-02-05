@@ -45,7 +45,6 @@
     "babel-loader": "^8.0.6",
     "chroma-js": "^2.1.0",
     "core-js": "^3.6.4",
-    "jest-canvas-mock": "^2.2.0",
     "lodash": "^4.17.15",
     "material-colors": "^1.2.6",
     "open": "^7.0.0",

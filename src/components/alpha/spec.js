@@ -4,7 +4,6 @@ import { render, fireEvent } from '@testing-library/react';
 import { simpleCheckForValidColor, red } from '../../helpers/color';
 import Alpha from './Alpha';
 import AlphaPointer from './AlphaPointer';
-import CanvasRenderingContext2DEvent from "jest-canvas-mock";
 
 test('Alpha renders correctly', () => {
   const tree = renderer.create(
@@ -15,7 +14,7 @@ test('Alpha renders correctly', () => {
 
  test('Alpha renders on server correctly', () => {
    const tree = renderer.create(
-     <Alpha renderers={ CanvasRenderingContext2DEvent } { ...red } />
+     <Alpha { ...red } />
    ).toJSON()
    expect(tree).toMatchSnapshot()
  })
@@ -49,7 +48,7 @@ test('Alpha onChange events correctly', () => {
   Object.defineProperty(event, 'pageY', {get: () => 10});
 
   const root = document.querySelector("div");
-  const alphaPointer = root.children[0].children[0].children[2];
+  const alphaPointer = root.children[0].children[0].children[1];
   fireEvent(alphaPointer, event);
   expect(changeSpy).toHaveBeenCalled();
 })

@@ -6,7 +6,6 @@ import ColorWrap from '../common/ColorWrap';
 import Saturation from '../common/Saturation';
 import Hue from '../common/Hue';
 import Alpha from '../common/Alpha';
-import Checkboard from '../common/Checkboard';
 import SketchFields from './SketchFields';
 import SketchPresetColors from './SketchPresetColors';
 import '../common/style.css';
@@ -68,6 +67,7 @@ const Sketch = ({
         height: '10px',
         marginTop: '4px',
         overflow: 'hidden',
+        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 12px',
       },
       Alpha: {
         radius: '2px',
@@ -117,7 +117,6 @@ const Sketch = ({
           </div>
         </div>
         <div style={styles.color}>
-          <Checkboard />
           <div style={styles.activeColor} />
         </div>
       </div>

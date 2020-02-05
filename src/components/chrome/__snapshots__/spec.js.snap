@@ -208,28 +208,6 @@ exports[`Chrome renders correctly 1`] = `
               }
             }
           />
-          <div
-            style={
-              Object {
-                "MozBorderRadius": "",
-                "MozBoxShadow": "",
-                "OBorderRadius": "",
-                "OBoxShadow": "",
-                "WebkitBorderRadius": "",
-                "WebkitBoxShadow": "",
-                "background": "url(data:image/png;base64,00) center left",
-                "borderRadius": "",
-                "bottom": "0px",
-                "boxShadow": "",
-                "left": "0px",
-                "msBorderRadius": "",
-                "msBoxShadow": "",
-                "position": "absolute",
-                "right": "0px",
-                "top": "0px",
-              }
-            }
-          />
         </div>
       </div>
       <div
@@ -350,7 +328,12 @@ exports[`Chrome renders correctly 1`] = `
         <div
           style={
             Object {
+              "MozBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
+              "OBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
+              "WebkitBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
+              "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
               "height": "10px",
+              "msBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
               "position": "relative",
             }
           }
@@ -359,58 +342,23 @@ exports[`Chrome renders correctly 1`] = `
             style={
               Object {
                 "MozBorderRadius": undefined,
+                "MozBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "OBorderRadius": undefined,
+                "OBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "WebkitBorderRadius": undefined,
+                "WebkitBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "borderRadius": undefined,
                 "bottom": "0px",
+                "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "left": "0px",
                 "msBorderRadius": undefined,
+                "msBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "position": "absolute",
                 "right": "0px",
                 "top": "0px",
               }
             }
           >
-            <div
-              style={
-                Object {
-                  "MozBorderRadius": undefined,
-                  "OBorderRadius": undefined,
-                  "WebkitBorderRadius": undefined,
-                  "borderRadius": undefined,
-                  "bottom": "0px",
-                  "left": "0px",
-                  "msBorderRadius": undefined,
-                  "overflow": "hidden",
-                  "position": "absolute",
-                  "right": "0px",
-                  "top": "0px",
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "MozBorderRadius": "",
-                    "MozBoxShadow": "",
-                    "OBorderRadius": "",
-                    "OBoxShadow": "",
-                    "WebkitBorderRadius": "",
-                    "WebkitBoxShadow": "",
-                    "background": "url(data:image/png;base64,00) center left",
-                    "borderRadius": "",
-                    "bottom": "0px",
-                    "boxShadow": "",
-                    "left": "0px",
-                    "msBorderRadius": "",
-                    "msBoxShadow": "",
-                    "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
-                  }
-                }
-              />
-            </div>
             <div
               style={
                 Object {
@@ -842,28 +790,6 @@ exports[`Chrome renders on server correctly 1`] = `
               }
             }
           />
-          <div
-            style={
-              Object {
-                "MozBorderRadius": "",
-                "MozBoxShadow": "",
-                "OBorderRadius": "",
-                "OBoxShadow": "",
-                "WebkitBorderRadius": "",
-                "WebkitBoxShadow": "",
-                "background": "url(data:image/png;base64,00) center left",
-                "borderRadius": "",
-                "bottom": "0px",
-                "boxShadow": "",
-                "left": "0px",
-                "msBorderRadius": "",
-                "msBoxShadow": "",
-                "position": "absolute",
-                "right": "0px",
-                "top": "0px",
-              }
-            }
-          />
         </div>
       </div>
       <div
@@ -984,7 +910,12 @@ exports[`Chrome renders on server correctly 1`] = `
         <div
           style={
             Object {
+              "MozBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
+              "OBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
+              "WebkitBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
+              "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
               "height": "10px",
+              "msBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
               "position": "relative",
             }
           }
@@ -993,58 +924,23 @@ exports[`Chrome renders on server correctly 1`] = `
             style={
               Object {
                 "MozBorderRadius": undefined,
+                "MozBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "OBorderRadius": undefined,
+                "OBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "WebkitBorderRadius": undefined,
+                "WebkitBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "borderRadius": undefined,
                 "bottom": "0px",
+                "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "left": "0px",
                 "msBorderRadius": undefined,
+                "msBoxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 12px",
                 "position": "absolute",
                 "right": "0px",
                 "top": "0px",
               }
             }
           >
-            <div
-              style={
-                Object {
-                  "MozBorderRadius": undefined,
-                  "OBorderRadius": undefined,
-                  "WebkitBorderRadius": undefined,
-                  "borderRadius": undefined,
-                  "bottom": "0px",
-                  "left": "0px",
-                  "msBorderRadius": undefined,
-                  "overflow": "hidden",
-                  "position": "absolute",
-                  "right": "0px",
-                  "top": "0px",
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "MozBorderRadius": "",
-                    "MozBoxShadow": "",
-                    "OBorderRadius": "",
-                    "OBoxShadow": "",
-                    "WebkitBorderRadius": "",
-                    "WebkitBoxShadow": "",
-                    "background": "url(data:image/png;base64,00) center left",
-                    "borderRadius": "",
-                    "bottom": "0px",
-                    "boxShadow": "",
-                    "left": "0px",
-                    "msBorderRadius": "",
-                    "msBoxShadow": "",
-                    "position": "absolute",
-                    "right": "0px",
-                    "top": "0px",
-                  }
-                }
-              />
-            </div>
             <div
               style={
                 Object {

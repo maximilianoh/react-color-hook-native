@@ -1,12 +1,12 @@
 import reactCSS from 'reactcss';
 import merge from 'lodash/merge';
-import * as checkboard from '../../helpers/checkboard';
 
 export const alphaStyle = (props, rgb) => reactCSS({
   default: {
     alpha: {
       absolute: '0px 0px 0px 0px',
       borderRadius: props.radius,
+      boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 12px',
     },
     checkboard: {
       absolute: '0px 0px 0px 0px',
@@ -56,17 +56,6 @@ export const alphaStyle = (props, rgb) => reactCSS({
 }, {
   vertical: props.direction === 'vertical',
   overwrite: true,
-});
-
-export const checkboardStyle = (white, grey, size, renderers, borderRadius, boxShadow) => reactCSS({
-  default: {
-    grid: {
-      borderRadius,
-      boxShadow,
-      absolute: '0px 0px 0px 0px',
-      background: `url(${checkboard.get(white, grey, size, renderers.canvas)}) center left`,
-    },
-  },
 });
 
 export const editableInputStyle = (props, style) => {
