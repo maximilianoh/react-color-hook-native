@@ -20,7 +20,8 @@ export const alphaStyle = (props, rgb) => reactCSS({
     },
     container: {
       position: 'relative',
-      height: '100%',
+      width:"100%",
+      height:"100%",
       marginRight: 3,
       borderColor: 'none',
     },

@@ -1,6 +1,9 @@
 const measureComponent = (component) => {
   return new Promise((resolve, reject) => {
     component.measure((x, y, width, height, pageX, pageY) => {
+      if(isNaN(x) || isNaN(y) || isNaN(width)|| isNaN(height)|| isNaN(pageX)|| isNaN(pageY)) {
+        reject({})
+      }
       resolve({ x, y, width, height, pageX, pageY })
     })
   })
@@ -12,9 +15,8 @@ const calculateChange = async (e, hsl, direction, initialA, container) => {
   const containerHeight = positionValue.height;
   const x = typeof e.pageX === 'number' ? e.pageX : e.touches[0].pageX;
   const y = typeof e.pageY === 'number' ? e.pageY : e.touches[0].pageY;
-  const left = x - (positionValue.pageX + window.pageXOffset);
-  const top = y - (positionValue.pageY + window.pageYOffset);
-
+  const left = x - (positionValue.pageX);
+  const top = y - (positionValue.pageY);
   if (direction === 'vertical') {
     let a;
     if (top < 0) {
@@ -43,6 +45,7 @@ const calculateChange = async (e, hsl, direction, initialA, container) => {
     } else {
       a = Math.round((left * 100) / containerWidth) / 100;
     }
+    
 
     if (initialA !== a) {
       return {
