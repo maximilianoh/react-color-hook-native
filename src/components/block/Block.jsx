@@ -123,7 +123,6 @@ Block.propTypes = {
   hex: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onSwatchHover: PropTypes.func.isRequired,
-  className: PropTypes.string,
 };
 
 export default ColorWrap(Block);

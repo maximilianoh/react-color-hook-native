@@ -6,7 +6,6 @@ import merge from 'lodash/merge';
 import * as material from 'material-colors';
 import ColorWrap from '../common/ColorWrap';
 import CircleSwatch from './CircleSwatch';
-import '../common/style.css';
 import { View } from 'react-native';
 
 const Circle = ({
@@ -19,6 +18,8 @@ const Circle = ({
         width,
         marginRight: -circleSpacing,
         marginBottom: -circleSpacing,
+        display: 'flex',
+        flexWrap: 'wrap',
       },
     },
   }, passedStyles));
@@ -26,7 +27,7 @@ const Circle = ({
   const handleChange = (hexCode, e) => onChange({ hex: hexCode, source: 'hex' }, e);
 
   return (
-    <View style={styles.card} className={`circle-picker ${className} flexContent`}>
+    <View style={styles.card}>
       { map(colors, (c) => (
         <View key={`ViewCircleSwatch${c}`}>
           <CircleSwatch

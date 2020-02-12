@@ -8,12 +8,11 @@ import Hue from '../common/Hue';
 import Alpha from '../common/Alpha';
 import SketchFields from './SketchFields';
 import SketchPresetColors from './SketchPresetColors';
-import '../common/style.css';
 import { View } from 'react-native';
 
 const Sketch = ({
   width, rgb, hex, hsv, hsl, onChange, onSwatchHover,
-  disableAlpha, presetColors, renderers, styles: passedStyles = {}, className = '',
+  disableAlpha, presetColors, renderers, styles: passedStyles = {},
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -89,7 +88,7 @@ const Sketch = ({
     },
   }, passedStyles), { disableAlpha });
   return (
-    <View style={styles.picker} className={`sketch-picker ${className}`}>
+    <View style={styles.picker}>
       <View style={styles.saturation}>
         <Saturation
           style={styles.Saturation}
@@ -98,7 +97,7 @@ const Sketch = ({
           onChange={onChange}
         />
       </View>
-      <View className="flexbox-fix flexContent">
+      <View style={{display: 'flex', flexWrap: 'wrap'}}>
         <View style={styles.sliders}>
           <View style={styles.hue}>
             <Hue
@@ -155,7 +154,6 @@ Sketch.propTypes = {
   onChange: PropTypes.func.isRequired,
   onSwatchHover: PropTypes.func.isRequired,
   renderers: PropTypes.shape({}).isRequired,
-  className: PropTypes.string.isRequired,
 };
 
 Sketch.defaultProps = {

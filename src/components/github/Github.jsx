@@ -5,12 +5,11 @@ import map from 'lodash/map';
 import merge from 'lodash/merge';
 import ColorWrap from '../common/ColorWrap';
 import GithubSwatch from './GithubSwatch';
-import '../common/style.css';
 import { View } from 'react-native';
 
 const Github = ({
   width, colors, onChange, onSwatchHover, triangle,
-  styles: passedStyles = {}, className,
+  styles: passedStyles = {},
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -23,6 +22,8 @@ const Github = ({
         position: 'relative',
         padding: 5,
         msBoxorient: 'horizontal',
+        display: 'flex',
+        flexWrap: 'wrap',
       },
       triangle: {
         position: 'absolute',
@@ -97,7 +98,7 @@ const Github = ({
 
   const handleChange = (hex, e) => onChange({ hex, source: 'hex' }, e);
   return (
-    <View style={styles.card} className={`github-picker ${className} flexContent`}>
+    <View style={styles.card}>
       <View style={styles.triangleShadow} />
       <View style={styles.triangle} />
       {map(colors, (c) => (
