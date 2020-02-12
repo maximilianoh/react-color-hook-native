@@ -12,11 +12,11 @@ const CompactColor = ({
     default: {
       color: {
         background: color,
-        width: '15px',
-        height: '15px',
+        width: 15,
+        height: 15,
         float: 'left',
-        marginRight: '5px',
-        marginBottom: '5px',
+        marginRight: 5,
+        marginBottom: 5,
         position: 'relative',
         cursor: 'pointer',
       },
@@ -24,12 +24,12 @@ const CompactColor = ({
         absolute: '5px 5px 5px 5px',
         background: getContrastingColor(color),
         borderRadius: '50%',
-        opacity: '0',
+        opacity: 0,
       },
     },
     active: {
       dot: {
-        opacity: '1',
+        opacity: 1,
       },
     },
     'color-#FFFFFF': {

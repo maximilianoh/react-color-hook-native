@@ -7,8 +7,8 @@ export const SliderPointer = ({ direction }) => {
   const styles = reactCSS({
     default: {
       picker: {
-        width: '18px',
-        height: '18px',
+        width: 18,
+        height: 18,
         borderRadius: '50%',
         transform: 'translate(-9px, -1px)',
         backgroundColor: 'rgb(248, 248, 248)',

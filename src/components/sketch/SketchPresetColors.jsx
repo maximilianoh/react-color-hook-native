@@ -15,12 +15,12 @@ const SketchPresetColors = ({ colors, onClick, onSwatchHover }) => {
         position: 'relative',
       },
       swatchWrap: {
-        width: '16px',
-        height: '16px',
+        width: 16,
+        height: 16,
         margin: '0 10px 10px 0',
       },
       swatch: {
-        borderRadius: '3px',
+        borderRadius: 3,
         boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.15)',
       },
     },

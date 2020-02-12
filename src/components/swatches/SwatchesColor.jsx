@@ -12,15 +12,15 @@ const SwatchesColor = ({
   const styles = reactCSS({
     default: {
       color: {
-        width: '40px',
-        height: '24px',
+        width: 40,
+        height: 24,
         cursor: 'pointer',
         background: color,
-        marginBottom: '1px',
+        marginBottom: 1,
       },
       check: {
         color: getContrastingColor(color),
-        marginLeft: '8px',
+        marginLeft: 8,
         display: 'none',
       },
     },

@@ -21,19 +21,19 @@ const Photoshop = (props) => {
     default: {
       picker: {
         background: '#DCDCDC',
-        borderRadius: '4px',
+        borderRadius: 4,
         boxShadow: '0 0 0 1px rgba(0,0,0,.25), 0 8px 16px rgba(0,0,0,.15)',
         boxSizing: 'initial',
-        width: '513px',
+        width: 513,
       },
       head: {
         backgroundImage: 'linear-gradient(-180deg, #F0F0F0 0%, #D4D4D4 100%)',
         borderBottom: '1px solid #B1B1B1',
         boxShadow: 'inset 0 1px 0 0 rgba(255,255,255,.2), inset 0 -1px 0 0 rgba(0,0,0,.02)',
-        height: '23px',
-        lineHeight: '24px',
+        height: 23,
+        lineHeight: 24,
         borderRadius: '4px 4px 0 0',
-        fontSize: '13px',
+        fontSize: 13,
         color: '#4D4D4D',
         textAlign: 'center',
       },
@@ -42,8 +42,8 @@ const Photoshop = (props) => {
         display: 'flex',
       },
       saturation: {
-        width: '256px',
-        height: '256px',
+        width: 256,
+        height: 256,
         position: 'relative',
         border: '2px solid #B3B3B3',
         borderBottom: '2px solid #F0F0F0',
@@ -51,25 +51,25 @@ const Photoshop = (props) => {
       },
       hue: {
         position: 'relative',
-        height: '256px',
-        width: '19px',
-        marginLeft: '10px',
+        height: 256,
+        width: 19,
+        marginLeft: 10,
         border: '2px solid #B3B3B3',
         borderBottom: '2px solid #F0F0F0',
       },
       controls: {
-        width: '180px',
-        marginLeft: '10px',
+        width: 180,
+        marginLeft: 10,
       },
       top: {
         display: 'flex',
       },
       previews: {
-        width: '60px',
+        width: 60,
       },
       actions: {
         flex: '1',
-        marginLeft: '20px',
+        marginLeft: 20,
       },
     },
   }, passedStyles));

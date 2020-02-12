@@ -13,15 +13,15 @@ const SketchFields = ({
     default: {
       fields: {
         display: 'flex',
-        paddingTop: '4px',
+        paddingTop: 4,
       },
       single: {
         flex: '1',
-        paddingLeft: '6px',
+        paddingLeft: 6,
       },
       alpha: {
         flex: '1',
-        paddingLeft: '6px',
+        paddingLeft: 6,
       },
       double: {
         flex: '2',
@@ -31,15 +31,15 @@ const SketchFields = ({
         padding: '4px 10% 3px',
         border: 'none',
         boxShadow: 'inset 0 0 0 1px #ccc',
-        fontSize: '11px',
+        fontSize: 11,
       },
       label: {
         display: 'block',
         textAlign: 'center',
-        fontSize: '11px',
+        fontSize: 11,
         color: '#222',
-        paddingTop: '3px',
-        paddingBottom: '4px',
+        paddingTop: 3,
+        paddingBottom: 4,
         textTransform: 'capitalize',
       },
     },

@@ -15,11 +15,11 @@ const Slider = ({
   const styles = reactCSS(merge({
     default: {
       hue: {
-        height: '12px',
+        height: 12,
         position: 'relative',
       },
       Hue: {
-        radius: '2px',
+        radius: 2,
       },
     },
   }, passedStyles));

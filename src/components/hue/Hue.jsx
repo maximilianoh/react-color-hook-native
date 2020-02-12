@@ -15,11 +15,11 @@ export const HuePicker = ({
     default: {
       picker: {
         position: 'relative',
-        width: `${width}px`,
-        height: `${height}px`,
+        width: width,
+        height: height,
       },
       hue: {
-        radius: '2px',
+        radius: 2,
       },
     },
   }, passedStyles));

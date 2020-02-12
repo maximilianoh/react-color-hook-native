@@ -6,9 +6,9 @@ const SliderPointer = () => {
   const styles = reactCSS({
     default: {
       picker: {
-        width: '14px',
-        height: '14px',
-        borderRadius: '6px',
+        width: 14,
+        height: 14,
+        borderRadius: 6,
         transform: 'translate(-7px, -1px)',
         backgroundColor: 'rgb(248, 248, 248)',
         boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.37)',

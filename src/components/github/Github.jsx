@@ -19,9 +19,9 @@ const Github = ({
         background: '#fff',
         border: '1px solid rgba(0,0,0,0.2)',
         boxShadow: '0 3px 12px rgba(0,0,0,0.15)',
-        borderRadius: '4px',
+        borderRadius: 4,
         position: 'relative',
-        padding: '5px',
+        padding: 5,
         msBoxorient: 'horizontal',
       },
       triangle: {
@@ -45,45 +45,45 @@ const Github = ({
     },
     'top-left-triangle': {
       triangle: {
-        top: '-14px',
-        left: '10px',
+        top: -14,
+        left: 10,
       },
       triangleShadow: {
-        top: '-16px',
-        left: '9px',
+        top: -16,
+        left: 9,
       },
     },
     'top-right-triangle': {
       triangle: {
-        top: '-14px',
-        right: '10px',
+        top: 14,
+        right: 10,
       },
       triangleShadow: {
-        top: '-16px',
-        right: '9px',
+        top: 16,
+        right: 9,
       },
     },
     'bottom-left-triangle': {
       triangle: {
-        top: '35px',
-        left: '10px',
+        top: 35,
+        left: 10,
         transform: 'rotate(180deg)',
       },
       triangleShadow: {
-        top: '37px',
-        left: '9px',
+        top: 37,
+        left: 9,
         transform: 'rotate(180deg)',
       },
     },
     'bottom-right-triangle': {
       triangle: {
-        top: '35px',
-        right: '10px',
+        top: 35,
+        right: 10,
         transform: 'rotate(180deg)',
       },
       triangleShadow: {
-        top: '37px',
-        right: '9px',
+        top: 37,
+        right: 9,
         transform: 'rotate(180deg)',
       },
     },

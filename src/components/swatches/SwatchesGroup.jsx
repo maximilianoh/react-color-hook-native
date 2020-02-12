@@ -11,10 +11,10 @@ const SwatchesGroup = ({
   const styles = reactCSS({
     default: {
       group: {
-        paddingBottom: '10px',
-        width: '40px',
+        paddingBottom: 10,
+        width: 40,
         float: 'left',
-        marginRight: '10px',
+        marginRight: 10,
       },
     },
   });

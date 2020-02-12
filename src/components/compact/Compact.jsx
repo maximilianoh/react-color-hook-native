@@ -18,13 +18,13 @@ const Compact = ({
     default: {
       Compact: {
         background: '#f6f6f6',
-        radius: '4px',
+        radius: 4,
       },
       compact: {
-        paddingTop: '5px',
-        paddingLeft: '5px',
+        paddingTop: 5,
+        paddingLeft: 5,
         boxSizing: 'initial',
-        width: '240px',
+        width: 240,
       },
       clear: {
         clear: 'both',

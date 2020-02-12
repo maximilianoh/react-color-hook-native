@@ -9,21 +9,21 @@ const PhotoshopPreviews = ({ rgb, currentColor }) => {
       swatches: {
         border: '1px solid #B3B3B3',
         borderBottom: '1px solid #F0F0F0',
-        marginBottom: '2px',
-        marginTop: '1px',
+        marginBottom: 2,
+        marginTop: 1,
       },
       new: {
-        height: '34px',
+        height: 34,
         background: `rgb(${rgb.r},${rgb.g}, ${rgb.b})`,
         boxShadow: 'inset 1px 0 0 #000, inset -1px 0 0 #000, inset 0 1px 0 #000',
       },
       current: {
-        height: '34px',
+        height: 34,
         background: currentColor,
         boxShadow: 'inset 1px 0 0 #000, inset -1px 0 0 #000, inset 0 -1px 0 #000',
       },
       label: {
-        fontSize: '14px',
+        fontSize: 14,
         color: '#000',
         textAlign: 'center',
       },

@@ -17,8 +17,8 @@ const GithubSwatch = ({
   const styles = reactCSS({
     default: {
       swatch: {
-        width: '25px',
-        height: '25px',
+        width: 25,
+        height: 25,
         fontSize: '0',
       },
     },

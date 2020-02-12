@@ -9,7 +9,7 @@ const SliderSwatch = ({
   const styles = reactCSS({
     default: {
       swatch: {
-        height: '12px',
+        height: 12,
         background: `hsl(${hsl.h}, 50%, ${(offset * 100)}%)`,
         cursor: 'pointer',
       },

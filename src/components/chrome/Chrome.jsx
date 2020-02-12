@@ -22,7 +22,7 @@ const Chrome = ({
       picker: {
         width,
         background: '#fff',
-        borderRadius: '2px',
+        borderRadius: 2,
         boxShadow: '0 0 2px rgba(0,0,0,.3), 0 4px 8px rgba(0,0,0,.3)',
         boxSizing: 'initial',
         fontFamily: 'Menlo',
@@ -44,19 +44,19 @@ const Chrome = ({
         display: 'flex',
       },
       color: {
-        width: '32px',
+        width: 32,
       },
       swatch: {
-        marginTop: '6px',
-        width: '16px',
-        height: '16px',
-        borderRadius: '8px',
+        marginTop: 6,
+        width: 16,
+        height: 16,
+        borderRadius: 8,
         position: 'relative',
         overflow: 'hidden',
       },
       active: {
         absolute: '0px 0px 0px 0px',
-        borderRadius: '8px',
+        borderRadius: 8,
         boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.1)',
         background: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
         zIndex: '2',
@@ -65,36 +65,36 @@ const Chrome = ({
         flex: '1',
       },
       hue: {
-        height: '10px',
+        height: 10,
         position: 'relative',
-        marginBottom: '8px',
+        marginBottom: 8,
       },
       Hue: {
-        radius: '2px',
+        radius: 2,
       },
       alpha: {
-        height: '10px',
+        height: 10,
         position: 'relative',
         boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 12px',
       },
       Alpha: {
-        radius: '2px',
+        radius: 2,
       },
     },
     disableAlpha: {
       color: {
-        width: '22px',
+        width: 22,
       },
       alpha: {
         display: 'none',
       },
       hue: {
-        marginBottom: '0px',
+        marginBottom: 0,
       },
       swatch: {
-        width: '10px',
-        height: '10px',
-        marginTop: '0px',
+        width: 10,
+        height: 10,
+        marginTop: 0,
       },
     },
   }, passedStyles), { disableAlpha });

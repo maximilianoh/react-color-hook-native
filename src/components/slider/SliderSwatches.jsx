@@ -8,12 +8,12 @@ const SliderSwatches = ({ onClick, hsl }) => {
   const styles = reactCSS({
     default: {
       swatches: {
-        marginTop: '20px',
+        marginTop: 20,
       },
       swatch: {
         boxSizing: 'border-box',
         width: '20%',
-        paddingRight: '1px',
+        paddingRight: 1,
         float: 'left',
       },
       clear: {

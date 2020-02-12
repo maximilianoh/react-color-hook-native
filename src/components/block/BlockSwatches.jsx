@@ -9,15 +9,15 @@ const BlockSwatches = ({ colors, onClick, onSwatchHover }) => {
   const styles = reactCSS({
     default: {
       swatches: {
-        marginRight: '-10px',
+        marginRight: -10,
       },
       swatch: {
-        width: '22px',
-        height: '22px',
+        width: 22,
+        height: 22,
         float: 'left',
-        marginRight: '10px',
-        marginBottom: '10px',
-        borderRadius: '4px',
+        marginRight: 10,
+        marginBottom: 10,
+        borderRadius: 4,
       },
       clear: {
         clear: 'both',

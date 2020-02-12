@@ -6,12 +6,11 @@ import { isValidHex, getContrastingColor } from '../../helpers/color';
 import ColorWrap from '../common/ColorWrap';
 import EditableInput from '../common/EditableInput';
 import BlockSwatches from './BlockSwatches';
-import '../common/style.css';
 import { View } from 'react-native';
 
 const Block = ({
   onChange, onSwatchHover, hex, colors, width, triangle,
-  styles: passedStyles = {}, className = '',
+  styles: passedStyles = {},
 }) => {
   const transparent = hex === 'transparent';
   const handleChange = (hexCode, e) => {
@@ -29,43 +28,46 @@ const Block = ({
         width,
         background: '#fff',
         boxShadow: '0 1px rgba(0,0,0,.1)',
-        borderRadius: '6px',
+        borderRadius: 6,
         position: 'relative',
       },
       head: {
-        height: '110px',
+        height: 110,
         background: hex,
         borderRadius: '6px 6px 0 0',
         position: 'relative',
+        display: 'flex',
+        alignItems: center,
+        justifyContent: center,
       },
       body: {
-        padding: '10px',
+        padding: 10,
       },
       label: {
-        fontSize: '18px',
+        fontSize: 18,
         color: getContrastingColor(hex),
         position: 'relative',
       },
       triangle: {
-        width: '0px',
-        height: '0px',
+        width: 0,
+        height: 0,
         borderStyle: 'solid',
         borderWidth: '0 10px 10px 10px',
         borderColor: `transparent transparent ${hex} transparent`,
         position: 'absolute',
-        top: '-10px',
+        top: -10,
         left: '50%',
-        marginLeft: '-10px',
+        marginLeft: -10,
       },
       input: {
         width: '100%',
-        fontSize: '12px',
+        fontSize: 12,
         color: '#666',
-        border: '0px',
+        border: 0,
         outline: 'none',
-        height: '22px',
+        height: 22,
         boxShadow: 'inset 0 0 0 1px #ddd',
-        borderRadius: '4px',
+        borderRadius: 4,
         padding: '0 7px',
         boxSizing: 'border-box',
       },
@@ -80,10 +82,10 @@ const Block = ({
   const upperHex = hex.toUpperCase();
 
   return (
-    <View style={styles.card} className={`block-picker ${className}`}>
+    <View style={styles.card}>
       <View style={styles.triangle} />
 
-      <View style={styles.head} className="flexContentCenter">
+      <View style={styles.head}>
         { transparent }
         <View style={styles.label}>
           { upperHex }
@@ -109,7 +111,6 @@ Block.defaultProps = {
     '#dce775', '#ff8a65', '#ba68c8'],
   triangle: 'top',
   styles: {},
-  className: '',
   hex: '',
 };
 

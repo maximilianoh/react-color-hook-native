@@ -7,9 +7,9 @@ const PhotoshopPointerCircle = ({ hsl }) => {
   const styles = reactCSS({
     default: {
       picker: {
-        width: '12px',
-        height: '12px',
-        borderRadius: '6px',
+        width: 12,
+        height: 12,
+        borderRadius: 6,
         boxShadow: 'inset 0 0 0 1px #fff',
         transform: 'translate(-6px, -6px)',
       },

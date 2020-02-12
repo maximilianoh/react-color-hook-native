@@ -22,7 +22,7 @@ const Sketch = ({
         padding: '10px 10px 0',
         boxSizing: 'initial',
         background: '#fff',
-        borderRadius: '4px',
+        borderRadius: 4,
         boxShadow: '0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15)',
       },
       saturation: {
@@ -32,7 +32,7 @@ const Sketch = ({
         overflow: 'hidden',
       },
       Saturation: {
-        radius: '3px',
+        radius: 3,
         shadow: 'inset 0 0 0 1px rgba(0,0,0,.15), inset 0 0 4px rgba(0,0,0,.25)',
       },
       sliders: {
@@ -40,48 +40,48 @@ const Sketch = ({
         flex: '1',
       },
       color: {
-        width: '24px',
-        height: '24px',
+        width: 24,
+        height: 24,
         position: 'relative',
-        marginTop: '4px',
-        marginLeft: '4px',
-        borderRadius: '3px',
+        marginTop: 4,
+        marginLeft: 4,
+        borderRadius: 3,
       },
       activeColor: {
         absolute: '0px 0px 0px 0px',
-        borderRadius: '2px',
+        borderRadius: 2,
         background: `rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`,
         boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.15), inset 0 0 4px rgba(0,0,0,.25)',
       },
       hue: {
         position: 'relative',
-        height: '10px',
+        height: 10,
         overflow: 'hidden',
       },
       Hue: {
-        radius: '2px',
+        radius: 2,
         shadow: 'inset 0 0 0 1px rgba(0,0,0,.15), inset 0 0 4px rgba(0,0,0,.25)',
       },
 
       alpha: {
         position: 'relative',
-        height: '10px',
-        marginTop: '4px',
+        height: 10,
+        marginTop: 4,
         overflow: 'hidden',
         boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 12px',
       },
       Alpha: {
-        radius: '2px',
+        radius: 2,
         shadow: 'inset 0 0 0 1px rgba(0,0,0,.15), inset 0 0 4px rgba(0,0,0,.25)',
       },
       ...passedStyles,
     },
     disableAlpha: {
       color: {
-        height: '10px',
+        height: 10,
       },
       hue: {
-        height: '10px',
+        height: 10,
       },
       alpha: {
         display: 'none',

@@ -12,8 +12,8 @@ const PhotoshopPointerCircle = () => {
         borderWidth: '4px 0 4px 6px',
         borderColor: 'transparent transparent transparent #fff',
         position: 'absolute',
-        top: '1px',
-        left: '1px',
+        top: 1,
+        left: 1,
       },
       triangleBorder: {
         width: 0,
