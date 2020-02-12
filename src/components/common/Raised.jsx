@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { raisedStyle } from './commonStyles';
+import { View } from 'react-native';
 
 const Raised = ({
   zDepth, radius, background, children,
@@ -8,12 +9,12 @@ const Raised = ({
 }) => {
   const styles = raisedStyle(zDepth, radius, background, passedStyles);
   return (
-    <div style={styles.wrap}>
-      <div style={styles.bg} />
-      <div style={styles.content}>
+    <View style={styles.wrap}>
+      <View style={styles.bg} />
+      <View style={styles.content}>
         { children }
-      </div>
-    </div>
+      </View>
+    </View>
   );
 };
 

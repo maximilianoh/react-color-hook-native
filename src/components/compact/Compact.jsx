@@ -8,6 +8,7 @@ import ColorWrap from '../common/ColorWrap';
 import Raised from '../common/Raised';
 import CompactColor from './CompactColor';
 import CompactFields from './CompactFields';
+import { View } from 'react-native';
 
 const Compact = ({
   onChange, onSwatchHover, colors, hex, rgb,
@@ -45,7 +46,7 @@ const Compact = ({
 
   return (
     <Raised style={styles.Compact} styles={passedStyles}>
-      <div style={styles.compact} className={`compact-picker ${className}`}>
+      <View style={styles.compact} className={`compact-picker ${className}`}>
         { map(colors, (c) => (
           <CompactColor
             key={c}
@@ -55,9 +56,9 @@ const Compact = ({
             onSwatchHover={onSwatchHover}
           />
         )) }
-        <div style={styles.clear} />
+        <View style={styles.clear} />
         <CompactFields hex={hex} rgb={rgb} onChange={handleChange} />
-      </div>
+      </View>
     </Raised>
   );
 };

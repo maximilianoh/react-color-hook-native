@@ -1,5 +1,6 @@
 import React from 'react';
 import reactCSS from 'reactcss';
+import { View } from 'react-native';
 
 const SliderPointer = () => {
   const styles = reactCSS({
@@ -16,7 +17,7 @@ const SliderPointer = () => {
   });
 
   return (
-    <div style={styles.picker} />
+    <View style={styles.picker} />
   );
 };
 

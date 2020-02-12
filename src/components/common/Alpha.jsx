@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import calculateChange from '../../helpers/alpha';
 import { alphaStyle } from './commonStyles';
+import { View, AppState, Text } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Alpha = (props) => {
   const inputRef = useRef(null);
@@ -10,14 +12,16 @@ const Alpha = (props) => {
     if (change && typeof props.onChange === 'function') props.onChange(change, e);
   };
   const handleMouseUp = () => {
-    window.removeEventListener('mousemove', handleChange);
-    window.removeEventListener('mouseup', handleMouseUp);
+    console.log("-------");
+    AppState.removeEventListener('change', handleChange);
+    AppState.removeEventListener('change', handleMouseUp);
   };
 
   const handleMouseDown = (e) => {
+    console.log("////////////");
     handleChange(e);
-    window.addEventListener('mousemove', handleChange);
-    window.addEventListener('mouseup', handleMouseUp);
+    AppState.addEventListener('change', handleChange);
+    AppState.addEventListener('change', handleMouseUp);
   };
 
 
@@ -26,26 +30,29 @@ const Alpha = (props) => {
   const { rgb, pointer } = props;
   const styles = alphaStyle(props, rgb);
   return (
-    <div style={styles.alpha}>
-      <div style={styles.gradient} />
-      <div
+    <View style={styles.alpha}>
+      <View
         style={styles.container}
         ref={inputRef}
         role="button"
         tabIndex={0}
-        onMouseDown={handleMouseDown}
+        onResponderStart={handleMouseDown}
         onTouchMove={handleChange}
-        onTouchStart={handleChange}
+        onTouchEnd={handleChange}
       >
-        <div style={styles.pointer}>
-          {pointer ? (
+        <LinearGradient
+          colors={['rgba(25, 77, 51, 0)', 'rgba(25, 77, 51, 1)']}
+          start={[1,1]}
+          style={{ width:"100%", height:"100%", borderRadius: props.radius }}>
+            {pointer ? (
             <props.pointer {...props} />
           ) : (
-            <div style={styles.slider} />
+            <View style={styles.slider} />
           )}
-        </div>
-      </div>
-    </div>
+        </LinearGradient>
+      </View>
+      
+    </View>
   );
 };
 
@@ -54,7 +61,6 @@ export default Alpha;
 
 Alpha.defaultProps = {
   a: null,
-  renderers: {},
   direction: 'horizontal',
   pointer: null,
 };
@@ -63,7 +69,6 @@ Alpha.propTypes = {
   direction: PropTypes.string,
   a: PropTypes.number,
   rgb: PropTypes.shape({}).isRequired,
-  renderers: PropTypes.shape({}),
   pointer: PropTypes.func,
   onChange: PropTypes.func.isRequired,
 };

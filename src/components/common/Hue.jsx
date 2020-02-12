@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { hueStyle } from './commonStyles';
 import calculateChange from '../../helpers/hue';
+import { View } from 'react-native';
 
 const Hue = (props) => {
   const inputRef = useRef();
@@ -32,8 +33,8 @@ const Hue = (props) => {
 
   const Pointer = pointer;
   return (
-    <div style={styles.hue}>
-      <div
+    <View style={styles.hue}>
+      <View
         role="button"
         tabIndex={0}
         className={`hue-${direction}`}
@@ -60,15 +61,15 @@ const Hue = (props) => {
           }
         ` }
         </style>
-        <div style={styles.pointer}>
+        <View style={styles.pointer}>
           {Pointer ? (
             <Pointer {...props} />
           ) : (
-            <div style={styles.slider} />
+            <View style={styles.slider} />
           )}
-        </div>
-      </div>
-    </div>
+        </View>
+      </View>
+    </View>
   );
 };
 

@@ -10,6 +10,7 @@ import PhotoshopPointerCircle from './PhotoshopPointerCircle';
 import PhotoshopPointer from './PhotoshopPointer';
 import PhotoshopButton from './PhotoshopButton';
 import PhotoshopPreviews from './PhotoshopPreviews';
+import { View } from 'react-native';
 
 const Photoshop = (props) => {
   const [currentColor, setCurrentColor] = useState('#FFFFFF');
@@ -78,35 +79,35 @@ const Photoshop = (props) => {
   } = props;
   useEffect(() => setCurrentColor(hex), []);
   return (
-    <div style={styles.picker} className={`photoshop-picker ${className}`}>
-      <div style={styles.head}>{header}</div>
+    <View style={styles.picker} className={`photoshop-picker ${className}`}>
+      <View style={styles.head}>{header}</View>
 
-      <div style={styles.body} className="flexbox-fix">
-        <div style={styles.saturation}>
+      <View style={styles.body} className="flexbox-fix">
+        <View style={styles.saturation}>
           <Saturation
             hsl={hsl}
             hsv={hsv}
             pointer={PhotoshopPointerCircle}
             onChange={onChange}
           />
-        </div>
-        <div style={styles.hue}>
+        </View>
+        <View style={styles.hue}>
           <Hue
             direction="vertical"
             hsl={hsl}
             pointer={PhotoshopPointer}
             onChange={onChange}
           />
-        </div>
-        <div style={styles.controls}>
-          <div style={styles.top} className="flexbox-fix">
-            <div style={styles.previews}>
+        </View>
+        <View style={styles.controls}>
+          <View style={styles.top} className="flexbox-fix">
+            <View style={styles.previews}>
               <PhotoshopPreviews
                 rgb={rgb}
                 currentColor={currentColor}
               />
-            </div>
-            <div style={styles.actions}>
+            </View>
+            <View style={styles.actions}>
               <PhotoshopButton label="OK" onClick={onAccept} active />
               <PhotoshopButton label="Cancel" onClick={onCancel} />
               <PhotoshopFields
@@ -115,11 +116,11 @@ const Photoshop = (props) => {
                 hsv={hsv}
                 hex={hex}
               />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
   );
 };
 

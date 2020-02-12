@@ -1,6 +1,7 @@
 import React from 'react';
 import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 
 const PhotoshopButton = ({
   onClick, label, children, active,
@@ -29,9 +30,9 @@ const PhotoshopButton = ({
   }, { active });
 
   return (
-    <div style={styles.button} onClick={onClick} onKeyDown={onClick} role="button" tabIndex={0}>
+    <View style={styles.button} onClick={onClick} onKeyDown={onClick} role="button" tabIndex={0}>
       { label || children }
-    </div>
+    </View>
   );
 };
 

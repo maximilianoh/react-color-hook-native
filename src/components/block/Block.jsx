@@ -7,6 +7,7 @@ import ColorWrap from '../common/ColorWrap';
 import EditableInput from '../common/EditableInput';
 import BlockSwatches from './BlockSwatches';
 import '../common/style.css';
+import { View } from 'react-native';
 
 const Block = ({
   onChange, onSwatchHover, hex, colors, width, triangle,
@@ -79,25 +80,25 @@ const Block = ({
   const upperHex = hex.toUpperCase();
 
   return (
-    <div style={styles.card} className={`block-picker ${className}`}>
-      <div style={styles.triangle} />
+    <View style={styles.card} className={`block-picker ${className}`}>
+      <View style={styles.triangle} />
 
-      <div style={styles.head} className="flexContentCenter">
+      <View style={styles.head} className="flexContentCenter">
         { transparent }
-        <div style={styles.label}>
+        <View style={styles.label}>
           { upperHex }
-        </div>
-      </div>
+        </View>
+      </View>
 
-      <div style={styles.body}>
+      <View style={styles.body}>
         <BlockSwatches colors={colors} onClick={handleChange} onSwatchHover={onSwatchHover} />
         <EditableInput
           style={{ input: styles.input }}
           value={hex}
           onChange={handleChange}
         />
-      </div>
-    </div>
+      </View>
+    </View>
   );
 };
 

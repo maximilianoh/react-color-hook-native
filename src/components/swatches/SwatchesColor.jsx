@@ -1,9 +1,9 @@
 import React from 'react';
 import reactCSS from 'reactcss';
-import Check from '@material-ui/icons/Check';
 import PropTypes from 'prop-types';
 import { getContrastingColor } from '../../helpers/color';
 import Swatch from '../common/Swatch';
+import { View } from 'react-native';
 
 const SwatchesColor = ({
   color, onClick, onSwatchHover, first,
@@ -70,9 +70,9 @@ const SwatchesColor = ({
       onHover={onSwatchHover}
       focusStyle={{ boxShadow: `0 0 4px ${color}` }}
     >
-      <div style={styles.check}>
-        <Check />
-      </div>
+      <View style={styles.check}>
+        X
+      </View>
     </Swatch>
   );
 };

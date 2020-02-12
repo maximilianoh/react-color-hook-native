@@ -6,6 +6,7 @@ import ColorWrap from '../common/ColorWrap';
 import Hue from '../common/Hue';
 import SliderSwatches from './SliderSwatches';
 import SliderPointer from './SliderPointer';
+import { View } from 'react-native';
 
 const Slider = ({
   hsl, onChange, pointer,
@@ -23,19 +24,19 @@ const Slider = ({
     },
   }, passedStyles));
   return (
-    <div style={styles.wrap || {}} className={`slider-picker ${className}`}>
-      <div style={styles.hue}>
+    <View style={styles.wrap || {}} className={`slider-picker ${className}`}>
+      <View style={styles.hue}>
         <Hue
           style={styles.Hue}
           hsl={hsl}
           pointer={pointer}
           onChange={onChange}
         />
-      </div>
-      <div style={styles.swatches}>
+      </View>
+      <View style={styles.swatches}>
         <SliderSwatches hsl={hsl} onClick={onChange} />
-      </div>
-    </div>
+      </View>
+    </View>
   );
 };
 

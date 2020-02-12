@@ -1,6 +1,7 @@
 import React from 'react';
 import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 
 const PhotoshopPointerCircle = ({ hsl }) => {
   const styles = reactCSS({
@@ -21,7 +22,7 @@ const PhotoshopPointerCircle = ({ hsl }) => {
   }, { 'black-outline': hsl.l > 0.5 });
 
   return (
-    <div style={styles.picker} />
+    <View style={styles.picker} />
   );
 };
 

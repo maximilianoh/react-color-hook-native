@@ -1,5 +1,6 @@
 import React from 'react';
 import reactCSS from 'reactcss';
+import { View } from 'react-native';
 
 const PhotoshopPointerCircle = () => {
   const styles = reactCSS({
@@ -43,15 +44,15 @@ const PhotoshopPointerCircle = () => {
   });
 
   return (
-    <div style={styles.pointer}>
-      <div style={styles.left}>
-        <div style={styles.leftInside} />
-      </div>
+    <View style={styles.pointer}>
+      <View style={styles.left}>
+        <View style={styles.leftInside} />
+      </View>
 
-      <div style={styles.right}>
-        <div style={styles.rightInside} />
-      </div>
-    </div>
+      <View style={styles.right}>
+        <View style={styles.rightInside} />
+      </View>
+    </View>
   );
 };
 

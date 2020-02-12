@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { editableInputStyle } from './commonStyles';
+import { View } from 'react-native';
 
 const DEFAULT_ARROW_OFFSET = 1;
 
@@ -99,7 +100,7 @@ const EditableInput = (props) => {
 
   const { placeholder, hideLabel, label } = props;
   return (
-    <div style={styles.wrap}>
+    <View style={styles.wrap}>
       <input
         style={styles.input}
         ref={inputRef}
@@ -115,7 +116,7 @@ const EditableInput = (props) => {
           {label}
         </span>
       ) : null}
-    </div>
+    </View>
   );
 };
 

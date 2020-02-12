@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import handleFocus from '../../helpers/interaction';
 import { swatchStyle } from './commonStyles';
+import { View } from 'react-native';
 
 const ENTER = 13;
 
@@ -21,7 +22,7 @@ const Swatch = ({
   }
   const showTitle = title || color;
   return (
-    <div
+    <View
       style={styles.swatch}
       onClick={handleClick}
       title={showTitle}
@@ -32,7 +33,7 @@ const Swatch = ({
     >
       { children }
       { transparent }
-    </div>
+    </View>
   );
 };
 

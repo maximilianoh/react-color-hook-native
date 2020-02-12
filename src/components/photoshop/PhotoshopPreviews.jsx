@@ -1,6 +1,7 @@
 import React from 'react';
 import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 
 const PhotoshopPreviews = ({ rgb, currentColor }) => {
   const styles = reactCSS({
@@ -30,14 +31,14 @@ const PhotoshopPreviews = ({ rgb, currentColor }) => {
   });
 
   return (
-    <div>
-      <div style={styles.label}>new</div>
-      <div style={styles.swatches}>
-        <div style={styles.new} />
-        <div style={styles.current} />
-      </div>
-      <div style={styles.label}>current</div>
-    </div>
+    <View>
+      <View style={styles.label}>new</View>
+      <View style={styles.swatches}>
+        <View style={styles.new} />
+        <View style={styles.current} />
+      </View>
+      <View style={styles.label}>current</View>
+    </View>
   );
 };
 

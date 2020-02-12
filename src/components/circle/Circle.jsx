@@ -7,6 +7,7 @@ import * as material from 'material-colors';
 import ColorWrap from '../common/ColorWrap';
 import CircleSwatch from './CircleSwatch';
 import '../common/style.css';
+import { View } from 'react-native';
 
 const Circle = ({
   width, onChange, onSwatchHover, colors, hex, circleSize,
@@ -25,9 +26,9 @@ const Circle = ({
   const handleChange = (hexCode, e) => onChange({ hex: hexCode, source: 'hex' }, e);
 
   return (
-    <div style={styles.card} className={`circle-picker ${className} flexContent`}>
+    <View style={styles.card} className={`circle-picker ${className} flexContent`}>
       { map(colors, (c) => (
-        <div key={`divCircleSwatch${c}`}>
+        <View key={`ViewCircleSwatch${c}`}>
           <CircleSwatch
             key={c}
             color={c}
@@ -37,9 +38,9 @@ const Circle = ({
             circleSize={circleSize}
             circleSpacing={circleSpacing}
           />
-        </div>
+        </View>
       )) }
-    </div>
+    </View>
   );
 };
 

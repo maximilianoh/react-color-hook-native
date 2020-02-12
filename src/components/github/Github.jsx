@@ -6,6 +6,7 @@ import merge from 'lodash/merge';
 import ColorWrap from '../common/ColorWrap';
 import GithubSwatch from './GithubSwatch';
 import '../common/style.css';
+import { View } from 'react-native';
 
 const Github = ({
   width, colors, onChange, onSwatchHover, triangle,
@@ -96,20 +97,20 @@ const Github = ({
 
   const handleChange = (hex, e) => onChange({ hex, source: 'hex' }, e);
   return (
-    <div style={styles.card} className={`github-picker ${className} flexContent`}>
-      <div style={styles.triangleShadow} />
-      <div style={styles.triangle} />
+    <View style={styles.card} className={`github-picker ${className} flexContent`}>
+      <View style={styles.triangleShadow} />
+      <View style={styles.triangle} />
       {map(colors, (c) => (
-        <div key={`divSwatch${c}`}>
+        <View key={`ViewSwatch${c}`}>
           <GithubSwatch
             color={c}
             key={c}
             onClick={handleChange}
             onSwatchHover={onSwatchHover}
           />
-        </div>
+        </View>
       ))}
-    </div>
+    </View>
   );
 };
 

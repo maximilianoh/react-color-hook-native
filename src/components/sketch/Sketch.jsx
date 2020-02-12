@@ -9,6 +9,7 @@ import Alpha from '../common/Alpha';
 import SketchFields from './SketchFields';
 import SketchPresetColors from './SketchPresetColors';
 import '../common/style.css';
+import { View } from 'react-native';
 
 const Sketch = ({
   width, rgb, hex, hsv, hsl, onChange, onSwatchHover,
@@ -88,25 +89,25 @@ const Sketch = ({
     },
   }, passedStyles), { disableAlpha });
   return (
-    <div style={styles.picker} className={`sketch-picker ${className}`}>
-      <div style={styles.saturation}>
+    <View style={styles.picker} className={`sketch-picker ${className}`}>
+      <View style={styles.saturation}>
         <Saturation
           style={styles.Saturation}
           hsl={hsl}
           hsv={hsv}
           onChange={onChange}
         />
-      </div>
-      <div className="flexbox-fix flexContent">
-        <div style={styles.sliders}>
-          <div style={styles.hue}>
+      </View>
+      <View className="flexbox-fix flexContent">
+        <View style={styles.sliders}>
+          <View style={styles.hue}>
             <Hue
               style={styles.Hue}
               hsl={hsl}
               onChange={onChange}
             />
-          </div>
-          <div style={styles.alpha}>
+          </View>
+          <View style={styles.alpha}>
             <Alpha
               style={styles.Alpha}
               rgb={rgb}
@@ -114,12 +115,12 @@ const Sketch = ({
               renderers={renderers}
               onChange={onChange}
             />
-          </div>
-        </div>
-        <div style={styles.color}>
-          <div style={styles.activeColor} />
-        </div>
-      </div>
+          </View>
+        </View>
+        <View style={styles.color}>
+          <View style={styles.activeColor} />
+        </View>
+      </View>
 
       <SketchFields
         rgb={rgb}
@@ -133,7 +134,7 @@ const Sketch = ({
         onClick={onChange}
         onSwatchHover={onSwatchHover}
       />
-    </div>
+    </View>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 
 export const SliderPointer = ({ direction }) => {
   const styles = reactCSS({
@@ -22,7 +23,7 @@ export const SliderPointer = ({ direction }) => {
   }, { vertical: direction === 'vertical' });
 
   return (
-    <div style={styles.picker} />
+    <View style={styles.picker} />
   );
 };
 

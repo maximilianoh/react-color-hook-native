@@ -5,6 +5,7 @@ import merge from 'lodash/merge';
 import ColorWrap from '../common/ColorWrap';
 import Hue from '../common/Hue';
 import HuePointer from './HuePointer';
+import { View } from 'react-native';
 
 export const HuePicker = ({
   width, height, onChange, hsl, direction, pointer,
@@ -33,7 +34,7 @@ export const HuePicker = ({
   }, e);
 
   return (
-    <div style={styles.picker} className={`hue-picker ${className}`}>
+    <View style={styles.picker} className={`hue-picker ${className}`}>
       <Hue
         {...styles.hue}
         hsl={hsl}
@@ -41,7 +42,7 @@ export const HuePicker = ({
         onChange={handleChange}
         direction={direction}
       />
-    </div>
+    </View>
   );
 };
 

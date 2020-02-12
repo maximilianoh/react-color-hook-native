@@ -1,5 +1,6 @@
 import React from 'react';
 import reactCSS from 'reactcss';
+import { View } from 'react-native';
 
 const ChromePointer = () => {
   const styles = reactCSS({
@@ -16,7 +17,7 @@ const ChromePointer = () => {
   });
 
   return (
-    <div style={styles.picker} />
+    <View style={styles.picker} />
   );
 };
 

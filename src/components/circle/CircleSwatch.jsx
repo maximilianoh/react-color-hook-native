@@ -2,6 +2,7 @@ import React from 'react';
 import reactCSS, { handleHover } from 'reactcss';
 import PropTypes from 'prop-types';
 import Swatch from '../common/Swatch';
+import { View } from 'react-native';
 
 const CircleSwatch = ({
   color, onClick, onSwatchHover, hover, active,
@@ -37,7 +38,7 @@ const CircleSwatch = ({
   }, { hover, active });
 
   return (
-    <div style={styles.swatch}>
+    <View style={styles.swatch}>
       <Swatch
         style={styles.Swatch}
         color={color}
@@ -45,7 +46,7 @@ const CircleSwatch = ({
         onHover={onSwatchHover}
         focusStyle={{ boxShadow: `${styles.Swatch.boxShadow}, 0 0 5px ${color}` }}
       />
-    </div>
+    </View>
   );
 };
 

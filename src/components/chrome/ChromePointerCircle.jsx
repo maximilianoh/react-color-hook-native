@@ -1,6 +1,6 @@
 import React from 'react';
 import reactCSS from 'reactcss';
-
+import { View } from 'react-native';
 const ChromePointerCircle = () => {
   const styles = reactCSS({
     default: {
@@ -15,7 +15,7 @@ const ChromePointerCircle = () => {
   });
 
   return (
-    <div style={styles.picker} />
+    <View style={styles.picker} />
   );
 };
 

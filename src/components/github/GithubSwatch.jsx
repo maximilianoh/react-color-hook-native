@@ -2,6 +2,7 @@ import React from 'react';
 import reactCSS, { handleHover } from 'reactcss';
 import PropTypes from 'prop-types';
 import Swatch from '../common/Swatch';
+import { View } from 'react-native';
 
 const GithubSwatch = ({
   hover, color, onClick, onSwatchHover,
@@ -27,14 +28,14 @@ const GithubSwatch = ({
   }, { hover });
 
   return (
-    <div style={styles.swatch}>
+    <View style={styles.swatch}>
       <Swatch
         color={color}
         onClick={onClick}
         onHover={onSwatchHover}
         focusStyle={hoverSwatch}
       />
-    </div>
+    </View>
   );
 };
 

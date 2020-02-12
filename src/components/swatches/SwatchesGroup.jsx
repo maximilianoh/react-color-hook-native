@@ -3,6 +3,7 @@ import reactCSS from 'reactcss';
 import map from 'lodash/map';
 import PropTypes from 'prop-types';
 import SwatchesColor from './SwatchesColor';
+import { View } from 'react-native';
 
 const SwatchesGroup = ({
   onClick, onSwatchHover, group, active,
@@ -19,7 +20,7 @@ const SwatchesGroup = ({
   });
 
   return (
-    <div style={styles.group}>
+    <View style={styles.group}>
       {map(group, (color, i) => (
         <SwatchesColor
           key={color}
@@ -31,7 +32,7 @@ const SwatchesGroup = ({
           onSwatchHover={onSwatchHover}
         />
       ))}
-    </div>
+    </View>
   );
 };
 

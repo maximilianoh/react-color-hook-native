@@ -4,6 +4,7 @@ import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import { isValidHex } from '../../helpers/color';
 import EditableInput from '../common/EditableInput';
+import { View } from 'react-native';
 
 const SketchFields = ({
   onChange, rgb, hsl, hex, disableAlpha,
@@ -85,16 +86,16 @@ const SketchFields = ({
   };
 
   return (
-    <div style={styles.fields} className="flexbox-fix">
-      <div style={styles.double}>
+    <View style={styles.fields} className="flexbox-fix">
+      <View style={styles.double}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
           label="hex"
           value={`${hex.replace('#', '')}`}
           onChange={handleChange}
         />
-      </div>
-      <div style={styles.single}>
+      </View>
+      <View style={styles.single}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
           label="r"
@@ -103,8 +104,8 @@ const SketchFields = ({
           dragLabel="true"
           dragMax="255"
         />
-      </div>
-      <div style={styles.single}>
+      </View>
+      <View style={styles.single}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
           label="g"
@@ -113,8 +114,8 @@ const SketchFields = ({
           dragLabel="true"
           dragMax="255"
         />
-      </div>
-      <div style={styles.single}>
+      </View>
+      <View style={styles.single}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
           label="b"
@@ -123,8 +124,8 @@ const SketchFields = ({
           dragLabel="true"
           dragMax="255"
         />
-      </div>
-      <div style={styles.alpha}>
+      </View>
+      <View style={styles.alpha}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
           label="a"
@@ -133,8 +134,8 @@ const SketchFields = ({
           dragLabel="true"
           dragMax="100"
         />
-      </div>
-    </div>
+      </View>
+    </View>
   );
 };
 

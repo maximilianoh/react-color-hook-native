@@ -2,6 +2,7 @@ import React from 'react';
 import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import SliderSwatch from './SliderSwatch';
+import { View } from 'react-native';
 
 const SliderSwatches = ({ onClick, hsl }) => {
   const styles = reactCSS({
@@ -25,8 +26,8 @@ const SliderSwatches = ({ onClick, hsl }) => {
   const epsilon = 0.1;
 
   return (
-    <div style={styles.swatches}>
-      <div style={styles.swatch}>
+    <View style={styles.swatches}>
+      <View style={styles.swatch}>
         <SliderSwatch
           hsl={hsl}
           offset={0.80}
@@ -35,8 +36,8 @@ const SliderSwatches = ({ onClick, hsl }) => {
           onClick={onClick}
           first
         />
-      </div>
-      <div style={styles.swatch}>
+      </View>
+      <View style={styles.swatch}>
         <SliderSwatch
           hsl={hsl}
           offset={0.65}
@@ -44,8 +45,8 @@ const SliderSwatches = ({ onClick, hsl }) => {
             && Math.abs(hsl.s - 0.50) < epsilon}
           onClick={onClick}
         />
-      </div>
-      <div style={styles.swatch}>
+      </View>
+      <View style={styles.swatch}>
         <SliderSwatch
           hsl={hsl}
           offset={0.50}
@@ -53,8 +54,8 @@ const SliderSwatches = ({ onClick, hsl }) => {
             && Math.abs(hsl.s - 0.50) < epsilon}
           onClick={onClick}
         />
-      </div>
-      <div style={styles.swatch}>
+      </View>
+      <View style={styles.swatch}>
         <SliderSwatch
           hsl={hsl}
           offset={0.35}
@@ -62,8 +63,8 @@ const SliderSwatches = ({ onClick, hsl }) => {
             && Math.abs(hsl.s - 0.50) < epsilon}
           onClick={onClick}
         />
-      </div>
-      <div style={styles.swatch}>
+      </View>
+      <View style={styles.swatch}>
         <SliderSwatch
           hsl={hsl}
           offset={0.20}
@@ -72,9 +73,9 @@ const SliderSwatches = ({ onClick, hsl }) => {
           onClick={onClick}
           last
         />
-      </div>
-      <div style={styles.clear} />
-    </div>
+      </View>
+      <View style={styles.clear} />
+    </View>
   );
 };
 

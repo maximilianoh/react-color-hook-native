@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import reactCSS from 'reactcss';
 import Swatch from '../common/Swatch';
 import '../common/style.css';
+import { View } from 'react-native';
 
 const SketchPresetColors = ({ colors, onClick, onSwatchHover }) => {
   const styles = reactCSS({
@@ -40,14 +41,14 @@ const SketchPresetColors = ({ colors, onClick, onSwatchHover }) => {
   };
 
   return (
-    <div style={styles.colors} className="flexContent flexbox-fix">
+    <View style={styles.colors} className="flexContent flexbox-fix">
       {colors.map((colorObjOrString) => {
         const c = typeof colorObjOrString === 'string'
           ? { color: colorObjOrString }
           : colorObjOrString;
         const key = `${c.color}${c.title || ''}`;
         return (
-          <div key={key} style={styles.swatchWrap}>
+          <View key={key} style={styles.swatchWrap}>
             <Swatch
               {...c}
               style={styles.swatch}
@@ -57,10 +58,10 @@ const SketchPresetColors = ({ colors, onClick, onSwatchHover }) => {
                 boxShadow: `inset 0 0 0 1px rgba(0,0,0,.15), 0 0 4px ${c.color}`,
               }}
             />
-          </div>
+          </View>
         );
       })}
-    </div>
+    </View>
   );
 };
 

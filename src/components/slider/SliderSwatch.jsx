@@ -1,6 +1,7 @@
 import React from 'react';
 import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 
 const SliderSwatch = ({
   hsl, offset, onClick, active, first, last,
@@ -39,7 +40,7 @@ const SliderSwatch = ({
   }, e);
 
   return (
-    <div style={styles.swatch} onKeyPress={handleClick} onClick={handleClick} role="grid" tabIndex={0} />
+    <View style={styles.swatch} onKeyPress={handleClick} onClick={handleClick} role="grid" tabIndex={0} />
   );
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import EditableInput from '../common/EditableInput';
+import { View } from 'react-native';
 
 const CompactFields = ({ hex, rgb, onChange }) => {
   const styles = reactCSS({
@@ -82,8 +83,8 @@ const CompactFields = ({ hex, rgb, onChange }) => {
   };
 
   return (
-    <div style={styles.fields} className="flexbox-fix">
-      <div style={styles.active} />
+    <View style={styles.fields} className="flexbox-fix">
+      <View style={styles.active} />
       <EditableInput
         style={{ wrap: styles.HEXwrap, input: styles.HEXinput, label: styles.HEXlabel }}
         label="hex"
@@ -108,7 +109,7 @@ const CompactFields = ({ hex, rgb, onChange }) => {
         value={`${rgb.b}`}
         onChange={handleChange}
       />
-    </div>
+    </View>
   );
 };
 

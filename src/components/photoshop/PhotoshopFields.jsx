@@ -3,6 +3,7 @@ import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import { isValidHex } from '../../helpers/color';
 import EditableInput from '../common/EditableInput';
+import { View } from 'react-native';
 
 const PhotoshopPicker = ({
   onChange, rgb, hsv, hex,
@@ -15,7 +16,7 @@ const PhotoshopPicker = ({
         width: '80px',
         position: 'relative',
       },
-      divider: {
+      Viewider: {
         height: '5px',
       },
       RGBwrap: {
@@ -104,7 +105,7 @@ const PhotoshopPicker = ({
   };
 
   return (
-    <div style={styles.fields}>
+    <View style={styles.fields}>
       <EditableInput
         style={{ wrap: styles.RGBwrap, input: styles.RGBinput, label: styles.RGBlabel }}
         label="h"
@@ -123,7 +124,7 @@ const PhotoshopPicker = ({
         value={`${Math.round(hsv.v * 100)}`}
         onChange={handleChange}
       />
-      <div style={styles.divider} />
+      <View style={styles.Viewider} />
       <EditableInput
         style={{ wrap: styles.RGBwrap, input: styles.RGBinput, label: styles.RGBlabel }}
         label="r"
@@ -142,19 +143,19 @@ const PhotoshopPicker = ({
         value={`${rgb.b}`}
         onChange={handleChange}
       />
-      <div style={styles.divider} />
+      <View style={styles.Viewider} />
       <EditableInput
         style={{ wrap: styles.HEXwrap, input: styles.HEXinput, label: styles.HEXlabel }}
         label="#"
         value={`${hex.replace('#', '')}`}
         onChange={handleChange}
       />
-      <div style={styles.fieldSymbols}>
-        <div style={styles.symbol}>°</div>
-        <div style={styles.symbol}>%</div>
-        <div style={styles.symbol}>%</div>
-      </div>
-    </div>
+      <View style={styles.fieldSymbols}>
+        <View style={styles.symbol}>°</View>
+        <View style={styles.symbol}>%</View>
+        <View style={styles.symbol}>%</View>
+      </View>
+    </View>
   );
 };
 

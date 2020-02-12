@@ -6,6 +6,7 @@ import { isValidHex } from '../../helpers/color';
 import ColorWrap from '../common/ColorWrap';
 import EditableInput from '../common/EditableInput';
 import Raised from '../common/Raised';
+import { View } from 'react-native';
 
 const Material = ({
   onChange, hex, rgb,
@@ -100,40 +101,40 @@ const Material = ({
 
   return (
     <Raised styles={passedStyles}>
-      <div style={styles.material} className={`material-picker ${className}`}>
+      <View style={styles.material} className={`material-picker ${className}`}>
         <EditableInput
           style={{ wrap: styles.HEXwrap, input: styles.HEXinput, label: styles.HEXlabel }}
           label="hex"
           value={`${hex}`}
           onChange={handleChange}
         />
-        <div style={styles.split} className="flexbox-fix">
-          <div style={styles.third}>
+        <View style={styles.split} className="flexbox-fix">
+          <View style={styles.third}>
             <EditableInput
               style={{ wrap: styles.RGBwrap, input: styles.RGBinput, label: styles.RGBlabel }}
               label="r"
               value={`${rgb.r}`}
               onChange={handleChange}
             />
-          </div>
-          <div style={styles.third}>
+          </View>
+          <View style={styles.third}>
             <EditableInput
               style={{ wrap: styles.RGBwrap, input: styles.RGBinput, label: styles.RGBlabel }}
               label="g"
               value={`${rgb.g}`}
               onChange={handleChange}
             />
-          </div>
-          <div style={styles.third}>
+          </View>
+          <View style={styles.third}>
             <EditableInput
               style={{ wrap: styles.RGBwrap, input: styles.RGBinput, label: styles.RGBlabel }}
               label="b"
               value={`${rgb.b}`}
               onChange={handleChange}
             />
-          </div>
-        </div>
-      </div>
+          </View>
+        </View>
+      </View>
     </Raised>
   );
 };

@@ -1,28 +1,32 @@
 import React from 'react';
 import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 
 const AlphaPointer = ({ direction }) => {
   const styles = reactCSS({
     default: {
       picker: {
-        width: '18px',
-        height: '18px',
-        borderRadius: '50%',
-        transform: 'translate(-9px, -1px)',
+        width: 18,
+        height: 18,
+        borderRadius: 20,
+        transform: [{translateX:-9}, {translateY:-1}],
         backgroundColor: 'rgb(248, 248, 248)',
-        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.37)',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 1,
+        shadowRadius: 4,
+        shadowColor:'rgba(0, 0, 0, 0.37)',
       },
     },
     vertical: {
       picker: {
-        transform: 'translate(-2px, -9px)',
+        transform: [{translateX:-2}, {translateY:-9}],
       },
     },
   }, { vertical: direction === 'vertical' });
 
   return (
-    <div style={styles.picker} />
+    <View style={styles.picker} />
   );
 };
 

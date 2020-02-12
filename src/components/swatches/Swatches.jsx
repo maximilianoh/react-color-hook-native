@@ -8,6 +8,7 @@ import { isValidHex } from '../../helpers/color';
 import ColorWrap from '../common/ColorWrap';
 import Raised from '../common/Raised';
 import SwatchesGroup from './SwatchesGroup';
+import { View } from 'react-native';
 
 const Swatches = ({
   width, height, onChange, onSwatchHover, colors, hex,
@@ -42,10 +43,10 @@ const Swatches = ({
   };
 
   return (
-    <div style={styles.picker} className={`swatches-picker ${className}`}>
+    <View style={styles.picker} className={`swatches-picker ${className}`}>
       <Raised>
-        <div style={styles.overflow}>
-          <div style={styles.body}>
+        <View style={styles.overflow}>
+          <View style={styles.body}>
             { map(colors, (group) => (
               <SwatchesGroup
                 key={group.toString()}
@@ -55,11 +56,11 @@ const Swatches = ({
                 onSwatchHover={onSwatchHover}
               />
             )) }
-            <div style={styles.clear} />
-          </div>
-        </div>
+            <View style={styles.clear} />
+          </View>
+        </View>
       </Raised>
-    </div>
+    </View>
   );
 };
 

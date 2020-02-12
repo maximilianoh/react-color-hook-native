@@ -8,6 +8,7 @@ import { isValidHex } from '../../helpers/color';
 import ColorWrap from '../common/ColorWrap';
 import EditableInput from '../common/EditableInput';
 import Swatch from '../common/Swatch';
+import { View } from 'react-native';
 
 
 const Twitter = ({
@@ -126,11 +127,11 @@ const Twitter = ({
   };
 
   return (
-    <div style={styles.card} className={`twitter-picker ${className}`}>
-      <div style={styles.triangleShadow} />
-      <div style={styles.triangle} />
+    <View style={styles.card} className={`twitter-picker ${className}`}>
+      <View style={styles.triangleShadow} />
+      <View style={styles.triangle} />
 
-      <div style={styles.body}>
+      <View style={styles.body}>
         { map(colors, (c, i) => (
           <Swatch
             key={i}
@@ -144,16 +145,16 @@ const Twitter = ({
             }}
           />
         )) }
-        <div style={styles.hash}>#</div>
+        <View style={styles.hash}>#</View>
         <EditableInput
           label={null}
           style={{ input: styles.input }}
           value={hex.replace('#', '')}
           onChange={handleChange}
         />
-        <div style={styles.clear} />
-      </div>
-    </div>
+        <View style={styles.clear} />
+      </View>
+    </View>
   );
 };
 

@@ -11,6 +11,7 @@ import Saturation from '../common/Saturation';
 import ChromeFields from './ChromeFields';
 import ChromePointer from './ChromePointer';
 import ChromePointerCircle from './ChromePointerCircle';
+import { View } from 'react-native';
 
 const Chrome = ({
   width, onChange, disableAlpha, rgb, hsl, hsv, hex, renderers,
@@ -98,8 +99,8 @@ const Chrome = ({
     },
   }, passedStyles), { disableAlpha });
   return (
-    <div style={styles.picker} className={`chrome-picker ${className}`}>
-      <div style={styles.saturation}>
+    <View style={styles.picker} className={`chrome-picker ${className}`}>
+      <View style={styles.saturation}>
         <Saturation
           style={styles.Saturation}
           hsl={hsl}
@@ -107,24 +108,24 @@ const Chrome = ({
           pointer={ChromePointerCircle}
           onChange={onChange}
         />
-      </div>
-      <div style={styles.body}>
-        <div style={styles.controls} className="flexbox-fix">
-          <div style={styles.color}>
-            <div style={styles.swatch}>
-              <div style={styles.active} />
-            </div>
-          </div>
-          <div style={styles.toggles}>
-            <div style={styles.hue}>
+      </View>
+      <View style={styles.body}>
+        <View style={styles.controls} className="flexbox-fix">
+          <View style={styles.color}>
+            <View style={styles.swatch}>
+              <View style={styles.active} />
+            </View>
+          </View>
+          <View style={styles.toggles}>
+            <View style={styles.hue}>
               <Hue
                 style={styles.Hue}
                 hsl={hsl}
                 pointer={ChromePointer}
                 onChange={onChange}
               />
-            </div>
-            <div style={styles.alpha}>
+            </View>
+            <View style={styles.alpha}>
               <Alpha
                 style={styles.Alpha}
                 rgb={rgb}
@@ -133,9 +134,9 @@ const Chrome = ({
                 renderers={renderers}
                 onChange={onChange}
               />
-            </div>
-          </div>
-        </div>
+            </View>
+          </View>
+        </View>
         <ChromeFields
           rgb={rgb}
           hsl={hsl}
@@ -144,8 +145,8 @@ const Chrome = ({
           onChange={onChange}
           disableAlpha={disableAlpha}
         />
-      </div>
-    </div>
+      </View>
+    </View>
   );
 };
 

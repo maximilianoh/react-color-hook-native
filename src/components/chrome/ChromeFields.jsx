@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import reactCSS from 'reactcss';
-import SwapHoriz from '@material-ui/icons/SwapHoriz';
 import PropTypes from 'prop-types';
 import { isValidHex } from '../../helpers/color';
 import EditableInput from '../common/EditableInput';
+import { View } from 'react-native';
 
 const ChromeFields = (props) => {
   const { view } = props;
@@ -174,45 +174,45 @@ const ChromeFields = (props) => {
   let fields;
   if (viewState === 'hex') {
     fields = (
-      <div style={styles.fields} className="flexbox-fix">
-        <div style={styles.field}>
+      <View style={styles.fields} className="flexbox-fix">
+        <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="hex"
             value={`${props.hex}`}
             onChange={handleChange}
           />
-        </div>
-      </div>
+        </View>
+      </View>
     );
   } else if (viewState === 'rgb') {
     fields = (
-      <div style={styles.fields} className="flexbox-fix">
-        <div style={styles.field}>
+      <View style={styles.fields} className="flexbox-fix">
+        <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="r"
             value={`${props.rgb.r}`}
             onChange={handleChange}
           />
-        </div>
-        <div style={styles.field}>
+        </View>
+        <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="g"
             value={`${props.rgb.g}`}
             onChange={handleChange}
           />
-        </div>
-        <div style={styles.field}>
+        </View>
+        <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="b"
             value={`${props.rgb.b}`}
             onChange={handleChange}
           />
-        </div>
-        <div style={styles.alpha}>
+        </View>
+        <View style={styles.alpha}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="a"
@@ -220,37 +220,37 @@ const ChromeFields = (props) => {
             arrowOffset={0.01}
             onChange={handleChange}
           />
-        </div>
-      </div>
+        </View>
+      </View>
     );
   } else if (viewState === 'hsl') {
     fields = (
-      <div style={styles.fields} className="flexbox-fix">
-        <div style={styles.field}>
+      <View style={styles.fields} className="flexbox-fix">
+        <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="h"
             value={`${Math.round(props.hsl.h)}`}
             onChange={handleChange}
           />
-        </div>
-        <div style={styles.field}>
+        </View>
+        <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="s"
             value={`${Math.round(props.hsl.s * 100)}%`}
             onChange={handleChange}
           />
-        </div>
-        <div style={styles.field}>
+        </View>
+        <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="l"
             value={`${Math.round(props.hsl.l * 100)}%`}
             onChange={handleChange}
           />
-        </div>
-        <div style={styles.alpha}>
+        </View>
+        <View style={styles.alpha}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="a"
@@ -258,16 +258,16 @@ const ChromeFields = (props) => {
             arrowOffset={0.01}
             onChange={handleChange}
           />
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 
   return (
-    <div style={styles.wrap} className="flexbox-fix">
+    <View style={styles.wrap} className="flexbox-fix">
       {fields}
-      <div style={styles.toggle}>
-        <div
+      <View style={styles.toggle}>
+        <View
           style={styles.icon}
           onKeyDown={toggleViews}
           onClick={toggleViews}
@@ -275,17 +275,10 @@ const ChromeFields = (props) => {
           role="button"
           tabIndex={0}
         >
-          <SwapHoriz
-            style={styles.svg}
-            onMouseOver={showHighlight}
-            onFocus={showHighlight}
-            onMouseEnter={showHighlight}
-            onMouseOut={hideHighlight}
-            onBlur={hideHighlight}
-          />
-        </div>
-      </div>
-    </div>
+          O
+        </View>
+      </View>
+    </View>
   );
 };
 

@@ -3,6 +3,7 @@ import throttle from 'lodash/throttle';
 import PropTypes from 'prop-types';
 import calculateChange from '../../helpers/saturation';
 import { saturationStyle } from './commonStyles';
+import { View } from 'react-native';
 
 const Saturation = (props) => {
   const inputRef = useRef();
@@ -49,7 +50,7 @@ const Saturation = (props) => {
     white, black, circle, point, style);
   const Pointer = pointer;
   return (
-    <div
+    <View
       role="button"
       tabIndex={0}
       style={styles.color}
@@ -70,17 +71,17 @@ const Saturation = (props) => {
         }
       `}
       </style>
-      <div style={styles.white} className="saturation-white">
-        <div style={styles.black} className="saturation-black" />
-        <div style={styles.pointer}>
+      <View style={styles.white} className="saturation-white">
+        <View style={styles.black} className="saturation-black" />
+        <View style={styles.pointer}>
           {Pointer ? (
             <Pointer {...props} />
           ) : (
-            <div style={styles.circle} />
+            <View style={styles.circle} />
           )}
-        </div>
-      </div>
-    </div>
+        </View>
+      </View>
+    </View>
   );
 };
 

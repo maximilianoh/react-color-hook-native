@@ -4,27 +4,25 @@ import merge from 'lodash/merge';
 export const alphaStyle = (props, rgb) => reactCSS({
   default: {
     alpha: {
-      absolute: '0px 0px 0px 0px',
+      position: 'absolute',
       borderRadius: props.radius,
+      shadowOffset: { width: 0, height: 5 },
+      shadowOpacity: 12,
+      shadowColor: 'rgba(0, 0, 0, 0.15)',
       boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 12px',
+      width:"100%",
+      height:"100%",
     },
     checkboard: {
-      absolute: '0px 0px 0px 0px',
+      absolute: '0 0 0 0',
       overflow: 'hidden',
-      borderRadius: props.radius,
-    },
-    gradient: {
-      absolute: '0px 0px 0px 0px',
-      background: `linear-gradient(to right, rgba(${rgb.r},${rgb.g},${rgb.b}, 0) 0%,
-             rgba(${rgb.r},${rgb.g},${rgb.b}, 1) 100%)`,
-      boxShadow: props.shadow,
       borderRadius: props.radius,
     },
     container: {
       position: 'relative',
       height: '100%',
-      margin: '0 3px',
-      outline: 'none',
+      marginRight: 3,
+      borderColor: 'none',
     },
     pointer: {
       position: 'absolute',
@@ -37,7 +35,7 @@ export const alphaStyle = (props, rgb) => reactCSS({
       boxShadow: '0 0 2px rgba(0, 0, 0, .6)',
       background: '#fff',
       marginTop: '1px',
-      transform: 'translateX(-2px)',
+      transform: [{ translateX: -2 }],
     },
   },
   vertical: {
@@ -111,7 +109,7 @@ export const hueStyle = (direction, radius, shadow, hsl) => reactCSS({
   },
   vertical: {
     pointer: {
-      left: '0px',
+      left: 0,
       top: `${-((hsl.h * 100) / 360) + 100}%`,
     },
   },
@@ -179,45 +177,45 @@ export const raisedStyle = (zDepth, radius, background, passedStyles) => reactCS
 
 export const saturationStyle = (hsl, radius, shadow, hsv, color,
   white, black, circle, point, style) => reactCSS({
-  default: {
-    color: {
-      absolute: '0px 0px 0px 0px',
-      background: `hsl(${hsl.h},100%, 50%)`,
-      borderRadius: radius,
-    },
-    white: {
-      absolute: '0px 0px 0px 0px',
-      borderRadius: radius,
-    },
-    black: {
-      absolute: '0px 0px 0px 0px',
-      boxShadow: shadow,
-      borderRadius: radius,
-    },
-    pointer: {
-      position: 'absolute',
-      top: `${-(hsv.v * 100) + 100}%`,
-      left: `${hsv.s * 100}%`,
-      cursor: 'default',
-    },
-    circle: {
-      width: '4px',
-      height: '4px',
-      boxShadow: `0 0 0 1.5px #fff, inset 0 0 1px 1px rgba(0,0,0,.3),
+    default: {
+      color: {
+        absolute: '0px 0px 0px 0px',
+        background: `hsl(${hsl.h},100%, 50%)`,
+        borderRadius: radius,
+      },
+      white: {
+        absolute: '0px 0px 0px 0px',
+        borderRadius: radius,
+      },
+      black: {
+        absolute: '0px 0px 0px 0px',
+        boxShadow: shadow,
+        borderRadius: radius,
+      },
+      pointer: {
+        position: 'absolute',
+        top: `${-(hsv.v * 100) + 100}%`,
+        left: `${hsv.s * 100}%`,
+        cursor: 'default',
+      },
+      circle: {
+        width: '4px',
+        height: '4px',
+        boxShadow: `0 0 0 1.5px #fff, inset 0 0 1px 1px rgba(0,0,0,.3),
         0 0 1px 2px rgba(0,0,0,.4)`,
-      borderRadius: '50%',
-      cursor: 'hand',
-      transform: 'translate(-2px, -2px)',
+        borderRadius: '50%',
+        cursor: 'hand',
+        transform: 'translate(-2px, -2px)',
+      },
     },
-  },
-  custom: {
-    color,
-    white,
-    black,
-    point,
-    circle,
-  },
-}, { custom: !!style });
+    custom: {
+      color,
+      white,
+      black,
+      point,
+      circle,
+    },
+  }, { custom: !!style });
 
 export const swatchStyle = (style, focus, focusStyle, color) => reactCSS({
   default: {

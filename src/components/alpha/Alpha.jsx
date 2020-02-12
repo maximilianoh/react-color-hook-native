@@ -4,26 +4,27 @@ import PropTypes from 'prop-types';
 import Alpha from '../common/Alpha';
 import ColorWrap from '../common/ColorWrap';
 import AlphaPointer from './AlphaPointer';
+import { View, Text } from 'react-native';
 
 export const AlphaPicker = ({
-  rgb, hsl, width, height, onChange, direction, style, pointer, className = '',
+  rgb, hsl, width, height, onChange, direction, style, pointer,
 }) => {
   const styles = reactCSS({
     default: {
       picker: {
         position: 'relative',
-        width: `${width}px`,
-        height: `${height}px`,
+        width: width,
+        height: height,
       },
       alpha: {
-        radius: '2px',
+        radius: 2,
         style,
       },
     },
   });
 
   return (
-    <div style={styles.picker} className={`alpha-picker ${className}`}>
+    <View style={styles.picker} >
       <Alpha
         {...styles.alpha}
         rgb={rgb}
@@ -32,7 +33,7 @@ export const AlphaPicker = ({
         onChange={onChange}
         direction={direction}
       />
-    </div>
+    </View>
   );
 };
 
@@ -41,7 +42,6 @@ AlphaPicker.defaultProps = {
   height: 16,
   direction: 'horizontal',
   pointer: AlphaPointer,
-  className: '',
   style: {},
 };
 
@@ -55,7 +55,6 @@ AlphaPicker.propTypes = {
   hsl: PropTypes.shape({}).isRequired,
   onChange: PropTypes.func.isRequired,
   style: PropTypes.shape({}),
-  className: PropTypes.string,
 
 };
 

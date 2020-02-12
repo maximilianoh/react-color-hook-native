@@ -3,6 +3,7 @@ import reactCSS from 'reactcss';
 import map from 'lodash/map';
 import PropTypes from 'prop-types';
 import Swatch from '../common/Swatch';
+import { View } from 'react-native';
 
 const BlockSwatches = ({ colors, onClick, onSwatchHover }) => {
   const styles = reactCSS({
@@ -25,7 +26,7 @@ const BlockSwatches = ({ colors, onClick, onSwatchHover }) => {
   });
 
   return (
-    <div style={styles.swatches}>
+    <View style={styles.swatches}>
       { map(colors, (c) => (
         <Swatch
           key={c}
@@ -38,8 +39,8 @@ const BlockSwatches = ({ colors, onClick, onSwatchHover }) => {
           }}
         />
       )) }
-      <div style={styles.clear} />
-    </div>
+      <View style={styles.clear} />
+    </View>
   );
 };
 

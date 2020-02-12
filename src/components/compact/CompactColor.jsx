@@ -3,6 +3,7 @@ import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import { getContrastingColor } from '../../helpers/color';
 import Swatch from '../common/Swatch';
+import { View } from 'react-native';
 
 const CompactColor = ({
   color, onClick = () => {}, onSwatchHover, active,
@@ -54,7 +55,7 @@ const CompactColor = ({
       onHover={onSwatchHover}
       focusStyle={{ boxShadow: `0 0 4px ${color}` }}
     >
-      <div style={styles.dot} />
+      <View style={styles.dot} />
     </Swatch>
   );
 };
