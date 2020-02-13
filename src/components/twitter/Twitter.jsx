@@ -13,7 +13,7 @@ import { View } from 'react-native';
 
 const Twitter = ({
   onChange, onSwatchHover, hex, colors, width, triangle,
-  styles: passedStyles = {}, className = '',
+  styles: passedStyles = {},
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -127,7 +127,7 @@ const Twitter = ({
   };
 
   return (
-    <View style={styles.card} className={`twitter-picker ${className}`}>
+    <View style={styles.card}>
       <View style={styles.triangleShadow} />
       <View style={styles.triangle} />
 
@@ -165,7 +165,6 @@ Twitter.propTypes = {
   styles: PropTypes.shape({}),
   onChange: PropTypes.func.isRequired,
   onSwatchHover: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired,
   hex: PropTypes.string.isRequired,
 };
 

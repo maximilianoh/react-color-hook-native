@@ -12,7 +12,7 @@ import { View } from 'react-native';
 
 const Compact = ({
   onChange, onSwatchHover, colors, hex, rgb,
-  styles: passedStyles = {}, className = '',
+  styles: passedStyles = {},
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -46,7 +46,7 @@ const Compact = ({
 
   return (
     <Raised style={styles.Compact} styles={passedStyles}>
-      <View style={styles.compact} className={`compact-picker ${className}`}>
+      <View style={styles.compact}>
         { map(colors, (c) => (
           <CompactColor
             key={c}
@@ -70,7 +70,6 @@ Compact.propTypes = {
   onSwatchHover: PropTypes.func.isRequired,
   hex: PropTypes.string.isRequired,
   rgb: PropTypes.shape({}).isRequired,
-  className: PropTypes.string.isRequired,
 };
 
 Compact.defaultProps = {

@@ -10,7 +10,7 @@ import { View } from 'react-native';
 
 const Circle = ({
   width, onChange, onSwatchHover, colors, hex, circleSize,
-  styles: passedStyles = {}, circleSpacing, className = '',
+  styles: passedStyles = {}, circleSpacing,
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -54,7 +54,6 @@ Circle.propTypes = {
   hex: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onSwatchHover: PropTypes.func.isRequired,
-  className: PropTypes.string,
 };
 
 Circle.defaultProps = {
@@ -68,7 +67,6 @@ Circle.defaultProps = {
     material.yellow['500'], material.amber['500'], material.orange['500'],
     material.deepOrange['500'], material.brown['500'], material.blueGrey['500']],
   styles: {},
-  className: '',
 };
 
 export default ColorWrap(Circle);

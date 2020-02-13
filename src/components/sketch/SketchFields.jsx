@@ -86,7 +86,7 @@ const SketchFields = ({
   };
 
   return (
-    <View style={styles.fields} className="flexbox-fix">
+    <View style={styles.fields}>
       <View style={styles.double}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}

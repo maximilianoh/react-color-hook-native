@@ -10,7 +10,7 @@ import { View } from 'react-native';
 
 const Material = ({
   onChange, hex, rgb,
-  styles: passedStyles = {}, className = '',
+  styles: passedStyles = {},
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -101,14 +101,14 @@ const Material = ({
 
   return (
     <Raised styles={passedStyles}>
-      <View style={styles.material} className={`material-picker ${className}`}>
+      <View style={styles.material}>
         <EditableInput
           style={{ wrap: styles.HEXwrap, input: styles.HEXinput, label: styles.HEXlabel }}
           label="hex"
           value={`${hex}`}
           onChange={handleChange}
         />
-        <View style={styles.split} className="flexbox-fix">
+        <View style={styles.split}>
           <View style={styles.third}>
             <EditableInput
               style={{ wrap: styles.RGBwrap, input: styles.RGBinput, label: styles.RGBlabel }}
@@ -145,7 +145,6 @@ Material.propTypes = {
     g: PropTypes.number,
     b: PropTypes.number,
   }).isRequired,
-  className: PropTypes.string.isRequired,
   hex: PropTypes.string.isRequired,
   styles: PropTypes.shape({}),
 };

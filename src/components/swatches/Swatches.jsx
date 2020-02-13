@@ -12,7 +12,7 @@ import { View } from 'react-native';
 
 const Swatches = ({
   width, height, onChange, onSwatchHover, colors, hex,
-  styles: passedStyles = {}, className = '',
+  styles: passedStyles = {},
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -43,7 +43,7 @@ const Swatches = ({
   };
 
   return (
-    <View style={styles.picker} className={`swatches-picker ${className}`}>
+    <View style={styles.picker}>
       <Raised>
         <View style={styles.overflow}>
           <View style={styles.body}>
@@ -72,7 +72,6 @@ Swatches.propTypes = {
   colors: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
   styles: PropTypes.shape({}),
   hex: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
 };
 
 Swatches.defaultProps = {

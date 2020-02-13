@@ -174,7 +174,7 @@ const ChromeFields = (props) => {
   let fields;
   if (viewState === 'hex') {
     fields = (
-      <View style={styles.fields} className="flexbox-fix">
+      <View style={styles.fields}>
         <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
@@ -187,7 +187,7 @@ const ChromeFields = (props) => {
     );
   } else if (viewState === 'rgb') {
     fields = (
-      <View style={styles.fields} className="flexbox-fix">
+      <View style={styles.fields}>
         <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
@@ -225,7 +225,7 @@ const ChromeFields = (props) => {
     );
   } else if (viewState === 'hsl') {
     fields = (
-      <View style={styles.fields} className="flexbox-fix">
+      <View style={styles.fields}>
         <View style={styles.field}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
@@ -264,7 +264,7 @@ const ChromeFields = (props) => {
   }
 
   return (
-    <View style={styles.wrap} className="flexbox-fix">
+    <View style={styles.wrap}>
       {fields}
       <View style={styles.toggle}>
         <View

@@ -71,8 +71,8 @@ const Saturation = (props) => {
         }
       `}
       </style>
-      <View style={styles.white} className="saturation-white">
-        <View style={styles.black} className="saturation-black" />
+      <View style={styles.white}>
+        <View style={styles.black} />
         <View style={styles.pointer}>
           {Pointer ? (
             <Pointer {...props} />

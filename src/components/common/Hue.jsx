@@ -37,7 +37,6 @@ const Hue = (props) => {
       <View
         role="button"
         tabIndex={0}
-        className={`hue-${direction}`}
         style={styles.container}
         ref={inputRef}
         onMouseDown={handleMouseDown}

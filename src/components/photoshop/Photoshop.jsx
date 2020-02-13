@@ -15,7 +15,7 @@ import { View } from 'react-native';
 const Photoshop = (props) => {
   const [currentColor, setCurrentColor] = useState('#FFFFFF');
 
-  const { styles: passedStyles = {}, className = '' } = props;
+  const { styles: passedStyles = {} } = props;
 
   const styles = reactCSS(merge({
     default: {
@@ -79,10 +79,10 @@ const Photoshop = (props) => {
   } = props;
   useEffect(() => setCurrentColor(hex), []);
   return (
-    <View style={styles.picker} className={`photoshop-picker ${className}`}>
+    <View style={styles.picker}>
       <View style={styles.head}>{header}</View>
 
-      <View style={styles.body} className="flexbox-fix">
+      <View style={styles.body}>
         <View style={styles.saturation}>
           <Saturation
             hsl={hsl}
@@ -100,7 +100,7 @@ const Photoshop = (props) => {
           />
         </View>
         <View style={styles.controls}>
-          <View style={styles.top} className="flexbox-fix">
+          <View style={styles.top}>
             <View style={styles.previews}>
               <PhotoshopPreviews
                 rgb={rgb}
@@ -127,7 +127,6 @@ const Photoshop = (props) => {
 Photoshop.propTypes = {
   header: PropTypes.string,
   styles: PropTypes.shape({}),
-  className: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   onAccept: PropTypes.func,
   onCancel: PropTypes.func,

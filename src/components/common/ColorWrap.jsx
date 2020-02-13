@@ -66,7 +66,6 @@ const ColorWrap = (Picker) => {
       a: 1,
     },
     hex: '',
-    className: '',
     onChange: () => { },
     onSwatchHover: () => { },
     hsl: { h: 0, s: 0, l: 0 },

@@ -9,7 +9,7 @@ import { View } from 'react-native';
 
 export const HuePicker = ({
   width, height, onChange, hsl, direction, pointer,
-  styles: passedStyles = {}, className = '',
+  styles: passedStyles = {},
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -34,7 +34,7 @@ export const HuePicker = ({
   }, e);
 
   return (
-    <View style={styles.picker} className={`hue-picker ${className}`}>
+    <View style={styles.picker}>
       <Hue
         {...styles.hue}
         hsl={hsl}
@@ -54,7 +54,6 @@ HuePicker.propTypes = {
   pointer: PropTypes.func,
   onChange: PropTypes.func.isRequired,
   hsl: PropTypes.shape({}).isRequired,
-  className: PropTypes.string.isRequired,
 };
 HuePicker.defaultProps = {
   width: 316,

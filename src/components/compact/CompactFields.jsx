@@ -83,7 +83,7 @@ const CompactFields = ({ hex, rgb, onChange }) => {
   };
 
   return (
-    <View style={styles.fields} className="flexbox-fix">
+    <View style={styles.fields}>
       <View style={styles.active} />
       <EditableInput
         style={{ wrap: styles.HEXwrap, input: styles.HEXinput, label: styles.HEXlabel }}

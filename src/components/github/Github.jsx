@@ -122,7 +122,6 @@ Github.propTypes = {
   styles: PropTypes.shape({}),
   onChange: PropTypes.func.isRequired,
   onSwatchHover: PropTypes.func.isRequired,
-  className: PropTypes.string,
 };
 
 Github.defaultProps = {
@@ -131,7 +130,6 @@ Github.defaultProps = {
     '#EB9694', '#FAD0C3', '#FEF3BD', '#C1E1C5', '#BEDADC', '#C4DEF6', '#BED3F3', '#D4C4FB'],
   triangle: 'top-left',
   styles: {},
-  className: '',
 };
 
 export default ColorWrap(Github);

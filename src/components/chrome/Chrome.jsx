@@ -15,7 +15,7 @@ import { View } from 'react-native';
 
 const Chrome = ({
   width, onChange, disableAlpha, rgb, hsl, hsv, hex, renderers,
-  styles: passedStyles, className, defaultView,
+  styles: passedStyles, defaultView,
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -99,7 +99,7 @@ const Chrome = ({
     },
   }, passedStyles), { disableAlpha });
   return (
-    <View style={styles.picker} className={`chrome-picker ${className}`}>
+    <View style={styles.picker} >
       <View style={styles.saturation}>
         <Saturation
           style={styles.Saturation}
@@ -110,7 +110,7 @@ const Chrome = ({
         />
       </View>
       <View style={styles.body}>
-        <View style={styles.controls} className="flexbox-fix">
+        <View style={styles.controls}>
           <View style={styles.color}>
             <View style={styles.swatch}>
               <View style={styles.active} />
@@ -179,7 +179,6 @@ Chrome.propTypes = {
   hsv: PropTypes.shape({}).isRequired,
   hsl: PropTypes.shape({}).isRequired,
   renderers: PropTypes.shape({}),
-  className: PropTypes.string,
   defaultView: PropTypes.oneOf([
     'hex',
     'rgb',
@@ -191,7 +190,6 @@ Chrome.defaultProps = {
   width: 225,
   disableAlpha: false,
   styles: {},
-  className: '',
   renderers: {},
   defaultView: 'hex',
 };

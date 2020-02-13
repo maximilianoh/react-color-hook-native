@@ -10,7 +10,7 @@ import { View } from 'react-native';
 
 const Slider = ({
   hsl, onChange, pointer,
-  styles: passedStyles = {}, className,
+  styles: passedStyles = {},
 }) => {
   const styles = reactCSS(merge({
     default: {
@@ -24,7 +24,7 @@ const Slider = ({
     },
   }, passedStyles));
   return (
-    <View style={styles.wrap || {}} className={`slider-picker ${className}`}>
+    <View style={styles.wrap || {}}>
       <View style={styles.hue}>
         <Hue
           style={styles.Hue}
@@ -45,12 +45,10 @@ Slider.propTypes = {
   pointer: PropTypes.func,
   hsl: PropTypes.shape({}).isRequired,
   onChange: PropTypes.func.isRequired,
-  className: PropTypes.string,
 };
 Slider.defaultProps = {
   pointer: SliderPointer,
   styles: {},
-  className: '',
 };
 
 export default ColorWrap(Slider);
