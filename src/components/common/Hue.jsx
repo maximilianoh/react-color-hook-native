@@ -29,7 +29,6 @@ const Hue = (props) => {
   const styles = hueStyle(direction, radius, hsl);
 
   const Pointer = pointer;
-  console.log(hsl)
   return (
     <View style={styles.hue} ref={inputRef}>
       <View
