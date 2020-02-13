@@ -1,10 +1,12 @@
-const calculateChange = (e, direction, hsl, container) => {
-  const containerWidth = container.clientWidth;
-  const containerHeight = container.clientHeight;
+import measureComponent from "./measureComponent";
+const calculateChange = async (e, direction, hsl, container) => {
+  const positionValue = await measureComponent(container);
+  const containerWidth = positionValue.width;
+  const containerHeight = positionValue.height;
   const x = typeof e.pageX === 'number' ? e.pageX : e.touches[0].pageX;
   const y = typeof e.pageY === 'number' ? e.pageY : e.touches[0].pageY;
-  const left = x - (container.getBoundingClientRect().left + window.pageXOffset);
-  const top = y - (container.getBoundingClientRect().top + window.pageYOffset);
+  const left = x - (positionValue.pageX);
+  const top = y - (positionValue.pageY);
 
   if (direction === 'vertical') {
     let h;

@@ -9,7 +9,7 @@ export const SliderPointer = ({ direction }) => {
       picker: {
         width: 18,
         height: 18,
-        borderRadius: '50%',
+        borderRadius: 20,
         transform: [{translateX:-9}, {translateY:-1}],
         backgroundColor: 'rgb(248, 248, 248)',
         shadowColor: "rgba(0, 0, 0, 0.37)",

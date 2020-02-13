@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { View } from 'react-native';
 const handleFocus = (Component) => {
   const Focus = (props) => {
     const [focus, setFocus] = useState(false);

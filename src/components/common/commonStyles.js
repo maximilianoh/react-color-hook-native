@@ -91,15 +91,15 @@ export const editableInputStyle = (props, style) => {
   }, props);
 };
 
-export const hueStyle = (direction, radius, shadow, hsl) => reactCSS({
+export const hueStyle = (direction, radius, hsl) => reactCSS({
   default: {
     hue: {
-      top: 0,
-      left: 0,
-      bottom: 0,
-      rigth: 0,
-      borderRadius: radius,
-      //boxShadow: shadow,
+      position: 'absolute',
+      shadowColor: "rgba(0, 0, 0, 0.15)",
+      shadowOffset: { width: 0, height: 5 },
+      elevation: 3,
+      width: "100%",
+      height: "100%",
     },
     container: {
       paddingTop: 0,
@@ -107,7 +107,8 @@ export const hueStyle = (direction, radius, shadow, hsl) => reactCSS({
       paddingBottom: 0,
       paddingLeft: 2,
       position: 'relative',
-      height: '100%',
+      width: "100%",
+      height: "100%",
       borderRadius: radius,
       outline: 'none',
     },

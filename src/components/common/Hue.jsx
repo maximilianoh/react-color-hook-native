@@ -2,71 +2,57 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { hueStyle } from './commonStyles';
 import calculateChange from '../../helpers/hue';
-import { View } from 'react-native';
+import { View, AppState } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Hue = (props) => {
   const inputRef = useRef();
-  const handleChange = (e) => {
-    const change = calculateChange(e, props.direction, props.hsl, inputRef.current);
+  const handleChange = async (e) => {
+    const change = await calculateChange(e.nativeEvent, props.direction, props.hsl, inputRef.current);
     if (change && typeof props.onChange === 'function') props.onChange(change, e);
   };
 
   const handleMouseUp = () => {
-    window.removeEventListener('mousemove', handleChange);
-    window.removeEventListener('mouseup', handleMouseUp);
+    AppState.removeEventListener('change', handleChange);
   };
 
   const handleMouseDown = (e) => {
     handleChange(e);
-    window.addEventListener('mousemove', handleChange);
-    window.addEventListener('mouseup', handleMouseUp);
+    AppState.addEventListener('change', handleChange);
   };
-
 
   useEffect(() => () => handleMouseUp(), []);
 
   const {
     direction, radius, shadow, hsl, pointer,
   } = props;
-
-  const styles = hueStyle(direction, radius, shadow, hsl);
+  const styles = hueStyle(direction, radius, hsl);
 
   const Pointer = pointer;
+  console.log(hsl)
   return (
-    <View style={styles.hue}>
+    <View style={styles.hue} ref={inputRef}>
       <View
         role="button"
-        tabIndex={0}
+        tabIndex={1}
         style={styles.container}
-        ref={inputRef}
-        onMouseDown={handleMouseDown}
+        onResponderStart={handleMouseDown}
         onTouchMove={handleChange}
         onTouchStart={handleChange}
       >
-        <style>
-          {`
-          .hue-horizontal {
-            background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0
-              33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-            background: -webkit-linear-gradient(to right, #f00 0%, #ff0
-              17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-          }
+        <LinearGradient
+          colors={['#f00', '#f0f', '#00f', '#0ff', '#0f0', '#ff0', '#f00' ]}
+          start={[1, 1]}
+          style={{ width: "100%", height: "100%", borderRadius: props.radius }}>
 
-          .hue-vertical {
-            background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%,
-              #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-            background: -webkit-linear-gradient(to top, #f00 0%, #ff0 17%,
-              #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
-          }
-        ` }
-        </style>
-        <View style={styles.pointer}>
-          {Pointer ? (
-            <Pointer {...props} />
-          ) : (
-            <View style={styles.slider} />
-          )}
-        </View>
+          <View style={styles.pointer}>
+            {Pointer ? (
+              <Pointer {...props} />
+            ) : (
+                <View style={styles.slider} />
+              )}
+          </View>
+        </LinearGradient>
       </View>
     </View>
   );
@@ -74,8 +60,7 @@ const Hue = (props) => {
 
 Hue.defaultProps = {
   direction: 'horizontal',
-  shadow: '',
-  radius: '',
+  radius: 0,
   pointer: null,
 };
 
@@ -85,8 +70,7 @@ Hue.propTypes = {
     h: PropTypes.number.isRequired,
   }).isRequired,
   onChange: PropTypes.func.isRequired,
-  radius: PropTypes.string,
-  shadow: PropTypes.string,
+  radius: PropTypes.number,
   pointer: PropTypes.func,
 };
 
