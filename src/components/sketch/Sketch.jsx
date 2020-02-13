@@ -22,7 +22,14 @@ const Sketch = ({
         boxSizing: 'initial',
         background: '#fff',
         borderRadius: 4,
-        boxShadow: '0 0 0 1px rgba(0,0,0,.15), 0 8px 16px rgba(0,0,0,.15)',
+        shadowColor: "rgba(0,0,0,0.15)",
+        shadowOffset: {
+          width: 0,
+          height: 8,
+        },
+        shadowRadius: 16,
+        shadowOpacity: 0,
+        elevation: 3,
       },
       saturation: {
         width: '100%',
@@ -32,7 +39,14 @@ const Sketch = ({
       },
       Saturation: {
         radius: 3,
-        shadow: 'inset 0 0 0 1px rgba(0,0,0,.15), inset 0 0 4px rgba(0,0,0,.25)',
+        shadowColor: "rgba(0,0,0,0.25)",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0,
+        elevation: 3,
       },
       sliders: {
         padding: '4px 0',
@@ -50,7 +64,14 @@ const Sketch = ({
         absolute: '0px 0px 0px 0px',
         borderRadius: 2,
         background: `rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`,
-        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.15), inset 0 0 4px rgba(0,0,0,.25)',
+        shadowColor: "rgba(0,0,0,0.25)",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0,
+        elevation: 3,
       },
       hue: {
         position: 'relative',
@@ -59,7 +80,14 @@ const Sketch = ({
       },
       Hue: {
         radius: 2,
-        shadow: 'inset 0 0 0 1px rgba(0,0,0,.15), inset 0 0 4px rgba(0,0,0,.25)',
+        shadowColor: "rgba(0,0,0,0.25)",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0,
+        elevation: 3,
       },
 
       alpha: {
@@ -67,11 +95,25 @@ const Sketch = ({
         height: 10,
         marginTop: 4,
         overflow: 'hidden',
-        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 12px',
+        shadowColor: "rgba(0, 0, 0, 0.15)",
+        shadowOffset: {
+          width: 0,
+          height: 5,
+        },
+        shadowRadius: 12,
+        shadowOpacity: 0,
+        elevation: 3,
       },
       Alpha: {
         radius: 2,
-        shadow: 'inset 0 0 0 1px rgba(0,0,0,.15), inset 0 0 4px rgba(0,0,0,.25)',
+        shadowColor: "rgba(0,0,0,0.25)",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0,
+        elevation: 3,
       },
       ...passedStyles,
     },

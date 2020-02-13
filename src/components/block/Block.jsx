@@ -27,7 +27,12 @@ const Block = ({
       card: {
         width,
         background: '#fff',
-        boxShadow: '0 1px rgba(0,0,0,.1)',
+        shadowColor: "rgba(0,0,0,0.1)",
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        elevation: 3,
         borderRadius: 6,
         position: 'relative',
       },
@@ -66,7 +71,14 @@ const Block = ({
         border: 0,
         outline: 'none',
         height: 22,
-        boxShadow: 'inset 0 0 0 1px #ddd',
+        shadowColor: "#ddd",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowOpacity: 1,
+        shadowRadius: 10,
+        elevation: 3,
         borderRadius: 4,
         padding: '0 7px',
         boxSizing: 'border-box',
@@ -86,9 +98,9 @@ const Block = ({
       <View style={styles.triangle} />
 
       <View style={styles.head}>
-        { transparent }
+        {transparent}
         <View style={styles.label}>
-          { upperHex }
+          {upperHex}
         </View>
       </View>
 

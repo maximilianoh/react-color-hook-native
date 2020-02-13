@@ -11,7 +11,14 @@ const GithubSwatch = ({
     position: 'relative',
     zIndex: '2',
     outline: '2px solid #fff',
-    boxShadow: '0 0 5px 2px rgba(0,0,0,0.25)',
+    shadowColor: "rgba(0,0,0,0.25)",
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowRadius: 5,
+    shadowOpacity: 2,
+    elevation: 3,
   };
 
   const styles = reactCSS({
@@ -47,8 +54,8 @@ GithubSwatch.propTypes = {
 };
 
 GithubSwatch.defaultProps = {
-  onSwatchHover: () => {},
-  onClick: () => {},
+  onSwatchHover: () => { },
+  onClick: () => { },
 };
 
 export default handleHover(GithubSwatch);

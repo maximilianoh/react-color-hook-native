@@ -27,7 +27,7 @@ const BlockSwatches = ({ colors, onClick, onSwatchHover }) => {
 
   return (
     <View style={styles.swatches}>
-      { map(colors, (c) => (
+      {map(colors, (c) => (
         <Swatch
           key={c}
           color={c}
@@ -35,10 +35,16 @@ const BlockSwatches = ({ colors, onClick, onSwatchHover }) => {
           onClick={onClick}
           onHover={onSwatchHover}
           focusStyle={{
-            boxShadow: `0 0 4px ${c}`,
+            shadowColor: c,
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowRadius: 4,
+            elevation: 3,
           }}
         />
-      )) }
+      ))}
       <View style={styles.clear} />
     </View>
   );
@@ -48,8 +54,8 @@ export default BlockSwatches;
 
 
 BlockSwatches.defaultProps = {
-  onSwatchHover: () => {},
-  onClick: () => {},
+  onSwatchHover: () => { },
+  onClick: () => { },
 };
 
 BlockSwatches.propTypes = {

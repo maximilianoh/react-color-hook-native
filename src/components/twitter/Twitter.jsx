@@ -21,7 +21,14 @@ const Twitter = ({
         width,
         background: '#fff',
         border: '0 solid rgba(0,0,0,0.25)',
-        boxShadow: '0 1px 4px rgba(0,0,0,0.25)',
+        shadowColor: "rgba(0,0,0,0.25)",
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0,
+        elevation: 3,
         borderRadius: 4,
         position: 'relative',
       },
@@ -66,7 +73,14 @@ const Twitter = ({
         border: 0,
         outline: 'none',
         height: 28,
-        boxShadow: 'inset 0 0 0 1px #F0F0F0',
+        shadowColor: "#F0F0F0",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 1,
+        elevation: 3,
         boxSizing: 'content-box',
         borderRadius: '0 4px 4px 0',
         float: 'left',
@@ -132,7 +146,7 @@ const Twitter = ({
       <View style={styles.triangle} />
 
       <View style={styles.body}>
-        { map(colors, (c, i) => (
+        {map(colors, (c, i) => (
           <Swatch
             key={i}
             color={c}
@@ -141,10 +155,17 @@ const Twitter = ({
             onClick={handleChange}
             onHover={onSwatchHover}
             focusStyle={{
-              boxShadow: `0 0 4px ${c}`,
+              shadowColor: c,
+              shadowOffset: {
+                width: 0,
+                height: 0,
+              },
+              shadowRadius: 4,
+              shadowOpacity: 0,
+              elevation: 3,
             }}
           />
-        )) }
+        ))}
         <View style={styles.hash}>#</View>
         <EditableInput
           label={null}

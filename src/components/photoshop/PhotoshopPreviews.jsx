@@ -15,12 +15,26 @@ const PhotoshopPreviews = ({ rgb, currentColor }) => {
       new: {
         height: 34,
         background: `rgb(${rgb.r},${rgb.g}, ${rgb.b})`,
-        boxShadow: 'inset 1px 0 0 #000, inset -1px 0 0 #000, inset 0 1px 0 #000',
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 0,
+        elevation: 3,
       },
       current: {
         height: 34,
         background: currentColor,
-        boxShadow: 'inset 1px 0 0 #000, inset -1px 0 0 #000, inset 0 -1px 0 #000',
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: -1,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 0,
+        elevation: 3,
       },
       label: {
         fontSize: 14,

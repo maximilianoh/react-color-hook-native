@@ -13,7 +13,14 @@ const PhotoshopButton = ({
         border: '1px solid #878787',
         borderRadius: '2px',
         height: '20px',
-        boxShadow: '0 1px 0 0 #EAEAEA',
+        shadowColor: "#EAEAEA",
+        shadowOffset: {
+          width: 0,
+          height: 1,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 0,
+        elevation: 3,
         fontSize: '14px',
         color: '#000',
         lineHeight: '20px',
@@ -24,7 +31,14 @@ const PhotoshopButton = ({
     },
     active: {
       button: {
-        boxShadow: '0 0 0 1px #878787',
+        shadowColor: "#878787",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 1,
+        elevation: 3,
       },
     },
   }, { active });

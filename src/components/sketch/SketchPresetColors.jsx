@@ -22,7 +22,14 @@ const SketchPresetColors = ({ colors, onClick, onSwatchHover }) => {
       },
       swatch: {
         borderRadius: 3,
-        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.15)',
+        shadowColor: "rgba(0,0,0,.15)",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 1,
+        elevation: 3,
       },
     },
     'no-presets': {
@@ -56,7 +63,14 @@ const SketchPresetColors = ({ colors, onClick, onSwatchHover }) => {
               onClick={handleClick}
               onHover={onSwatchHover}
               focusStyle={{
-                boxShadow: `inset 0 0 0 1px rgba(0,0,0,.15), 0 0 4px ${c.color}`,
+                shadowColor: c.color,
+                shadowOffset: {
+                  width: 0,
+                  height: 0,
+                },
+                shadowRadius: 4,
+                shadowOpacity: 0,
+                elevation: 3,
               }}
             />
           </View>
@@ -78,8 +92,8 @@ SketchPresetColors.propTypes = {
 };
 
 SketchPresetColors.defaultProps = {
-  onClick: () => {},
-  onSwatchHover: () => {},
+  onClick: () => { },
+  onSwatchHover: () => { },
 };
 
 export default SketchPresetColors;

@@ -30,7 +30,14 @@ const SketchFields = ({
         width: '80%',
         padding: '4px 10% 3px',
         border: 'none',
-        boxShadow: 'inset 0 0 0 1px #ccc',
+        shadowColor: "#ccc",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 1,
+        elevation: 3,
         fontSize: 11,
       },
       label: {

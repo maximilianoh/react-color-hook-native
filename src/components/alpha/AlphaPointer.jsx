@@ -16,6 +16,7 @@ const AlphaPointer = ({ direction }) => {
         shadowOpacity: 1,
         shadowRadius: 4,
         shadowColor:'rgba(0, 0, 0, 0.37)',
+        elevation: 3,
       },
     },
     vertical: {

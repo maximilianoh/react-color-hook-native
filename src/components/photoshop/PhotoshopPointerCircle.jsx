@@ -10,13 +10,27 @@ const PhotoshopPointerCircle = ({ hsl }) => {
         width: 12,
         height: 12,
         borderRadius: 6,
-        boxShadow: 'inset 0 0 0 1px #fff',
+        shadowColor: "#fff",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 1,
+        elevation: 3,
         transform: 'translate(-6px, -6px)',
       },
     },
     'black-outline': {
       picker: {
-        boxShadow: 'inset 0 0 0 1px #000',
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 1,
+        elevation: 3,
       },
     },
   }, { 'black-outline': hsl.l > 0.5 });

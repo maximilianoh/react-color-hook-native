@@ -21,7 +21,14 @@ const CircleSwatch = ({
       Swatch: {
         borderRadius: '50%',
         background: 'transparent',
-        boxShadow: `inset 0 0 0 ${circleSize / 2}px ${color}`,
+        shadowColor: color,
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: circleSize / 2,
+        elevation: 3,
         transition: '100ms box-shadow ease',
       },
     },
@@ -32,7 +39,14 @@ const CircleSwatch = ({
     },
     active: {
       Swatch: {
-        boxShadow: `inset 0 0 0 3px ${color}`,
+        shadowColor: color,
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 3,
+        elevation: 3,
       },
     },
   }, { hover, active });
@@ -44,7 +58,16 @@ const CircleSwatch = ({
         color={color}
         onClick={onClick}
         onHover={onSwatchHover}
-        focusStyle={{ boxShadow: `${styles.Swatch.boxShadow}, 0 0 5px ${color}` }}
+        focusStyle={{
+          shadowColor: color,
+          shadowOffset: {
+            width: 0,
+            height: 0,
+          },
+          shadowRadius: 5,
+          shadowOpacity: 0,
+          elevation: 3,
+        }}
       />
     </View>
   );
@@ -54,8 +77,8 @@ CircleSwatch.defaultProps = {
   circleSize: 28,
   circleSpacing: 14,
   color: '',
-  onClick: () => {},
-  onSwatchHover: () => {},
+  onClick: () => { },
+  onSwatchHover: () => { },
   active: false,
 };
 

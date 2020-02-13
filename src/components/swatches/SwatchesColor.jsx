@@ -43,7 +43,14 @@ const SwatchesColor = ({
     },
     'color-#FFFFFF': {
       color: {
-        boxShadow: 'inset 0 0 0 1px #ddd',
+        shadowColor: "#ddd",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 1,
+        elevation: 3,
       },
       check: {
         color: '#333',
@@ -68,7 +75,16 @@ const SwatchesColor = ({
       style={styles.color}
       onClick={onClick}
       onHover={onSwatchHover}
-      focusStyle={{ boxShadow: `0 0 4px ${color}` }}
+      focusStyle={{ 
+        shadowColor: color,
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0,
+        elevation: 3,
+      }}
     >
       <View style={styles.check}>
         X

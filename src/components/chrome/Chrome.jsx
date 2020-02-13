@@ -23,7 +23,13 @@ const Chrome = ({
         width,
         background: '#fff',
         borderRadius: 2,
-        boxShadow: '0 0 2px rgba(0,0,0,.3), 0 4px 8px rgba(0,0,0,.3)',
+        shadowColor: "rgba(0,0,0,.3)",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 2,
+        elevation: 3,
         boxSizing: 'initial',
         fontFamily: 'Menlo',
       },
@@ -57,7 +63,14 @@ const Chrome = ({
       active: {
         absolute: '0px 0px 0px 0px',
         borderRadius: 8,
-        boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.1)',
+        shadowColor: "rgba(0,0,0,0.1)",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowOpacity: 1,
+        shadowRadius: 0,
+        elevation: 3,
         background: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
         zIndex: '2',
       },
@@ -75,7 +88,13 @@ const Chrome = ({
       alpha: {
         height: 10,
         position: 'relative',
-        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 12px',
+        shadowColor: "rgba(0, 0, 0, 0.15)",
+        shadowOffset: {
+          width: 0,
+          height: 5,
+        },
+        shadowRadius: 12,
+        elevation: 3,
       },
       Alpha: {
         radius: 2,

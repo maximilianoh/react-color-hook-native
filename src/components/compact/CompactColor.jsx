@@ -6,7 +6,7 @@ import Swatch from '../common/Swatch';
 import { View } from 'react-native';
 
 const CompactColor = ({
-  color, onClick = () => {}, onSwatchHover, active,
+  color, onClick = () => { }, onSwatchHover, active,
 }) => {
   const styles = reactCSS({
     default: {
@@ -34,7 +34,14 @@ const CompactColor = ({
     },
     'color-#FFFFFF': {
       color: {
-        boxShadow: 'inset 0 0 0 1px #ddd',
+        shadowColor: "#ddd",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 0,
+        shadowOpacity: 1,
+        elevation: 3,
       },
       dot: {
         background: '#000',
@@ -53,7 +60,16 @@ const CompactColor = ({
       color={color}
       onClick={onClick}
       onHover={onSwatchHover}
-      focusStyle={{ boxShadow: `0 0 4px ${color}` }}
+      focusStyle={{ 
+        shadowColor: color,
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 4,
+        shadowOpacity: 0,
+        elevation: 3,
+      }}
     >
       <View style={styles.dot} />
     </Swatch>
@@ -68,8 +84,8 @@ CompactColor.propTypes = {
 };
 
 CompactColor.defaultProps = {
-  onClick: () => {},
-  onSwatchHover: () => {},
+  onClick: () => { },
+  onSwatchHover: () => { },
   color: '',
   active: false,
 };

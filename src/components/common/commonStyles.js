@@ -6,12 +6,13 @@ export const alphaStyle = (props, rgb) => reactCSS({
     alpha: {
       position: 'absolute',
       borderRadius: props.radius,
+      shadowColor: "rgba(0, 0, 0, 0.15)",
       shadowOffset: { width: 0, height: 5 },
-      shadowOpacity: 12,
-      shadowColor: 'rgba(0, 0, 0, 0.15)',
-      boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 12px',
-      width:"100%",
-      height:"100%",
+      shadowRadius: 12,
+      shadowOpacity: 0,
+      elevation: 3,
+      width: "100%",
+      height: "100%",
     },
     checkboard: {
       absolute: '0 0 0 0',
@@ -20,8 +21,8 @@ export const alphaStyle = (props, rgb) => reactCSS({
     },
     container: {
       position: 'relative',
-      width:"100%",
-      height:"100%",
+      width: "100%",
+      height: "100%",
       marginRight: 3,
       borderColor: 'none',
     },
@@ -33,7 +34,14 @@ export const alphaStyle = (props, rgb) => reactCSS({
       width: 4,
       borderRadius: 1,
       height: 8,
-      boxShadow: '0 0 2px rgba(0, 0, 0, .6)',
+      shadowColor: "rgba(0, 0, 0, 0.6)",
+      shadowOffset: {
+        width: 0,
+        height: 0,
+      },
+      shadowRadius: 2,
+      shadowOpacity: 0,
+      elevation: 3,
       background: '#fff',
       marginTop: 1,
       transform: [{ translateX: -2 }],
@@ -85,7 +93,7 @@ export const hueStyle = (direction, radius, shadow, hsl) => reactCSS({
     hue: {
       absolute: '0px 0px 0px 0px',
       borderRadius: radius,
-      boxShadow: shadow,
+      //boxShadow: shadow,
     },
     container: {
       padding: '0 2px',
@@ -103,7 +111,14 @@ export const hueStyle = (direction, radius, shadow, hsl) => reactCSS({
       width: 4,
       borderRadius: 1,
       height: 8,
-      boxShadow: '0 0 2px rgba(0, 0, 0, .6)',
+      shadowColor: "rgba(0, 0, 0, 0.6)",
+      shadowOffset: {
+        width: 0,
+        height: 0,
+      },
+      shadowRadius: 2,
+      shadowOpacity: 0,
+      elevation: 3,
       background: '#fff',
       transform: 'translateX(-2px)',
     },
@@ -127,40 +142,89 @@ export const raisedStyle = (zDepth, radius, background, passedStyles) => reactCS
     },
     bg: {
       absolute: '0px 0px 0px 0px',
-      boxShadow: `0 ${zDepth}px ${zDepth * 4}px rgba(0,0,0,.24)`,
+      shadowColor: "rgba(0,0,0,.24)",
+      shadowOffset: {
+        width: 0,
+        height: zDepth,
+      },
+      shadowRadius: zDepth * 4,
+      shadowOpacity: 0,
+      elevation: 3,
       borderRadius: radius,
       background,
     },
   },
   'zDepth-0': {
     bg: {
-      boxShadow: 'none',
+      shadowColor: "#FFF",
+      shadowOffset: {
+        width: 0,
+        height: 0,
+      },
+      shadowRadius: 0,
+      shadowOpacity: 0,
+      elevation: 1,
     },
   },
 
   'zDepth-1': {
     bg: {
-      boxShadow: '0 2px 10px rgba(0,0,0,.12), 0 2px 5px rgba(0,0,0,.16)',
+      shadowColor: "rgba(0,0,0,0.12)",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowRadius: 10,
+      shadowOpacity: 0,
+      elevation: 3,
     },
   },
   'zDepth-2': {
     bg: {
-      boxShadow: '0 6px 20px rgba(0,0,0,.19), 0 8px 17px rgba(0,0,0,.2)',
+      shadowColor: "rgba(0,0,0,.19)",
+      shadowOffset: {
+        width: 0,
+        height: 6,
+      },
+      shadowRadius: 20,
+      shadowOpacity: 0,
+      elevation: 3,
     },
   },
   'zDepth-3': {
     bg: {
-      boxShadow: '0 17px 50px rgba(0,0,0,.19), 0 12px 15px rgba(0,0,0,.24)',
+      shadowColor: "rgba(0,0,0,0.24)",
+      shadowOffset: {
+        width: 0,
+        height: 12,
+      },
+      shadowRadius: 15,
+      shadowOpacity: 0,
+      elevation: 3,
     },
   },
   'zDepth-4': {
     bg: {
-      boxShadow: '0 25px 55px rgba(0,0,0,.21), 0 16px 28px rgba(0,0,0,.22)',
+      shadowColor: "rgba(0,0,0,0.22)",
+      shadowOffset: {
+        width: 0,
+        height: 16,
+      },
+      shadowRadius: 28,
+      shadowOpacity: 0,
+      elevation: 3,
     },
   },
   'zDepth-5': {
     bg: {
-      boxShadow: '0 40px 77px rgba(0,0,0,.22), 0 27px 24px rgba(0,0,0,.2)',
+      shadowColor: "rgba(0,0,0,0.2)",
+      shadowOffset: {
+        width: 0,
+        height: 27,
+      },
+      shadowRadius: 24,
+      shadowOpacity: 0,
+      elevation: 3,
     },
   },
   square: {
@@ -190,7 +254,7 @@ export const saturationStyle = (hsl, radius, shadow, hsv, color,
       },
       black: {
         absolute: '0px 0px 0px 0px',
-        boxShadow: shadow,
+        // boxShadow: shadow,
         borderRadius: radius,
       },
       pointer: {
@@ -202,8 +266,14 @@ export const saturationStyle = (hsl, radius, shadow, hsv, color,
       circle: {
         width: 4,
         height: 4,
-        boxShadow: `0 0 0 1.5px #fff, inset 0 0 1px 1px rgba(0,0,0,.3),
-        0 0 1px 2px rgba(0,0,0,.4)`,
+        shadowColor: "rgba(0,0,0,0.4)",
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowRadius: 1,
+        shadowOpacity: 2,
+        elevation: 3,
         borderRadius: '50%',
         cursor: 'hand',
         transform: 'translate(-2px, -2px)',
