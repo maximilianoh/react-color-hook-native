@@ -61,7 +61,10 @@ const Sketch = ({
         borderRadius: 3,
       },
       activeColor: {
-        absolute: '0px 0px 0px 0px',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        rigth: 0,
         borderRadius: 2,
         background: `rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`,
         shadowColor: "rgba(0,0,0,0.25)",
@@ -139,7 +142,7 @@ const Sketch = ({
           onChange={onChange}
         />
       </View>
-      <View style={{display: 'flex', flexWrap: 'wrap'}}>
+      <View style={{ display: 'flex', flexWrap: 'wrap' }}>
         <View style={styles.sliders}>
           <View style={styles.hue}>
             <Hue

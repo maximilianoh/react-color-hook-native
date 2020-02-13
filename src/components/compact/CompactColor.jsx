@@ -21,7 +21,10 @@ const CompactColor = ({
         cursor: 'pointer',
       },
       dot: {
-        absolute: '5px 5px 5px 5px',
+        top: 5,
+        left: 5,
+        bottom: 5,
+        rigth: 5,
         background: getContrastingColor(color),
         borderRadius: '50%',
         opacity: 0,
@@ -60,7 +63,7 @@ const CompactColor = ({
       color={color}
       onClick={onClick}
       onHover={onSwatchHover}
-      focusStyle={{ 
+      focusStyle={{
         shadowColor: color,
         shadowOffset: {
           width: 0,

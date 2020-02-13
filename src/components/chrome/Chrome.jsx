@@ -61,7 +61,10 @@ const Chrome = ({
         overflow: 'hidden',
       },
       active: {
-        absolute: '0px 0px 0px 0px',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        rigth: 0,
         borderRadius: 8,
         shadowColor: "rgba(0,0,0,0.1)",
         shadowOffset: {

@@ -15,7 +15,10 @@ export const alphaStyle = (props, rgb) => reactCSS({
       height: "100%",
     },
     checkboard: {
-      absolute: '0 0 0 0',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      rigth: 0,
       overflow: 'hidden',
       borderRadius: props.radius,
     },
@@ -91,7 +94,10 @@ export const editableInputStyle = (props, style) => {
 export const hueStyle = (direction, radius, shadow, hsl) => reactCSS({
   default: {
     hue: {
-      absolute: '0px 0px 0px 0px',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      rigth: 0,
       borderRadius: radius,
       //boxShadow: shadow,
     },
@@ -141,7 +147,10 @@ export const raisedStyle = (zDepth, radius, background, passedStyles) => reactCS
       position: 'relative',
     },
     bg: {
-      absolute: '0px 0px 0px 0px',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      rigth: 0,
       shadowColor: "rgba(0,0,0,.24)",
       shadowOffset: {
         width: 0,
@@ -244,16 +253,25 @@ export const saturationStyle = (hsl, radius, shadow, hsv, color,
   white, black, circle, point, style) => reactCSS({
     default: {
       color: {
-        absolute: '0px 0px 0px 0px',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        rigth: 0,
         background: `hsl(${hsl.h},100%, 50%)`,
         borderRadius: radius,
       },
       white: {
-        absolute: '0px 0px 0px 0px',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        rigth: 0,
         borderRadius: radius,
       },
       black: {
-        absolute: '0px 0px 0px 0px',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        rigth: 0,
         // boxShadow: shadow,
         borderRadius: radius,
       },
