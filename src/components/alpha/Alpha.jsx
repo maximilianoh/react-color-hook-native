@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Alpha from '../common/Alpha';
 import ColorWrap from '../common/ColorWrap';
 import AlphaPointer from './AlphaPointer';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 export const AlphaPicker = ({
   rgb, hsl, width, height, onChange, direction, style, pointer,

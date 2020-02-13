@@ -6,7 +6,7 @@ import { isValidHex, getContrastingColor } from '../../helpers/color';
 import ColorWrap from '../common/ColorWrap';
 import EditableInput from '../common/EditableInput';
 import BlockSwatches from './BlockSwatches';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const Block = ({
   onChange, onSwatchHover, hex, colors, width, triangle,
@@ -48,8 +48,8 @@ const Block = ({
         elevation: 3,
         position: 'relative',
         display: 'flex',
-        alignItems: center,
-        justifyContent: center,
+        alignItems: 'center',
+        justifyContent: 'center',
       },
       body: {
         padding: 10,
@@ -113,9 +113,9 @@ const Block = ({
       <View style={styles.triangle} />
 
       <View style={styles.head}>
-        {transparent}
+        <Text>{transparent}</Text>
         <View style={styles.label}>
-          {upperHex}
+          <Text>{upperHex}</Text>
         </View>
       </View>
 

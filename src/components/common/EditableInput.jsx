@@ -112,9 +112,9 @@ const EditableInput = (props) => {
         spellCheck="false"
       />
       {label && !hideLabel ? (
-        <span style={styles.label} onMouseDown={handleMouseDown} role="button" tabIndex={0}>
+        <View style={styles.label} onMouseDown={handleMouseDown} role="button" tabIndex={0}>
           {label}
-        </span>
+        </View>
       ) : null}
     </View>
   );

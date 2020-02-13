@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const handleFocus = (Component, Span = 'span') => {
+const handleFocus = (Component) => {
   const Focus = (props) => {
     const [focus, setFocus] = useState(false);
 
@@ -9,9 +9,9 @@ const handleFocus = (Component, Span = 'span') => {
     const handleBlur = () => setFocus(false);
 
     return (
-      <Span onFocus={handlerFocus} onBlur={handleBlur}>
+      <View onFocus={handlerFocus} onBlur={handleBlur}>
         <Component {...props} {...focus} />
-      </Span>
+      </View>
     );
   };
   return Focus;
