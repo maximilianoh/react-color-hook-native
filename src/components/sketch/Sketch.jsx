@@ -18,7 +18,10 @@ const Sketch = ({
     default: {
       picker: {
         width,
-        padding: '10px 10px 0',
+        paddingTop: 10,
+        paddingRight: 10,
+        paddingBottom: 0,
+        paddingLeft: 10,
         boxSizing: 'initial',
         background: '#fff',
         borderRadius: 4,
@@ -49,7 +52,10 @@ const Sketch = ({
         elevation: 3,
       },
       sliders: {
-        padding: '4px 0',
+        paddingTop: 4,
+        paddingRight: 0,
+        paddingBottom: 4,
+        paddingLeft: 0,
         flex: '1',
       },
       color: {

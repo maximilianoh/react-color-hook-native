@@ -10,7 +10,7 @@ export const SliderPointer = ({ direction }) => {
         width: 18,
         height: 18,
         borderRadius: '50%',
-        transform: 'translate(-9px, -1px)',
+        transform: [{translateX:-9}, {translateY:-1}],
         backgroundColor: 'rgb(248, 248, 248)',
         shadowColor: "rgba(0, 0, 0, 0.37)",
         shadowOffset: {
@@ -24,7 +24,7 @@ export const SliderPointer = ({ direction }) => {
     },
     vertical: {
       picker: {
-        transform: 'translate(1px, -9px)',
+        transform: [{translateX:1}, {translateY:-9}],
       },
     },
   }, { vertical: direction === 'vertical' });

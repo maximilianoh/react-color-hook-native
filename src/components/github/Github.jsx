@@ -16,7 +16,9 @@ const Github = ({
       card: {
         width,
         background: '#fff',
-        border: '1px solid rgba(0,0,0,0.2)',
+        borderColor:'rgba(0,0,0,0.2)',
+        borderStyle:'solid',
+        borderWidth:1,
         shadowColor: "rgba(0,0,0,0.15)",
         shadowOffset: {
           width: 0,
@@ -34,12 +36,16 @@ const Github = ({
       },
       triangle: {
         position: 'absolute',
-        border: '7px solid transparent',
+        borderColor:'transparent',
+        borderStyle:'solid',
+        borderWidth:7,
         borderBottomColor: '#fff',
       },
       triangleShadow: {
         position: 'absolute',
-        border: '8px solid transparent',
+        borderColor:'transparent',
+        borderStyle:'solid',
+        borderWidth:8,
         borderBottomColor: 'rgba(0,0,0,0.15)',
       },
     },

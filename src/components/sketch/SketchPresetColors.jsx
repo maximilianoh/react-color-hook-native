@@ -8,9 +8,17 @@ const SketchPresetColors = ({ colors, onClick, onSwatchHover }) => {
   const styles = reactCSS({
     default: {
       colors: {
-        margin: '0 -10px',
-        padding: '10px 0 0 10px',
-        borderTop: '1px solid #eee',
+        marginTop:0,
+        marginRight:-10,
+        marginBottom:0,
+        marginLeft:-10,
+        paddingTop: 10,
+        paddingRight: 0,
+        paddingBottom: 0,
+        paddingLeft: 10,
+        borderStyle:'solid',
+        borderBottomWidth:1,
+        borderBottomColor: "#eee",
         position: 'relative',
         display: 'flex',
         flexWrap: 'wrap',
@@ -18,7 +26,10 @@ const SketchPresetColors = ({ colors, onClick, onSwatchHover }) => {
       swatchWrap: {
         width: 16,
         height: 16,
-        margin: '0 10px 10px 0',
+        marginTop:0,
+        marginRight:10,
+        marginBottom:10,
+        marginLeft:0,
       },
       swatch: {
         borderRadius: 3,

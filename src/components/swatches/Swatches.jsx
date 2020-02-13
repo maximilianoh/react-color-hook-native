@@ -25,7 +25,10 @@ const Swatches = ({
         overflowY: 'scroll',
       },
       body: {
-        padding: '16px 0 6px 16px',
+        paddingTop: 16,
+        paddingRight: 0,
+        paddingBottom: 6,
+        paddingLeft: 16,
       },
       clear: {
         clear: 'both',

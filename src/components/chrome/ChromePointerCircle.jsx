@@ -16,7 +16,7 @@ const ChromePointerCircle = () => {
         shadowRadius: 0,
         shadowOpacity: 1,
         elevation: 3,
-        transform: 'translate(-6px, -6px)',
+        transform: [{translateX:-6}, {translateY:-6}],
       },
     },
   });

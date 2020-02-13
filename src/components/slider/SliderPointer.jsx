@@ -9,7 +9,7 @@ const SliderPointer = () => {
         width: 14,
         height: 14,
         borderRadius: 6,
-        transform: 'translate(-7px, -1px)',
+        transform: [{translateX:-7}, {translateY:-1}],
         backgroundColor: 'rgb(248, 248, 248)',
         shadowColor: "rgba(0, 0, 0, 0.37)",
         shadowOffset: {

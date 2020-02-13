@@ -10,7 +10,9 @@ const PhotoshopButton = ({
     default: {
       button: {
         backgroundImage: 'linear-gradient(-180deg, #FFFFFF 0%, #E6E6E6 100%)',
-        border: '1px solid #878787',
+        borderColor:'#878787',
+        borderStyle:'solid',
+        borderWidth:1,
         borderRadius: 2,
         height: 20,
         shadowColor: "#EAEAEA",

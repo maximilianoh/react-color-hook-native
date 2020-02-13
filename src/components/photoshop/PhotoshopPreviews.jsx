@@ -7,8 +7,11 @@ const PhotoshopPreviews = ({ rgb, currentColor }) => {
   const styles = reactCSS({
     default: {
       swatches: {
-        border: '1px solid #B3B3B3',
-        borderBottom: '1px solid #F0F0F0',
+        borderStyle:'solid',
+        borderColor:'#B3B3B3',
+        borderWidth:1,
+        borderBottomColor:"#F0F0F0",
+        borderBottomWidth:1,
         marginBottom: 2,
         marginTop: 1,
       },

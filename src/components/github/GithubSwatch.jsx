@@ -10,7 +10,9 @@ const GithubSwatch = ({
   const hoverSwatch = {
     position: 'relative',
     zIndex: '2',
-    outline: '2px solid #fff',
+    borderColor:"#fff",
+    borderStyle:"solid",
+    borderWidth:2,
     shadowColor: "rgba(0,0,0,0.25)",
     shadowOffset: {
       width: 0,

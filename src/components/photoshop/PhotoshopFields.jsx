@@ -26,7 +26,9 @@ const PhotoshopPicker = ({
         marginLeft: '40%',
         width: '40%',
         height: 18,
-        border: '1px solid #888888',
+        borderColor:'#888888',
+        borderStyle:'solid',
+        borderWidth:1,
         shadowColor: "#ECECEC",
         shadowOffset: {
           width: 0,
@@ -56,7 +58,9 @@ const PhotoshopPicker = ({
         marginLeft: '20%',
         width: '80%',
         height: 18,
-        border: '1px solid #888888',
+        borderColor:'#888888',
+        borderStyle:'solid',
+        borderWidth:1,
         shadowColor: "#ECECEC",
         shadowOffset: {
           width: 0,

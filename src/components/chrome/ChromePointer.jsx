@@ -9,7 +9,7 @@ const ChromePointer = () => {
         width: 12,
         height: 12,
         borderRadius: 6,
-        transform: 'translate(-6px, -1px)',
+        transform: [{translateX:-6}, {translateY:-1}],
         backgroundColor: 'rgb(248, 248, 248)',
         shadowColor: "rgba(0, 0, 0, 0.37)",
         shadowOffset: {

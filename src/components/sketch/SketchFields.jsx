@@ -28,7 +28,10 @@ const SketchFields = ({
       },
       input: {
         width: '80%',
-        padding: '4px 10% 3px',
+        paddingTop: 4,
+        paddingRight: "10%",
+        paddingBottom: 03,
+        paddingLeft: "10%",
         border: 'none',
         shadowColor: "#ccc",
         shadowOffset: {

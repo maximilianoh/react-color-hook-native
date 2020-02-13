@@ -56,7 +56,10 @@ const Chrome = ({
         elevation: 3,
       },
       body: {
-        padding: '16px 16px 12px',
+        paddingTop: 16,
+        paddingRight: 16,
+        paddingBottom: 12,
+        paddingLeft: 16,
       },
       controls: {
         display: 'flex',
