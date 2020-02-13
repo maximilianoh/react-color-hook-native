@@ -16,18 +16,30 @@ const SliderSwatch = ({
     },
     first: {
       swatch: {
-        borderRadius: '2px 0 0 2px',
+        borderTopEndRadius:2,
+        borderTopRightRadius:0,
+        borderBottomRightRadius:0,
+        borderBottomEndRadius:2,
+        borderBottomLeftRadius:0,
+        borderTopLeftRadius:0,
+        elevation: 3,
       },
     },
     last: {
       swatch: {
-        borderRadius: '0 2px 2px 0',
+        borderTopEndRadius:0,
+        borderTopRightRadius:2,
+        borderBottomRightRadius:2,
+        borderBottomEndRadius:0,
+        borderBottomLeftRadius:2,
+        borderTopLeftRadius:2,
+        elevation: 3,
       },
     },
     active: {
       swatch: {
         transform: 'scaleY(1.8)',
-        borderRadius: '3.6px/2px',
+        borderRadius: 3.6/2,
       },
     },
   }, { active, first, last });

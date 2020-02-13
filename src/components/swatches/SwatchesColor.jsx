@@ -27,13 +27,25 @@ const SwatchesColor = ({
     first: {
       color: {
         overflow: 'hidden',
-        borderRadius: '2px 2px 0 0',
+        borderTopEndRadius:2,
+        borderTopRightRadius:2,
+        borderBottomRightRadius:2,
+        borderBottomEndRadius:0,
+        borderBottomLeftRadius:0,
+        borderTopLeftRadius:0,
+        elevation: 3,
       },
     },
     last: {
       color: {
         overflow: 'hidden',
-        borderRadius: '0 0 2px 2px',
+        borderTopEndRadius:0,
+        borderTopRightRadius:0,
+        borderBottomRightRadius:0,
+        borderBottomEndRadius:2,
+        borderBottomLeftRadius:2,
+        borderTopLeftRadius:2,
+        elevation: 3,
       },
     },
     active: {
