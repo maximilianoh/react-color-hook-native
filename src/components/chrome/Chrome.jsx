@@ -47,7 +47,13 @@ const Chrome = ({
         overflow: 'hidden',
       },
       Saturation: {
-        radius: '2px 2px 0 0',
+        borderTopEndRadius:2,
+        borderTopRightRadius:2,
+        borderBottomRightRadius:2,
+        borderBottomEndRadius:0,
+        borderBottomLeftRadius:0,
+        borderTopLeftRadius:0,
+        elevation: 3,
       },
       body: {
         padding: '16px 16px 12px',
