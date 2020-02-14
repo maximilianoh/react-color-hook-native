@@ -11,7 +11,7 @@ const CompactColor = ({
   const styles = reactCSS({
     default: {
       color: {
-        background: color,
+        backgroundColor: color,
         width: 15,
         height: 15,
         float: 'left',
@@ -25,7 +25,7 @@ const CompactColor = ({
         left: 5,
         bottom: 5,
         rigth: 5,
-        background: getContrastingColor(color),
+        backgroundColor: getContrastingColor(color),
         borderRadius: '50%',
         opacity: 0,
       },
@@ -47,12 +47,12 @@ const CompactColor = ({
         elevation: 3,
       },
       dot: {
-        background: '#000',
+        backgroundColor: '#000',
       },
     },
     transparent: {
       dot: {
-        background: '#000',
+        backgroundColor: '#000',
       },
     },
   }, { active, 'color-#FFFFFF': color === '#FFFFFF', transparent: color === 'transparent' });

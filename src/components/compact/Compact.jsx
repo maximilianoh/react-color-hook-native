@@ -17,7 +17,7 @@ const Compact = ({
   const styles = reactCSS(merge({
     default: {
       Compact: {
-        background: '#f6f6f6',
+        backgroundColor: '#f6f6f6',
         radius: 4,
       },
       compact: {

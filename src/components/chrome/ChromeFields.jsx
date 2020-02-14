@@ -114,7 +114,7 @@ const ChromeFields = (props) => {
         position: 'absolute',
         width: 24,
         height: 28,
-        background: '#eee',
+        backgroundColor: '#eee',
         borderRadius: 4,
         top: 10,
         left: 12,

@@ -1,11 +1,11 @@
 import React from 'react';
-import reactCSS, { handleHover } from 'reactcss';
+import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import Swatch from '../common/Swatch';
 import { View } from 'react-native';
 
 const GithubSwatch = ({
-  hover, color, onClick, onSwatchHover,
+  color, onClick, onSwatchHover,
 }) => {
   const hoverSwatch = {
     position: 'relative',
@@ -34,7 +34,7 @@ const GithubSwatch = ({
     hover: {
       swatch: hoverSwatch,
     },
-  }, { hover });
+  });
 
   return (
     <View style={styles.swatch}>
@@ -49,7 +49,6 @@ const GithubSwatch = ({
 };
 
 GithubSwatch.propTypes = {
-  hover: PropTypes.bool.isRequired,
   onSwatchHover: PropTypes.func,
   onClick: PropTypes.func,
   color: PropTypes.string.isRequired,
@@ -60,4 +59,4 @@ GithubSwatch.defaultProps = {
   onClick: () => { },
 };
 
-export default handleHover(GithubSwatch);
+export default GithubSwatch;

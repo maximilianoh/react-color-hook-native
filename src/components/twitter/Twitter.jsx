@@ -19,7 +19,7 @@ const Twitter = ({
     default: {
       card: {
         width,
-        background: '#fff',
+        backgroundColor: '#fff',
         border: '0 solid rgba(0,0,0,0.25)',
         shadowColor: "rgba(0,0,0,0.25)",
         shadowOffset: {
@@ -71,7 +71,7 @@ const Twitter = ({
         position: 'absolute',
       },
       hash: {
-        background: '#F0F0F0',
+        backgroundColor: '#F0F0F0',
         height: 30,
         width: 30,
         borderTopEndRadius:4,

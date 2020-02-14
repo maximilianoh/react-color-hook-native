@@ -17,7 +17,7 @@ const PhotoshopPreviews = ({ rgb, currentColor }) => {
       },
       new: {
         height: 34,
-        background: `rgb(${rgb.r},${rgb.g}, ${rgb.b})`,
+        backgroundColor: `rgb(${rgb.r},${rgb.g}, ${rgb.b})`,
         shadowColor: "#000",
         shadowOffset: {
           width: 0,
@@ -29,7 +29,7 @@ const PhotoshopPreviews = ({ rgb, currentColor }) => {
       },
       current: {
         height: 34,
-        background: currentColor,
+        backgroundColor: currentColor,
         shadowColor: "#000",
         shadowOffset: {
           width: 0,

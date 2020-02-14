@@ -20,7 +20,7 @@ const CircleSwatch = ({
       },
       Swatch: {
         borderRadius: '50%',
-        background: 'transparent',
+        backgroundColor: 'transparent',
         shadowColor: color,
         shadowOffset: {
           width: 0,

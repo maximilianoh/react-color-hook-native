@@ -20,7 +20,7 @@ const Photoshop = (props) => {
   const styles = reactCSS(merge({
     default: {
       picker: {
-        background: '#DCDCDC',
+        backgroundColor: '#DCDCDC',
         borderRadius: 4,
         shadowColor: "rgba(0,0,0,0.15)",
         shadowOffset: {

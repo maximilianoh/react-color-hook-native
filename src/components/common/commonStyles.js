@@ -45,14 +45,14 @@ export const alphaStyle = (props, rgb) => reactCSS({
       shadowRadius: 2,
       shadowOpacity: 0,
       elevation: 3,
-      background: '#fff',
+      backgroundColor: '#fff',
       marginTop: 1,
       transform: [{ translateX: -2 }],
     },
   },
   vertical: {
     gradient: {
-      background: `linear-gradient(to bottom, rgba(${rgb.r},${rgb.g},${rgb.b}, 0) 0%,
+      backgroundColor: `linear-gradient(to bottom, rgba(${rgb.r},${rgb.g},${rgb.b}, 0) 0%,
              rgba(${rgb.r},${rgb.g},${rgb.b}, 1) 100%)`,
     },
     pointer: {
@@ -129,7 +129,7 @@ export const hueStyle = (direction, radius, hsl) => reactCSS({
       shadowRadius: 2,
       shadowOpacity: 0,
       elevation: 3,
-      background: '#fff',
+      backgroundColor: '#fff',
       transform: [{translateX:-2}],
     },
   },
@@ -141,7 +141,7 @@ export const hueStyle = (direction, radius, hsl) => reactCSS({
   },
 }, { vertical: direction === 'vertical' });
 
-export const raisedStyle = (zDepth, radius, background, passedStyles) => reactCSS(merge({
+export const raisedStyle = (zDepth, radius, backgroundColor, passedStyles) => reactCSS(merge({
   default: {
     wrap: {
       position: 'relative',
@@ -164,7 +164,7 @@ export const raisedStyle = (zDepth, radius, background, passedStyles) => reactCS
       shadowOpacity: 0,
       elevation: 3,
       borderRadius: radius,
-      background,
+      backgroundColor,
     },
   },
   'zDepth-0': {
@@ -261,7 +261,7 @@ export const saturationStyle = (hsl, radius, shadow, hsv, color,
         left: 0,
         bottom: 0,
         rigth: 0,
-        background: `hsl(${hsl.h},100%, 50%)`,
+        backgroundColor: `hsl(${hsl.h},100%, 50%)`,
         borderRadius: radius,
       },
       white: {
@@ -313,7 +313,7 @@ export const saturationStyle = (hsl, radius, shadow, hsv, color,
 export const swatchStyle = (style, focus, focusStyle, color) => reactCSS({
   default: {
     swatch: {
-      background: color,
+      backgroundColor: color,
       height: '100%',
       width: '100%',
       cursor: 'pointer',

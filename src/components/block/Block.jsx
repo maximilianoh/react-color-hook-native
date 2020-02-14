@@ -26,7 +26,7 @@ const Block = ({
     default: {
       card: {
         width,
-        background: '#fff',
+        backgroundColor: '#fff',
         shadowColor: "rgba(0,0,0,0.1)",
         shadowOffset: {
           width: 0,
@@ -38,7 +38,7 @@ const Block = ({
       },
       head: {
         height: 110,
-        background: hex,
+        backgroundColor: hex,
         borderTopEndRadius: 6,
         borderTopRightRadius: 6,
         borderBottomRightRadius: 6,

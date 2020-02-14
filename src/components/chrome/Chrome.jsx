@@ -21,7 +21,7 @@ const Chrome = ({
     default: {
       picker: {
         width,
-        background: '#fff',
+        backgroundColor: '#fff',
         borderRadius: 2,
         shadowColor: "rgba(0,0,0,.3)",
         shadowOffset: {
@@ -89,7 +89,7 @@ const Chrome = ({
         shadowOpacity: 1,
         shadowRadius: 0,
         elevation: 3,
-        background: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
+        backgroundColor: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
         zIndex: '2',
       },
       toggles: {

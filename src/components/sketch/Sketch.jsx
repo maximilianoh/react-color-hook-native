@@ -23,7 +23,7 @@ const Sketch = ({
         paddingBottom: 0,
         paddingLeft: 10,
         boxSizing: 'initial',
-        background: '#fff',
+        backgroundColor: '#fff',
         borderRadius: 4,
         shadowColor: "rgba(0,0,0,0.15)",
         shadowOffset: {
@@ -72,7 +72,7 @@ const Sketch = ({
         bottom: 0,
         rigth: 0,
         borderRadius: 2,
-        background: `rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`,
+        backgroundColor: `rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`,
         shadowColor: "rgba(0,0,0,0.25)",
         shadowOffset: {
           width: 0,

@@ -15,7 +15,7 @@ const SwatchesColor = ({
         width: 40,
         height: 24,
         cursor: 'pointer',
-        background: color,
+        backgroundColor: color,
         marginBottom: 1,
       },
       check: {

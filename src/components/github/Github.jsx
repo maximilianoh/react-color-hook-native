@@ -15,7 +15,7 @@ const Github = ({
     default: {
       card: {
         width,
-        background: '#fff',
+        backgroundColor: '#fff',
         borderColor:'rgba(0,0,0,0.2)',
         borderStyle:'solid',
         borderWidth:1,
@@ -31,8 +31,6 @@ const Github = ({
         position: 'relative',
         padding: 5,
         msBoxorient: 'horizontal',
-        display: 'flex',
-        flexWrap: 'wrap',
       },
       triangle: {
         position: 'absolute',
@@ -111,7 +109,7 @@ const Github = ({
 
   const handleChange = (hex, e) => onChange({ hex, source: 'hex' }, e);
   return (
-    <View style={styles.card}>
+    <View style={{...styles.card, flexDirection: 'row', display: 'flex', flexWrap: 'wrap'}}>
       <View style={styles.triangleShadow} />
       <View style={styles.triangle} />
       {map(colors, (c) => (
@@ -138,7 +136,7 @@ Github.propTypes = {
 };
 
 Github.defaultProps = {
-  width: 200,
+  width: 215,
   colors: ['#B80000', '#DB3E00', '#FCCB00', '#008B02', '#006B76', '#1273DE', '#004DCF', '#5300EB',
     '#EB9694', '#FAD0C3', '#FEF3BD', '#C1E1C5', '#BEDADC', '#C4DEF6', '#BED3F3', '#D4C4FB'],
   triangle: 'top-left',
