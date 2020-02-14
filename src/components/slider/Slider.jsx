@@ -30,7 +30,6 @@ const Slider = ({
       },
     },
   }, passedStyles));
-  console.log(hsl)
   return (
     <View style={{width: 316, height: 100}}>
       <View style={styles.hue}>
