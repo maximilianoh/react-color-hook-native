@@ -1,5 +1,5 @@
 import React from 'react';
-import reactCSS, { handleHover } from 'reactcss';
+import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import Swatch from '../common/Swatch';
 import { View } from 'react-native';
@@ -19,8 +19,7 @@ const CircleSwatch = ({
         transition: '100ms transform ease',
       },
       Swatch: {
-        borderRadius: '50%',
-        backgroundColor: 'transparent',
+        borderRadius: circleSize/2,
         shadowColor: color,
         shadowOffset: {
           width: 0,
@@ -50,7 +49,6 @@ const CircleSwatch = ({
       },
     },
   }, { hover, active });
-
   return (
     <View style={styles.swatch}>
       <Swatch
@@ -86,10 +84,9 @@ CircleSwatch.propTypes = {
   color: PropTypes.string,
   onClick: PropTypes.func,
   onSwatchHover: PropTypes.func,
-  hover: PropTypes.bool.isRequired,
   active: PropTypes.bool,
   circleSize: PropTypes.number,
   circleSpacing: PropTypes.number,
 };
 
-export default handleHover(CircleSwatch);
+export default CircleSwatch;

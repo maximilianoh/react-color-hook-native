@@ -106,7 +106,7 @@ const Github = ({
     'bottom-left-triangle': triangle === 'bottom-left',
     'bottom-right-triangle': triangle === 'bottom-right',
   });
-
+  
   const handleChange = (hex, e) => onChange({ hex, source: 'hex' }, e);
   return (
     <View style={{...styles.card, flexDirection: 'row', display: 'flex', flexWrap: 'wrap'}}>

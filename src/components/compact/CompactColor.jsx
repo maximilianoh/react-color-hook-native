@@ -26,7 +26,7 @@ const CompactColor = ({
         bottom: 5,
         rigth: 5,
         backgroundColor: getContrastingColor(color),
-        borderRadius: '50%',
+        borderRadius: 10,
         opacity: 0,
       },
     },

@@ -18,28 +18,26 @@ const Circle = ({
         width,
         marginRight: -circleSpacing,
         marginBottom: -circleSpacing,
-        display: 'flex',
-        flexWrap: 'wrap',
+        flexDirection: 'row',
+        display: 'flex', 
+        flexWrap: 'wrap'
       },
     },
   }, passedStyles));
 
   const handleChange = (hexCode, e) => onChange({ hex: hexCode, source: 'hex' }, e);
-
   return (
     <View style={styles.card}>
       { map(colors, (c) => (
-        <View key={`ViewCircleSwatch${c}`}>
           <CircleSwatch
             key={c}
             color={c}
             onClick={handleChange}
-            onSwatchHover={onSwatchHover}
+            onResponderTerminate={onSwatchHover}
             active={hex === c.toLowerCase()}
             circleSize={circleSize}
             circleSpacing={circleSpacing}
           />
-        </View>
       )) }
     </View>
   );
