@@ -24,7 +24,10 @@ const Compact = ({
         paddingTop: 5,
         paddingLeft: 5,
         boxSizing: 'initial',
-        width: 240,
+        width: 250,
+        display: 'flex', 
+      flexWrap: 'wrap',
+      flexDirection: 'row', 
       },
       clear: {
         clear: 'both',
@@ -49,15 +52,17 @@ const Compact = ({
       <View style={styles.compact}>
         { map(colors, (c) => (
           <CompactColor
-            key={c}
-            color={c}
-            active={c.toLowerCase() === hex}
-            onClick={handleChange}
-            onSwatchHover={onSwatchHover}
+          key={c}
+          color={c}
+          active={c.toLowerCase() === hex}
+          onClick={handleChange}
+          onSwatchHover={onSwatchHover}
           />
-        )) }
+          )) }
         <View style={styles.clear} />
+          {/*
         <CompactFields hex={hex} rgb={rgb} onChange={handleChange} />
+        */}
       </View>
     </Raised>
   );

@@ -145,7 +145,6 @@ export const raisedStyle = (zDepth, radius, backgroundColor, passedStyles) => re
   default: {
     wrap: {
       position: 'relative',
-      display: 'inline-block',
     },
     content: {
       position: 'relative',
@@ -247,7 +246,7 @@ export const raisedStyle = (zDepth, radius, backgroundColor, passedStyles) => re
   },
   circle: {
     bg: {
-      borderRadius: 10,
+      borderRadius: 20,
     },
   },
 }, passedStyles), { 'zDepth-1': zDepth === 1 });
@@ -296,7 +295,7 @@ export const saturationStyle = (hsl, radius, shadow, hsv, color,
         shadowRadius: 1,
         shadowOpacity: 2,
         elevation: 3,
-        borderRadius: 10,
+        borderRadius: 20,
         cursor: 'hand',
         transform: [{translateX:-2}, {translateY:-2}],
       },
