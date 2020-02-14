@@ -15,7 +15,7 @@ const CircleSwatch = ({
         height: circleSize,
         marginRight: circleSpacing,
         marginBottom: circleSpacing,
-        transform: 'scale(1)',
+        transform: [{ scale: 1 }],
         transition: '100ms transform ease',
       },
       Swatch: {
@@ -34,7 +34,7 @@ const CircleSwatch = ({
     },
     hover: {
       swatch: {
-        transform: 'scale(1.2)',
+        transform: [{ scale: 1.2 }],
       },
     },
     active: {

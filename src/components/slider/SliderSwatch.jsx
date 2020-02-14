@@ -10,7 +10,7 @@ const SliderSwatch = ({
     default: {
       swatch: {
         height: 12,
-        background: `hsl(${hsl.h}, 50%, ${(offset * 100)}%)`,
+        backgroundColor: `hsl(${hsl.h}, 50%, ${(offset * 100)}%)`,
         cursor: 'pointer',
       },
     },
@@ -38,7 +38,7 @@ const SliderSwatch = ({
     },
     active: {
       swatch: {
-        transform: 'scaleY(1.8)',
+        transform: [{ scaleY: 1.8 }],
         borderRadius: 3.6/2,
       },
     },
@@ -50,9 +50,8 @@ const SliderSwatch = ({
     l: offset,
     source: 'hsl',
   }, e);
-
   return (
-    <View style={styles.swatch} onKeyPress={handleClick} onClick={handleClick} role="grid" tabIndex={0} />
+    <View style={styles.swatch} onResponderStart={handleClick} onTouchStart={handleClick} role="grid" tabIndex={0} />
   );
 };
 

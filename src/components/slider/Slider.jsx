@@ -16,15 +16,23 @@ const Slider = ({
     default: {
       hue: {
         height: 12,
+        width:"100%",
         position: 'relative',
       },
       Hue: {
+        width:"100%",
+        height:"100%",
         radius: 2,
+      },
+      swatches: {
+        width:"100%",
+        height:"100%",
       },
     },
   }, passedStyles));
+  console.log(hsl)
   return (
-    <View style={styles.wrap || {}}>
+    <View style={{width: 316, height: 100}}>
       <View style={styles.hue}>
         <Hue
           style={styles.Hue}

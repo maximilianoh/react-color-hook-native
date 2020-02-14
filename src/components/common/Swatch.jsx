@@ -28,11 +28,13 @@ const Swatch = ({
       title={showTitle}
       role="button"
       tabIndex={0}
-      onKeyDown={handleKeyDown}
+      onResponderStart={handleKeyDown}
+      onTouchMove={handleClick}
+      onTouchStart={handleClick}
       {...optionalEvents}
     >
-      { children }
-      { transparent }
+      {children}
+      {transparent}
     </View>
   );
 };
@@ -44,9 +46,9 @@ Swatch.defaultProps = {
   children: null,
   focus: false,
   title: '',
-  onHover: () => {},
+  onHover: () => { },
   style: {},
-  onClick: () => {},
+  onClick: () => { console.log("-------")},
   color: '',
 };
 

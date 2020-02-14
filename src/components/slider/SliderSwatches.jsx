@@ -9,6 +9,10 @@ const SliderSwatches = ({ onClick, hsl }) => {
     default: {
       swatches: {
         marginTop: 20,
+        width: "100%",
+        heigth: "100%",
+        display: 'flex',
+        flexDirection: 'row',
       },
       swatch: {
         boxSizing: 'border-box',

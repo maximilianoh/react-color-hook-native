@@ -81,24 +81,24 @@ const Github = ({
       triangle: {
         top: 35,
         left: 10,
-        transform: 'rotate(180deg)',
+        transform: [{ rotate: '180deg' }],
       },
       triangleShadow: {
         top: 37,
         left: 9,
-        transform: 'rotate(180deg)',
+        transform: [{ rotate: '180deg' }],
       },
     },
     'bottom-right-triangle': {
       triangle: {
         top: 35,
         right: 10,
-        transform: 'rotate(180deg)',
+        transform: [{ rotate: '180deg' }],
       },
       triangleShadow: {
         top: 37,
         right: 9,
-        transform: 'rotate(180deg)',
+        transform: [{ rotate: '180deg' }],
       },
     },
   }, passedStyles), {
