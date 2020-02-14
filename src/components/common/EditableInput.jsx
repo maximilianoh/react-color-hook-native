@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { editableInputStyle } from './commonStyles';
-import { View } from 'react-native';
+import { View, TextInput  } from 'react-native';
 
 const DEFAULT_ARROW_OFFSET = 1;
 
@@ -101,11 +101,11 @@ const EditableInput = (props) => {
   const { placeholder, hideLabel, label } = props;
   return (
     <View style={styles.wrap}>
-      <input
+      <TextInput 
         style={styles.input}
         ref={inputRef}
         value={valueState}
-        onKeyDown={handleKeyDown}
+        onKeyPress={handleKeyDown}
         onChange={handleChange}
         onBlur={handleBlur}
         placeholder={placeholder}
