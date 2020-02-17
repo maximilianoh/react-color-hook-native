@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { editableInputStyle } from './commonStyles';
-import { View, TextInput  } from 'react-native';
+import { View, TextInput, Text, AppState  } from 'react-native';
 
 const DEFAULT_ARROW_OFFSET = 1;
 
@@ -39,23 +39,22 @@ const EditableInput = (props) => {
     const onChangeValue = props.label ? getValueObjectWithLabel(v) : v;
     if (props.onChange) props.onChange(onChangeValue, e);
 
-    const isPercentage = getIsPercentage(e.target.value);
+    const isPercentage = getIsPercentage(e.target);
     setValueState(isPercentage ? getFormattedPercentage(v) : v);
   };
 
   const handleMouseUp = () => {
-    window.removeEventListener('mousemove', handleDrag);
-    window.removeEventListener('mouseup', handleMouseUp);
+    AppState.removeEventListener('change', handleChange);
   };
 
   const handleMouseDown = (e) => {
     if (props.dragLabel) {
       e.preventDefault();
       handleDrag(e);
-      window.addEventListener('mousemove', handleDrag);
-      window.addEventListener('mouseup', handleMouseUp);
+      AppState.addEventListener('change', handleChange);
     }
   };
+
 
   const handleBlur = () => {
     if (blurValueState) {
@@ -65,7 +64,7 @@ const EditableInput = (props) => {
   };
 
   const handleChange = (e) => {
-    setUpdatedValue(e.target.value, e);
+    setUpdatedValue(e.target, e);
   };
 
   const getArrowOffset = () => props.arrowOffset || DEFAULT_ARROW_OFFSET;
@@ -74,7 +73,7 @@ const EditableInput = (props) => {
     // In case `e.target.value` is a percentage remove the `%` character
     // and update accordingly with a percentage
     // https://github.com/casesandberg/react-color/issues/383
-    const v = getNumberValue(e.target.value);
+    const v = getNumberValue(e.target);
     if (isNumber(v) && isValidKeyCode(e.keyCode)) {
       const offset = getArrowOffset();
       const updatedValue = e.keyCode === UP_KEY_CODE ? v + offset : v - offset;
@@ -84,7 +83,7 @@ const EditableInput = (props) => {
   };
 
   useEffect(() => {
-    if (inputRef.current && inputRef.current.input === document.activeElement) {
+    if (inputRef.current) {
       setBlurValueState(String(props.value).toUpperCase());
     } else {
       setBlurValueState(!blurValueState && String(props.value).toUpperCase());
@@ -106,14 +105,14 @@ const EditableInput = (props) => {
         ref={inputRef}
         value={valueState}
         onKeyPress={handleKeyDown}
-        onChange={handleChange}
+        onChangeText={handleChange}
         onBlur={handleBlur}
         placeholder={placeholder}
-        spellCheck="false"
+        spellCheck={false}
       />
       {label && !hideLabel ? (
         <View style={styles.label} onMouseDown={handleMouseDown} role="button" tabIndex={0}>
-          {label}
+          <Text>{label}</Text>
         </View>
       ) : null}
     </View>

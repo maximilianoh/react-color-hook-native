@@ -48,7 +48,7 @@ Swatch.defaultProps = {
   title: '',
   onHover: () => { },
   style: {},
-  onClick: () => { console.log("-------")},
+  onClick: () => {},
   color: '',
 };
 
