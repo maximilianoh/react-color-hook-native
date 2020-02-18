@@ -79,24 +79,14 @@ const Block = ({
       input: {
         width: '100%',
         fontSize: 12,
-        color: '#666',
-        border: 0,
-        outline: 'none',
-        height: 22,
-        shadowColor: "#ddd",
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-        shadowOpacity: 1,
-        shadowRadius: 10,
-        elevation: 3,
-        borderRadius: 4,
-        paddingTop: 0,
-        paddingRight: 7,
-        paddingBottom: 0,
-        paddingLeft: 7,
-        boxSizing: 'border-box',
+        borderTopEndRadius: 3,
+        borderTopRightRadius: 3,
+        borderBottomRightRadius: 3,
+        borderBottomEndRadius: 3,
+        borderBottomLeftRadius: 3,
+        borderTopLeftRadius: 3,
+        elevation: 1,
+        paddingLeft:10
       },
     },
     'hide-triangle': {
@@ -113,10 +103,7 @@ const Block = ({
       <View style={styles.triangle} />
 
       <View style={styles.head}>
-        <Text>{transparent}</Text>
-        <View style={styles.label}>
-          <Text>{upperHex}</Text>
-        </View>
+        <Text style={styles.label}>{upperHex}</Text>
       </View>
 
       <View style={styles.body}>

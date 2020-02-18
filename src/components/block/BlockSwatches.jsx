@@ -10,11 +10,13 @@ const BlockSwatches = ({ colors, onClick, onSwatchHover }) => {
     default: {
       swatches: {
         marginRight: -10,
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
       },
       swatch: {
         width: 22,
         height: 22,
-        float: 'left',
         marginRight: 10,
         marginBottom: 10,
         borderRadius: 4,
