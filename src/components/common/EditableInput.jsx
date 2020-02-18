@@ -83,11 +83,11 @@ const EditableInput = (props) => {
   };
 
   useEffect(() => {
+    setValueState(String(props.value).toUpperCase());
     if (inputRef.current) {
       setBlurValueState(String(props.value).toUpperCase());
     } else {
       setBlurValueState(!blurValueState && String(props.value).toUpperCase());
-      setValueState(String(props.value).toUpperCase());
     }
   }, [value]);
 
@@ -98,6 +98,7 @@ const EditableInput = (props) => {
   const styles = editableInputStyle(props, style);
 
   const { placeholder, hideLabel, label } = props;
+  
   return (
     <View style={styles.wrap}>
       {label && !hideLabel ? (

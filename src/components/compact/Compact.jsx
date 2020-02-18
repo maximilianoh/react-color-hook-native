@@ -46,7 +46,7 @@ const Compact = ({
       onChange(data, e);
     }
   };
-
+  
   return (
     <Raised style={styles.Compact} styles={passedStyles}>
       <View style={styles.compact}>

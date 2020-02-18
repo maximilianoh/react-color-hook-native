@@ -60,7 +60,7 @@ const CompactFields = ({ hex, rgb, onChange }) => {
         color: '#999',
       },
     },
-  });
+  })
 
   const handleChange = (data, e) => {
     if (data.r || data.g || data.b) {
@@ -77,7 +77,6 @@ const CompactFields = ({ hex, rgb, onChange }) => {
       }, e);
     }
   };
-
   return (
     <View style={styles.fields}>
       <View style={styles.active} />

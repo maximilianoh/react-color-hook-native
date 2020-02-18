@@ -12,7 +12,7 @@ const Swatch = ({
 }) => {
   const transparent = color === 'transparent';
   const styles = swatchStyle(style, focus, focusStyle, color);
-  const handleClick = (e) => onClick(color, e);
+  const handleClick = (e) => { onClick(color, e)};
   const handleKeyDown = (e) => e.keyCode === ENTER && onClick(color, e);
   const handleHover = (e) => onHover(color, e);
 
@@ -24,7 +24,7 @@ const Swatch = ({
   return (
     <View
       style={styles.swatch}
-      onClick={handleClick}
+      onPress={handleClick}
       title={showTitle}
       role="button"
       tabIndex={0}
