@@ -8,15 +8,18 @@ const CompactFields = ({ hex, rgb, onChange }) => {
   const styles = reactCSS({
     default: {
       fields: {
-        display: 'flex',
         paddingBottom: 6,
         paddingRight: 5,
         position: 'relative',
+        display: 'flex', 
+        flexDirection: 'row', 
+        flexWrap: 'wrap',
+        width:"100%"
       },
       active: {
         position: 'absolute',
-        top: 8,
-        left: 5,
+        top: 4,
+        left: 2,
         height: 9,
         width: 9,
         backgroundColor: hex,
@@ -41,7 +44,7 @@ const CompactFields = ({ hex, rgb, onChange }) => {
         position: 'relative',
       },
       RGBinput: {
-        width: '70%',
+        width: '80%',
         padding: 0,
         paddingLeft: '30%',
         fontSize: 12,
@@ -50,8 +53,7 @@ const CompactFields = ({ hex, rgb, onChange }) => {
       },
       RGBlabel: {
         position: 'absolute',
-        top: 5,
-        left: 0,
+        left: 1,
         lineHeight: 16,
         textTransform: 'uppercase',
         fontSize: 12,

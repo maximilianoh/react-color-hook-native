@@ -100,8 +100,13 @@ const EditableInput = (props) => {
   const { placeholder, hideLabel, label } = props;
   return (
     <View style={styles.wrap}>
+      {label && !hideLabel ? (
+        <View onMouseDown={handleMouseDown} role="button" tabIndex={0}>
+          <Text style={styles.label}>{label}</Text>
+        </View>
+      ) : null}
       <TextInput 
-        style={styles.input}
+        style={{...styles.input, borderColor:'#808080', borderStyle:'solid', borderBottomWidth:1}}
         ref={inputRef}
         value={valueState}
         onKeyPress={handleKeyDown}
@@ -110,11 +115,7 @@ const EditableInput = (props) => {
         placeholder={placeholder}
         spellCheck={false}
       />
-      {label && !hideLabel ? (
-        <View style={styles.label} onMouseDown={handleMouseDown} role="button" tabIndex={0}>
-          <Text>{label}</Text>
-        </View>
-      ) : null}
+      
     </View>
   );
 };
