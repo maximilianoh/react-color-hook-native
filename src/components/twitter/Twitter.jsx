@@ -8,7 +8,7 @@ import { isValidHex } from '../../helpers/color';
 import ColorWrap from '../common/ColorWrap';
 import EditableInput from '../common/EditableInput';
 import Swatch from '../common/Swatch';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 
 const Twitter = ({
@@ -20,7 +20,6 @@ const Twitter = ({
       card: {
         width,
         backgroundColor: '#fff',
-        border: '0 solid rgba(0,0,0,0.25)',
         shadowColor: "rgba(0,0,0,0.25)",
         shadowOffset: {
           width: 0,
@@ -37,6 +36,9 @@ const Twitter = ({
         paddingRight: 9,
         paddingBottom: 9,
         paddingLeft: 15,
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
       },
       label: {
         fontSize: 18,
@@ -70,7 +72,7 @@ const Twitter = ({
         borderLeftColor:'transparent',
         position: 'absolute',
       },
-      hash: {
+      viewHash: {
         backgroundColor: '#F0F0F0',
         height: 30,
         width: 30,
@@ -79,44 +81,25 @@ const Twitter = ({
         borderBottomRightRadius:0,
         borderBottomEndRadius:0,
         borderBottomLeftRadius:4,
-        borderTopLeftRadius:04,
+        borderTopLeftRadius:4,
         elevation: 3,
-        float: 'left',
-        color: '#98A1A4',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+      },
+      hash: {
+        color: '#98A1A4',
       },
       input: {
-        width: 100,
+        width: 110,
         fontSize: 14,
         color: '#666',
-        border: 0,
-        outline: 'none',
-        height: 28,
-        shadowColor: "#F0F0F0",
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-        shadowRadius: 0,
-        shadowOpacity: 1,
-        elevation: 3,
-        boxSizing: 'content-box',
-        borderTopEndRadius:0,
-        borderTopRightRadius:4,
-        borderBottomRightRadius:4,
-        borderBottomEndRadius:4,
-        borderBottomLeftRadius:0,
-        borderTopLeftRadius:0,
-        elevation: 3,
-        float: 'left',
+        height: 30,
+        elevation: 1,
         paddingLeft: 8,
       },
       swatch: {
         width: 30,
         height: 30,
-        float: 'left',
         borderRadius: 4,
         marginTop:0,
         marginRight:6,
@@ -196,7 +179,11 @@ const Twitter = ({
             }}
           />
         ))}
-        <View style={styles.hash}>#</View>
+        <View style={{...styles.viewHash, 
+          justifyContent: 'center',
+          }}>
+            <Text style={styles.hash}>#</Text>
+        </View>
         <EditableInput
           label={null}
           style={{ input: styles.input }}

@@ -35,6 +35,9 @@ const CompactFields = ({ hex, rgb, onChange }) => {
         fontSize: 12,
         color: '#333',
         height: 16,
+        borderColor:'#cccccc', 
+        borderStyle:'solid', 
+        borderBottomWidth:1
       },
       HEXlabel: {
         display: 'none',
@@ -50,6 +53,9 @@ const CompactFields = ({ hex, rgb, onChange }) => {
         fontSize: 12,
         color: '#333',
         height: 16,
+        borderColor:'#cccccc', 
+        borderStyle:'solid', 
+        borderBottomWidth:1
       },
       RGBlabel: {
         position: 'absolute',

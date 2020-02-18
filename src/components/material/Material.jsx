@@ -15,9 +15,9 @@ const Material = ({
   const styles = reactCSS(merge({
     default: {
       material: {
-        width: 98,
+        width: 110,
         height: 98,
-        padding: 16,
+        padding: 10,
         fontFamily: 'Roboto',
       },
       HEXwrap: {
@@ -27,13 +27,9 @@ const Material = ({
         width: '100%',
         marginTop: 12,
         fontSize: 15,
-        color: '#333',
-        padding: 0,
-        border: 0,
         borderColor:hex,
         borderStyle:'solid',
-        borderBottomWidth:2,
-        outline: 'none',
+        borderBottomWidth:4,
         height: 30,
       },
       HEXlabel: {
@@ -44,25 +40,17 @@ const Material = ({
         color: '#999999',
         textTransform: 'capitalize',
       },
-      Hex: {
-        style: {
-
-        },
-      },
       RGBwrap: {
         position: 'relative',
       },
       RGBinput: {
-        width: '100%',
         marginTop: 12,
-        fontSize: 15,
+        fontSize: 14,
         color: '#333',
         padding: 0,
-        border: 0,
-        borderColor:'#eee',
+        borderColor:'#cccccc',
         borderStyle:'solid',
         borderBottomWidth:1,
-        outline: 'none',
         height: 30,
       },
       RGBlabel: {
@@ -75,12 +63,14 @@ const Material = ({
       },
       split: {
         display: 'flex',
-        marginRight: -10,
+        flexWrap: 'wrap',
+        flexDirection: 'row',
         paddingTop: 11,
+
       },
       third: {
-        flex: '1',
-        paddingRight: 10,
+        flex:1,
+        marginRight: 4,
       },
     },
   }, passedStyles));
@@ -111,7 +101,8 @@ const Material = ({
           label="hex"
           value={`${hex}`}
           onChange={handleChange}
-        />
+          />
+          
         <View style={styles.split}>
           <View style={styles.third}>
             <EditableInput

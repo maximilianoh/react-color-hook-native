@@ -64,7 +64,7 @@ const EditableInput = (props) => {
   };
 
   const handleChange = (e) => {
-    setUpdatedValue(e.target, e);
+    setUpdatedValue(e.nativeEvent.text, e);
   };
 
   const getArrowOffset = () => props.arrowOffset || DEFAULT_ARROW_OFFSET;
@@ -107,11 +107,11 @@ const EditableInput = (props) => {
         </View>
       ) : null}
       <TextInput 
-        style={{...styles.input, borderColor:'#808080', borderStyle:'solid', borderBottomWidth:1}}
+        style={{...styles.input}}
         ref={inputRef}
-        value={valueState}
+        value={`${valueState}`}
         onKeyPress={handleKeyDown}
-        onChangeText={handleChange}
+        onChange={handleChange}
         onBlur={handleBlur}
         placeholder={placeholder}
         spellCheck={false}
