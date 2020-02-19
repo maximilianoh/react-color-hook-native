@@ -3,7 +3,7 @@ import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import { isValidHex } from '../../helpers/color';
 import EditableInput from '../common/EditableInput';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const ChromeFields = (props) => {
   const { view } = props;
@@ -124,8 +124,6 @@ const ChromeFields = (props) => {
         fontSize: 11,
         color: '#333',
         width: '100%',
-        borderRadius: 2,
-        border: 'none',
         shadowColor: "#dadada",
         shadowOffset: {
           width: 0,
@@ -143,7 +141,6 @@ const ChromeFields = (props) => {
         lineHeight: 11,
         color: '#969696',
         textAlign: 'center',
-        display: 'block',
         marginTop: 12,
       },
       svg: {
@@ -275,6 +272,7 @@ const ChromeFields = (props) => {
   return (
     <View style={styles.wrap}>
       {fields}
+      
       <View style={styles.toggle}>
         <View
           style={styles.icon}
@@ -284,7 +282,7 @@ const ChromeFields = (props) => {
           role="button"
           tabIndex={0}
         >
-          O
+          <Text>O</Text>
         </View>
       </View>
     </View>

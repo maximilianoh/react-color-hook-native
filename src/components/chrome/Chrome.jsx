@@ -22,7 +22,6 @@ const Chrome = ({
       picker: {
         width,
         backgroundColor: '#fff',
-        borderRadius: 2,
         shadowColor: "rgba(0,0,0,.3)",
         shadowOffset: {
           width: 0,
@@ -37,23 +36,23 @@ const Chrome = ({
         width: '100%',
         paddingBottom: '55%',
         position: 'relative',
-        borderTopEndRadius:2,
-        borderTopRightRadius:2,
-        borderBottomRightRadius:2,
-        borderBottomEndRadius:0,
-        borderBottomLeftRadius:0,
-        borderTopLeftRadius:0,
-        elevation: 3,
+        borderTopEndRadius: 2,
+        borderTopRightRadius: 2,
+        borderBottomRightRadius: 2,
+        borderBottomEndRadius: 2,
+        borderBottomLeftRadius: 2,
+        borderTopLeftRadius: 2,
+        elevation: 1,
         overflow: 'hidden',
       },
       Saturation: {
-        borderTopEndRadius:2,
-        borderTopRightRadius:2,
-        borderBottomRightRadius:2,
-        borderBottomEndRadius:0,
-        borderBottomLeftRadius:0,
-        borderTopLeftRadius:0,
-        elevation: 3,
+        borderTopEndRadius: 2,
+        borderTopRightRadius: 2,
+        borderBottomRightRadius: 2,
+        borderBottomEndRadius: 0,
+        borderBottomLeftRadius: 0,
+        borderTopLeftRadius: 0,
+        elevation: 1,
       },
       body: {
         paddingTop: 16,
@@ -90,10 +89,10 @@ const Chrome = ({
         shadowRadius: 0,
         elevation: 3,
         backgroundColor: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
-        zIndex: '2',
+        zIndex: 2,
       },
       toggles: {
-        flex: '1',
+        flex: 1,
       },
       hue: {
         height: 10,
@@ -137,16 +136,19 @@ const Chrome = ({
   }, passedStyles), { disableAlpha });
   return (
     <View style={styles.picker} >
-      <View style={styles.saturation}>
+      <View style={styles.saturation}>  
         <Saturation
           style={styles.Saturation}
           hsl={hsl}
           hsv={hsv}
           pointer={ChromePointerCircle}
           onChange={onChange}
-        />
+          />
       </View>
+      {/*
+      
       <View style={styles.body}>
+        
         <View style={styles.controls}>
           <View style={styles.color}>
             <View style={styles.swatch}>
@@ -183,6 +185,7 @@ const Chrome = ({
           disableAlpha={disableAlpha}
         />
       </View>
+      */}
     </View>
   );
 };

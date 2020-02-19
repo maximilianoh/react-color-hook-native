@@ -3,7 +3,7 @@ import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import { getContrastingColor } from '../../helpers/color';
 import Swatch from '../common/Swatch';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const SwatchesColor = ({
   color, onClick, onSwatchHover, first,
@@ -50,7 +50,7 @@ const SwatchesColor = ({
     },
     active: {
       check: {
-        display: 'block',
+        display: 'flex',
       },
     },
     'color-#FFFFFF': {
@@ -99,7 +99,7 @@ const SwatchesColor = ({
       }}
     >
       <View style={styles.check}>
-        X
+        <Text>X</Text>
       </View>
     </Swatch>
   );

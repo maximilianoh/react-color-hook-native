@@ -3,7 +3,8 @@ import throttle from 'lodash/throttle';
 import PropTypes from 'prop-types';
 import calculateChange from '../../helpers/saturation';
 import { saturationStyle } from './commonStyles';
-import { View } from 'react-native';
+import { View, AppState } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Saturation = (props) => {
   const inputRef = useRef();
@@ -22,17 +23,13 @@ const Saturation = (props) => {
   };
 
   const handleMouseUp = () => {
-    window.removeEventListener('mousemove', handleChange);
-    window.removeEventListener('mouseup', handleMouseUp);
+    AppState.removeEventListener('change', handleChange);
   };
-
 
   const handleMouseDown = (e) => {
     handleChange(e);
-    window.addEventListener('mousemove', handleChange);
-    window.addEventListener('mouseup', handleMouseUp);
+    AppState.addEventListener('change', handleChange);
   };
-
 
   useEffect(() => () => {
     throttleLocal.cancel();
@@ -59,6 +56,7 @@ const Saturation = (props) => {
       onTouchMove={handleChange}
       onTouchStart={handleChange}
     >
+      {/*
       <style>
         {`
         .saturation-white {
@@ -71,6 +69,19 @@ const Saturation = (props) => {
         }
       `}
       </style>
+    
+      */}
+      <LinearGradient
+        start={[1,1]}
+        colors={[ 'rgba(255,255,255,0)','#fff',]}
+        style={{ width: "100%", height: "100%", borderRadius: props.radius }}>          
+          <LinearGradient
+          colors={['rgba(0,0,0,0)', '#000']}
+          style={{ width: "100%", height: "100%", borderRadius: props.radius }}
+          />          
+      </LinearGradient>
+
+      {/*
       <View style={styles.white}>
         <View style={styles.black} />
         <View style={styles.pointer}>
@@ -81,13 +92,14 @@ const Saturation = (props) => {
           )}
         </View>
       </View>
+        */}
     </View>
   );
 };
 
 
 Saturation.defaultProps = {
-  radius: '',
+  radius: 0,
   shadow: '',
   style: {},
   pointer: null,
@@ -109,7 +121,7 @@ Saturation.propTypes = {
   }).isRequired,
   pointer: PropTypes.func,
   shadow: PropTypes.string,
-  radius: PropTypes.string,
+  radius: PropTypes.number,
 };
 
 export default Saturation;

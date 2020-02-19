@@ -8,7 +8,7 @@ import { isValidHex } from '../../helpers/color';
 import ColorWrap from '../common/ColorWrap';
 import Raised from '../common/Raised';
 import SwatchesGroup from './SwatchesGroup';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 const Swatches = ({
   width, height, onChange, onSwatchHover, colors, hex,
@@ -29,6 +29,9 @@ const Swatches = ({
         paddingRight: 0,
         paddingBottom: 6,
         paddingLeft: 16,
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
       },
       clear: {
         clear: 'both',
@@ -46,7 +49,7 @@ const Swatches = ({
   };
 
   return (
-    <View style={styles.picker}>
+    <ScrollView style={styles.picker}>
       <Raised>
         <View style={styles.overflow}>
           <View style={styles.body}>
@@ -63,7 +66,7 @@ const Swatches = ({
           </View>
         </View>
       </Raised>
-    </View>
+    </ScrollView>
   );
 };
 

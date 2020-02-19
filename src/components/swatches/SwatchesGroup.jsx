@@ -3,7 +3,7 @@ import reactCSS from 'reactcss';
 import map from 'lodash/map';
 import PropTypes from 'prop-types';
 import SwatchesColor from './SwatchesColor';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 
 const SwatchesGroup = ({
   onClick, onSwatchHover, group, active,
@@ -13,14 +13,13 @@ const SwatchesGroup = ({
       group: {
         paddingBottom: 10,
         width: 40,
-        float: 'left',
         marginRight: 10,
       },
     },
   });
 
   return (
-    <View style={styles.group}>
+    <ScrollView style={styles.group}>
       {map(group, (color, i) => (
         <SwatchesColor
           key={color}
@@ -32,7 +31,7 @@ const SwatchesGroup = ({
           onSwatchHover={onSwatchHover}
         />
       ))}
-    </View>
+    </ScrollView>
   );
 };
 

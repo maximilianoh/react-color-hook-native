@@ -44,7 +44,7 @@ const SketchFields = ({
         fontSize: 11,
       },
       label: {
-        display: 'block',
+        display: 'flex',
         textAlign: 'center',
         fontSize: 11,
         color: '#222',
