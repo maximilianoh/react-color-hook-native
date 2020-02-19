@@ -136,19 +136,23 @@ const Chrome = ({
   }, passedStyles), { disableAlpha });
   return (
     <View style={styles.picker} >
-      <View style={styles.saturation}>  
+      
+      <View style={styles.saturation}>
+        
         <Saturation
           style={styles.Saturation}
           hsl={hsl}
           hsv={hsv}
           pointer={ChromePointerCircle}
           onChange={onChange}
-          />
+        />
+      
       </View>
-      {/*
+      
+      
+      
       
       <View style={styles.body}>
-        
         <View style={styles.controls}>
           <View style={styles.color}>
             <View style={styles.swatch}>
@@ -176,6 +180,7 @@ const Chrome = ({
             </View>
           </View>
         </View>
+         
         <ChromeFields
           rgb={rgb}
           hsl={hsl}
@@ -184,8 +189,9 @@ const Chrome = ({
           onChange={onChange}
           disableAlpha={disableAlpha}
         />
+      
       </View>
-      */}
+      
     </View>
   );
 };

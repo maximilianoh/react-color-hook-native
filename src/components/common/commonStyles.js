@@ -256,12 +256,14 @@ export const saturationStyle = (hsl, radius, shadow, hsv, color,
   white, black, circle, point, style) => reactCSS({
     default: {
       color: {
+        width: "100%",
+        position:'absolute',
         top: 0,
         left: 0,
         bottom: 0,
         right: 0,
         backgroundColor: `hsl(${hsl.h},100%, 50%)`,
-        //borderRadius: radius,
+        borderRadius: radius,
       },
       white: {
         top: 0,

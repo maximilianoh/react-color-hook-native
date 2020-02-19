@@ -1,11 +1,14 @@
+import measureComponent from "./measureComponent";
 const isNumber = (value) => !Number.isNaN(parseFloat(value));
-const calculateChange = (e, hsl, container) => {
-  const containerWidth = container.clientWidth;
-  const containerHeight = container.clientHeight;
+
+const calculateChange = async (e, hsl, container) => {
+  const positionValue = await measureComponent(container);
+  const containerWidth = positionValue.width;
+  const containerHeight = positionValue.height;
   const x = typeof e.pageX === 'number' ? e.pageX : e.touches[0].pageX;
   const y = typeof e.pageY === 'number' ? e.pageY : e.touches[0].pageY;
-  let left = x - (container.getBoundingClientRect().left + window.pageXOffset);
-  let top = y - (container.getBoundingClientRect().top + window.pageYOffset);
+  const left = x - (positionValue.pageX);
+  const top = y - (positionValue.pageY);
 
   if (left < 0) {
     left = 0;

@@ -12,11 +12,11 @@ const Saturation = (props) => {
     fn(data, e);
   }, 50);
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     if (typeof props.onChange === 'function') {
       throttleLocal(
         props.onChange,
-        calculateChange(e, props.hsl, inputRef.current),
+        await calculateChange(e.nativeEvent, props.hsl, inputRef.current),
         e,
       );
     }
@@ -56,43 +56,25 @@ const Saturation = (props) => {
       onTouchMove={handleChange}
       onTouchStart={handleChange}
     >
-      {/*
-      <style>
-        {`
-        .saturation-white {
-          background: -webkit-linear-gradient(to right, #fff, rgba(255,255,255,0));
-          background: linear-gradient(to right, #fff, rgba(255,255,255,0));
-        }
-        .saturation-black {
-          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
-          background: linear-gradient(to top, #000, rgba(0,0,0,0));
-        }
-      `}
-      </style>
-    
-      */}
       <LinearGradient
-        start={[1,1]}
-        colors={[ 'rgba(255,255,255,0)','#fff',]}
-        style={{ width: "100%", height: "100%", borderRadius: props.radius }}>          
-          <LinearGradient
+        start={[1, 1]}
+        colors={['rgba(255,255,255,0)', '#fff',]}
+        style={{ width: "100%", height:"100%", borderRadius: props.radius, position:'absolute'}}>
+        <LinearGradient
           colors={['rgba(0,0,0,0)', '#000']}
-          style={{ width: "100%", height: "100%", borderRadius: props.radius }}
-          />          
-      </LinearGradient>
-
-      {/*
-      <View style={styles.white}>
-        <View style={styles.black} />
+          style={{ width: "100%", height:"100%", borderRadius: props.radius,   position:'absolute', top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0, }}
+        />
         <View style={styles.pointer}>
           {Pointer ? (
             <Pointer {...props} />
           ) : (
-            <View style={styles.circle} />
-          )}
+              <View style={styles.circle} />
+            )}
         </View>
-      </View>
-        */}
+      </LinearGradient>
     </View>
   );
 };
