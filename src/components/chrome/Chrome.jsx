@@ -62,9 +62,10 @@ const Chrome = ({
       },
       controls: {
         display: 'flex',
+        flexDirection: 'row',
       },
       color: {
-        width: 32,
+        width: "15%",
       },
       swatch: {
         marginTop: 6,
@@ -75,10 +76,13 @@ const Chrome = ({
         overflow: 'hidden',
       },
       active: {
+        position:'absolute',
         top: 0,
         left: 0,
         bottom: 0,
         rigth: 0,
+        width:"100%",
+        height:"100%", 
         borderRadius: 8,
         shadowColor: "rgba(0,0,0,0.1)",
         shadowOffset: {
@@ -86,10 +90,11 @@ const Chrome = ({
           height: 0,
         },
         shadowOpacity: 1,
-        shadowRadius: 0,
-        elevation: 3,
-        backgroundColor: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
+        shadowRadius: 1,
+        elevation: 1,
         zIndex: 2,
+        
+        backgroundColor: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${rgb.a})`,
       },
       toggles: {
         flex: 1,
@@ -135,10 +140,8 @@ const Chrome = ({
     },
   }, passedStyles), { disableAlpha });
   return (
-    <View style={styles.picker} >
-      
+    <View style={styles.picker} >      
       <View style={styles.saturation}>
-        
         <Saturation
           style={styles.Saturation}
           hsl={hsl}
@@ -148,10 +151,6 @@ const Chrome = ({
         />
       
       </View>
-      
-      
-      
-      
       <View style={styles.body}>
         <View style={styles.controls}>
           <View style={styles.color}>
@@ -159,6 +158,7 @@ const Chrome = ({
               <View style={styles.active} />
             </View>
           </View>
+          
           <View style={styles.toggles}>
             <View style={styles.hue}>
               <Hue
@@ -168,9 +168,9 @@ const Chrome = ({
                 onChange={onChange}
               />
             </View>
-            <View style={styles.alpha}>
+            <View style={styles.hue}>
               <Alpha
-                style={styles.Alpha}
+
                 rgb={rgb}
                 hsl={hsl}
                 pointer={ChromePointer}

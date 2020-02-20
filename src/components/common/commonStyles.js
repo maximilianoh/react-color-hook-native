@@ -14,14 +14,7 @@ export const alphaStyle = (props, rgb) => reactCSS({
       width: "100%",
       height: "100%",
     },
-    checkboard: {
-      top: 0,
-      left: 0,
-      bottom: 0,
-      rigth: 0,
-      overflow: 'hidden',
-      borderRadius: props.radius,
-    },
+
     container: {
       position: 'relative',
       width: "100%",
@@ -74,6 +67,7 @@ export const editableInputStyle = (props, style) => {
     default: {
       wrap: {
         position: 'relative',
+        flexDirection: props.orderLabel
       },
     },
     'user-override': {
@@ -97,20 +91,19 @@ export const hueStyle = (direction, radius, hsl) => reactCSS({
       position: 'absolute',
       shadowColor: "rgba(0, 0, 0, 0.15)",
       shadowOffset: { width: 0, height: 5 },
+      shadowRadius: 12,
+      shadowOpacity: 0,
+      borderRadius: radius,
       elevation: 3,
       width: "100%",
       height: "100%",
     },
     container: {
-      paddingTop: 0,
-      paddingRight: 2,
-      paddingBottom: 0,
-      paddingLeft: 2,
       position: 'relative',
       width: "100%",
       height: "100%",
-      borderRadius: radius,
-      outline: 'none',
+      marginRight: 3,
+      borderColor: 'none',
     },
     pointer: {
       position: 'absolute',
@@ -270,7 +263,7 @@ export const saturationStyle = (hsl, radius, shadow, hsv, color,
         left: 0,
         bottom: 0,
         right: 0,
-        //borderRadius: radius,
+        borderRadius: radius,
       },
       black: {
         top: 0,
@@ -278,7 +271,7 @@ export const saturationStyle = (hsl, radius, shadow, hsv, color,
         bottom: 0,
         right: 0,
         // boxShadow: shadow,
-        //borderRadius: radius,
+        borderRadius: radius,
       },
       pointer: {
         position: 'absolute',

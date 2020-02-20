@@ -16,31 +16,23 @@ const SketchFields = ({
         paddingTop: 4,
       },
       single: {
-        flex: '1',
+        flex: 1,
         paddingLeft: 6,
       },
       alpha: {
-        flex: '1',
+        flex: 1,
         paddingLeft: 6,
       },
       double: {
-        flex: '2',
+        flex: 2,
       },
       input: {
         width: '80%',
         paddingTop: 4,
         paddingRight: "10%",
-        paddingBottom: 03,
+        paddingBottom: 3,
         paddingLeft: "10%",
-        border: 'none',
-        shadowColor: "#ccc",
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-        shadowRadius: 0,
-        shadowOpacity: 1,
-        elevation: 3,
+        elevation: 1,
         fontSize: 11,
       },
       label: {
@@ -97,6 +89,8 @@ const SketchFields = ({
 
   return (
     <View style={styles.fields}>
+      
+      
       <View style={styles.double}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
@@ -105,6 +99,7 @@ const SketchFields = ({
           onChange={handleChange}
         />
       </View>
+      {/*
       <View style={styles.single}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
@@ -145,6 +140,7 @@ const SketchFields = ({
           dragMax="100"
         />
       </View>
+      */}
     </View>
   );
 };

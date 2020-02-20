@@ -22,6 +22,7 @@ const SketchPresetColors = ({ colors, onClick, onSwatchHover }) => {
         position: 'relative',
         display: 'flex',
         flexWrap: 'wrap',
+        flexDirection: 'row',
       },
       swatchWrap: {
         width: 16,

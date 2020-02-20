@@ -3,7 +3,8 @@ import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import { isValidHex } from '../../helpers/color';
 import EditableInput from '../common/EditableInput';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { Icon } from 'react-native-elements'
 
 const ChromeFields = (props) => {
   const { view } = props;
@@ -84,54 +85,38 @@ const ChromeFields = (props) => {
       wrap: {
         paddingTop: 16,
         display: 'flex',
+        display: 'flex',
+        flexDirection: 'row',
       },
       fields: {
         flex: 1,
         display: 'flex',
+        flexDirection: 'row',
         marginLeft: -6,
+        width: '70%'
+      },
+      fieldHex: {
+        paddingLeft: 6,
+        width: "95%",
       },
       field: {
         paddingLeft: 6,
-        width: '100%',
+        width: "24%"
       },
       alpha: {
         paddingLeft: 6,
-        width: '100%',
+        width: "24%"
       },
       toggle: {
-        width: 32,
-        textAlign: 'right',
-        position: 'relative',
-      },
-      icon: {
-        marginRight: -4,
-        marginTop: 12,
-        cursor: 'pointer',
-        position: 'relative',
-        outline: 'none',
-      },
-      iconHighlight: {
-        position: 'absolute',
-        width: 24,
-        height: 28,
-        backgroundColor: '#eee',
-        borderRadius: 4,
-        top: 10,
-        left: 12,
-        display: 'none',
+        width:"20%"
       },
       input: {
         fontSize: 11,
         color: '#333',
         width: '100%',
-        shadowColor: "#dadada",
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-        shadowOpacity: 1,
-        shadowRadius: 0,
-        elevation: 3,
+        borderColor: '#dadada',
+        borderStyle: 'solid',
+        borderWidth: 1,
         height: 21,
         textAlign: 'center',
       },
@@ -142,15 +127,6 @@ const ChromeFields = (props) => {
         color: '#969696',
         textAlign: 'center',
         marginTop: 12,
-      },
-      svg: {
-        fill: '#333',
-        width: 24,
-        height: 24,
-        borderColor:'transparent',
-        borderStyle:'solid',
-        borderWidth:1,
-        borderRadius: 5,
       },
     },
     disableAlpha: {
@@ -181,12 +157,13 @@ const ChromeFields = (props) => {
   if (viewState === 'hex') {
     fields = (
       <View style={styles.fields}>
-        <View style={styles.field}>
+        <View style={styles.fieldHex}>
           <EditableInput
             style={{ input: styles.input, label: styles.label }}
             label="hex"
             value={`${props.hex}`}
             onChange={handleChange}
+            orderLabel='column-reverse'
           />
         </View>
       </View>
@@ -200,6 +177,7 @@ const ChromeFields = (props) => {
             label="r"
             value={`${props.rgb.r}`}
             onChange={handleChange}
+            orderLabel='column-reverse'
           />
         </View>
         <View style={styles.field}>
@@ -208,6 +186,7 @@ const ChromeFields = (props) => {
             label="g"
             value={`${props.rgb.g}`}
             onChange={handleChange}
+            orderLabel='column-reverse'
           />
         </View>
         <View style={styles.field}>
@@ -216,6 +195,7 @@ const ChromeFields = (props) => {
             label="b"
             value={`${props.rgb.b}`}
             onChange={handleChange}
+            orderLabel='column-reverse'
           />
         </View>
         <View style={styles.alpha}>
@@ -225,6 +205,7 @@ const ChromeFields = (props) => {
             value={`${props.rgb.a}`}
             arrowOffset={0.01}
             onChange={handleChange}
+            orderLabel='column-reverse'
           />
         </View>
       </View>
@@ -238,6 +219,7 @@ const ChromeFields = (props) => {
             label="h"
             value={`${Math.round(props.hsl.h)}`}
             onChange={handleChange}
+            orderLabel='column-reverse'
           />
         </View>
         <View style={styles.field}>
@@ -246,6 +228,7 @@ const ChromeFields = (props) => {
             label="s"
             value={`${Math.round(props.hsl.s * 100)}%`}
             onChange={handleChange}
+            orderLabel='column-reverse'
           />
         </View>
         <View style={styles.field}>
@@ -254,6 +237,7 @@ const ChromeFields = (props) => {
             label="l"
             value={`${Math.round(props.hsl.l * 100)}%`}
             onChange={handleChange}
+            orderLabel='column-reverse'
           />
         </View>
         <View style={styles.alpha}>
@@ -263,6 +247,7 @@ const ChromeFields = (props) => {
             value={`${props.hsl.a}`}
             arrowOffset={0.01}
             onChange={handleChange}
+            orderLabel='column-reverse'
           />
         </View>
       </View>
@@ -272,18 +257,15 @@ const ChromeFields = (props) => {
   return (
     <View style={styles.wrap}>
       {fields}
-      
       <View style={styles.toggle}>
-        <View
-          style={styles.icon}
-          onKeyDown={toggleViews}
-          onClick={toggleViews}
+        <Icon
+          raised
+          name='swap-horiz'
+          size={15}
+          onPress={toggleViews}
+          onLongPress={toggleViews}
           ref={inputRef}
-          role="button"
-          tabIndex={0}
-        >
-          <Text>O</Text>
-        </View>
+          />
       </View>
     </View>
   );

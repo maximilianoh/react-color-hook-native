@@ -56,7 +56,12 @@ const Sketch = ({
         paddingRight: 0,
         paddingBottom: 4,
         paddingLeft: 0,
-        flex: '1',
+        flex: 1,
+      },
+      flexContent:{
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        flexDirection: 'row',
       },
       color: {
         width: 24,
@@ -67,6 +72,8 @@ const Sketch = ({
         borderRadius: 3,
       },
       activeColor: {
+        width:"100%",
+        height:"100%",
         top: 0,
         left: 0,
         bottom: 0,
@@ -148,14 +155,14 @@ const Sketch = ({
           onChange={onChange}
         />
       </View>
-      <View style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <View style={styles.flexContent}>
         <View style={styles.sliders}>
           <View style={styles.hue}>
             <Hue
               style={styles.Hue}
               hsl={hsl}
               onChange={onChange}
-            />
+              />
           </View>
           <View style={styles.alpha}>
             <Alpha
@@ -164,14 +171,14 @@ const Sketch = ({
               hsl={hsl}
               renderers={renderers}
               onChange={onChange}
-            />
+              />
           </View>
         </View>
         <View style={styles.color}>
           <View style={styles.activeColor} />
         </View>
       </View>
-
+       
       <SketchFields
         rgb={rgb}
         hsl={hsl}
@@ -179,11 +186,13 @@ const Sketch = ({
         onChange={onChange}
         disableAlpha={disableAlpha}
       />
+     
       <SketchPresetColors
         colors={presetColors}
         onClick={onChange}
         onSwatchHover={onSwatchHover}
       />
+      
     </View>
   );
 };

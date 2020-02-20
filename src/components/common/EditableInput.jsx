@@ -94,7 +94,6 @@ const EditableInput = (props) => {
   useEffect(() => () => handleMouseUp(), []);
 
   const { style } = props;
-
   const styles = editableInputStyle(props, style);
 
   const { placeholder, hideLabel, label } = props;
@@ -102,7 +101,7 @@ const EditableInput = (props) => {
   return (
     <View style={styles.wrap}>
       {label && !hideLabel ? (
-        <View onMouseDown={handleMouseDown} role="button" tabIndex={0}>
+        <View onMouseDown={handleMouseDown} >
           <Text style={styles.label}>{label}</Text>
         </View>
       ) : null}
@@ -137,6 +136,7 @@ EditableInput.defaultProps = {
   dragMax: '',
   dragLabel: '',
   label: '',
+  orderLabel:'column'
 };
 
 EditableInput.propTypes = {
@@ -148,6 +148,7 @@ EditableInput.propTypes = {
   hideLabel: PropTypes.bool,
   placeholder: PropTypes.string,
   arrowOffset: PropTypes.number,
+  orderLabel: PropTypes.string,
   style: PropTypes.shape({
     wrap: PropTypes.shape({}),
     label: PropTypes.shape({}),
