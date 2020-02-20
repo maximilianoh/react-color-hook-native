@@ -75,11 +75,6 @@ export const editableInputStyle = (props, style) => {
       input: style && input ? input : {},
       label: style && style.label ? style.label : {},
     },
-    'dragLabel-true': {
-      label: {
-        cursor: 'ew-resize',
-      },
-    },
   }, {
     'user-override': true,
   }, props);

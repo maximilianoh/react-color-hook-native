@@ -28,11 +28,10 @@ const SketchFields = ({
       },
       input: {
         width: '80%',
-        paddingTop: 4,
-        paddingRight: "10%",
-        paddingBottom: 3,
-        paddingLeft: "10%",
-        elevation: 1,
+        borderColor: '#dadada',
+        borderStyle: 'solid',
+        borderWidth: 1,
+        textAlign:'center',
         fontSize: 11,
       },
       label: {
@@ -99,7 +98,7 @@ const SketchFields = ({
           onChange={handleChange}
         />
       </View>
-      {/*
+      
       <View style={styles.single}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
@@ -110,6 +109,7 @@ const SketchFields = ({
           dragMax="255"
         />
       </View>
+      
       <View style={styles.single}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
@@ -140,7 +140,7 @@ const SketchFields = ({
           dragMax="100"
         />
       </View>
-      */}
+      
     </View>
   );
 };
