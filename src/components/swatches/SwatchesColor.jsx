@@ -3,7 +3,8 @@ import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import { getContrastingColor } from '../../helpers/color';
 import Swatch from '../common/Swatch';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { Icon } from 'react-native-elements'
 
 const SwatchesColor = ({
   color, onClick, onSwatchHover, first,
@@ -20,7 +21,8 @@ const SwatchesColor = ({
       },
       check: {
         color: getContrastingColor(color),
-        marginLeft: 8,
+        marginLeft: 0,
+        marginTop:3,
         display: 'none',
       },
     },
@@ -98,8 +100,13 @@ const SwatchesColor = ({
         elevation: 3,
       }}
     >
+
       <View style={styles.check}>
-        <Text>X</Text>
+        <Icon
+            color={getContrastingColor(color)}
+            name='check'
+            size={15}
+            />
       </View>
     </Swatch>
   );

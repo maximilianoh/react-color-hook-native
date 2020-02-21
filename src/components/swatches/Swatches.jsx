@@ -22,7 +22,6 @@ const Swatches = ({
       },
       overflow: {
         height,
-        overflowY: 'scroll',
       },
       body: {
         paddingTop: 16,
@@ -51,9 +50,9 @@ const Swatches = ({
   return (
     <ScrollView style={styles.picker}>
       <Raised>
-        <View style={styles.overflow}>
+        <ScrollView style={styles.overflow}>
           <View style={styles.body}>
-            { map(colors, (group) => (
+            {map(colors, (group) => (
               <SwatchesGroup
                 key={group.toString()}
                 group={group}
@@ -61,10 +60,10 @@ const Swatches = ({
                 onClick={handleChange}
                 onSwatchHover={onSwatchHover}
               />
-            )) }
+            ))}
             <View style={styles.clear} />
           </View>
-        </View>
+        </ScrollView>
       </Raised>
     </ScrollView>
   );
@@ -82,7 +81,7 @@ Swatches.propTypes = {
 
 Swatches.defaultProps = {
   width: 320,
-  height: 240,
+  height: 200,
   colors: [
     [material.red['900'], material.red['700'], material.red['500'], material.red['300'], material.red['100']],
     [material.pink['900'], material.pink['700'], material.pink['500'], material.pink['300'], material.pink['100']],
