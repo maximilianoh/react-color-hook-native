@@ -13,6 +13,7 @@ const SketchFields = ({
     default: {
       fields: {
         display: 'flex',
+        flexDirection: 'row',
         paddingTop: 4,
       },
       single: {
@@ -27,7 +28,7 @@ const SketchFields = ({
         flex: 2,
       },
       input: {
-        width: '80%',
+        width: '100%',
         borderColor: '#dadada',
         borderStyle: 'solid',
         borderWidth: 1,
@@ -87,15 +88,14 @@ const SketchFields = ({
   };
 
   return (
-    <View style={styles.fields}>
-      
-      
+    <View style={styles.fields}>      
       <View style={styles.double}>
         <EditableInput
           style={{ input: styles.input, label: styles.label }}
           label="hex"
           value={`${hex.replace('#', '')}`}
           onChange={handleChange}
+          orderLabel='column-reverse'
         />
       </View>
       
@@ -107,6 +107,7 @@ const SketchFields = ({
           onChange={handleChange}
           dragLabel="true"
           dragMax="255"
+          orderLabel='column-reverse'
         />
       </View>
       
@@ -118,6 +119,7 @@ const SketchFields = ({
           onChange={handleChange}
           dragLabel="true"
           dragMax="255"
+          orderLabel='column-reverse'
         />
       </View>
       <View style={styles.single}>
@@ -128,6 +130,7 @@ const SketchFields = ({
           onChange={handleChange}
           dragLabel="true"
           dragMax="255"
+          orderLabel='column-reverse'
         />
       </View>
       <View style={styles.alpha}>
@@ -138,6 +141,7 @@ const SketchFields = ({
           onChange={handleChange}
           dragLabel="true"
           dragMax="100"
+          orderLabel='column-reverse'
         />
       </View>
       

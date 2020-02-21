@@ -36,7 +36,7 @@ const Alpha = (props) => {
         onTouchStart={handleChange}
       >
         <LinearGradient
-          colors={['rgba(25, 77, 51, 1)', 'rgba(25, 77, 51, 0)']}
+          colors={[`rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 1)`, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0)`]}
           start={[1, 1]}
           style={{ width: "100%", height: "100%", borderRadius: props.radius }}>
           <View style={styles.pointer}>
