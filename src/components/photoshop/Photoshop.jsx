@@ -10,7 +10,8 @@ import PhotoshopPointerCircle from './PhotoshopPointerCircle';
 import PhotoshopPointer from './PhotoshopPointer';
 import PhotoshopButton from './PhotoshopButton';
 import PhotoshopPreviews from './PhotoshopPreviews';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Photoshop = (props) => {
   const [currentColor, setCurrentColor] = useState('#FFFFFF');
@@ -31,30 +32,20 @@ const Photoshop = (props) => {
         shadowOpacity: 0,
         elevation: 3,
         boxSizing: 'initial',
-        width: 513,
+        width: 300,
       },
       head: {
-        backgroundImage: 'linear-gradient(-180deg, #F0F0F0 0%, #D4D4D4 100%)',
-        borderColor:'#B1B1B1',
-        borderStyle:'solid',
-        borderBottomWidth:1,
-        shadowColor: "rgba(255,255,255,0.2)",
-        shadowOffset: {
-          width: 0,
-          height: 1,
-        },
-        shadowRadius: 0,
-        shadowOpacity: 0,
-        elevation: 3,
+        borderColor: '#B1B1B1',
+        borderStyle: 'solid',
+        borderWidth: 1,
         height: 23,
         lineHeight: 24,
-        borderTopEndRadius:4,
-        borderTopRightRadius:4,
-        borderBottomRightRadius:4,
-        borderBottomEndRadius:0,
-        borderBottomLeftRadius:0,
-        borderTopLeftRadius:0,
-        elevation: 3,
+        borderTopEndRadius: 4,
+        borderTopRightRadius: 4,
+        borderBottomRightRadius: 4,
+        borderBottomEndRadius: 0,
+        borderBottomLeftRadius: 0,
+        borderTopLeftRadius: 0,
         fontSize: 13,
         color: '#4D4D4D',
         textAlign: 'center',
@@ -66,40 +57,56 @@ const Photoshop = (props) => {
         paddingLeft: 15,
         display: 'flex',
       },
+      pickers: {
+        display: 'flex',
+        flexDirection: 'row',
+      },
       saturation: {
-        width: 256,
-        height: 256,
+        width: 200,
+        height: 200,
         position: 'relative',
-        borderStyle:'solid',
-        borderWidth:2,
-        borderColor:'#B3B3B3',
-        borderBottomWidth:2,
-        borderBottomColor:"#F0F0F0",
+        borderStyle: 'solid',
+        borderWidth: 2,
+        borderColor: '#B3B3B3',
+        borderBottomWidth: 2,
+        borderBottomColor: "#F0F0F0",
         overflow: 'hidden',
       },
       hue: {
         position: 'relative',
-        height: 256,
+        height: 200,
         width: 19,
         marginLeft: 10,
-        borderStyle:'solid',
-        borderColor:'#B3B3B3',
-        borderWidth:2,
-        borderBottomColor:"#F0F0F0",
-        borderBottomWidth:2,
-      },
-      controls: {
-        width: 180,
-        marginLeft: 10,
+        borderStyle: 'solid',
+        borderColor: '#B3B3B3',
+        borderWidth: 2,
+        borderBottomColor: "#F0F0F0",
+        borderBottomWidth: 2,
       },
       top: {
+        width: '100%'
+      },
+      flexControls:{
         display: 'flex',
+        flexDirection: 'row',
+      },
+      controls: {
+        width: '100%',
+        marginLeft: 10,
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
       },
       previews: {
-        width: 60,
+        width: '25%',
+      },
+      actionsButton: {
+        width: '60%',
+        marginLeft: 20,
+        marginTop: 20,
       },
       actions: {
-        flex: '1',
+        flex: 1,
         marginLeft: 20,
       },
     },
@@ -110,37 +117,44 @@ const Photoshop = (props) => {
   } = props;
   useEffect(() => setCurrentColor(hex), []);
   return (
-    <View style={styles.picker}>
-      <View style={styles.head}>{header}</View>
+    <View style={styles.picker} >
+      <Text style={styles.head}>{header}</Text>
 
-      <View style={styles.body}>
-        <View style={styles.saturation}>
-          <Saturation
-            hsl={hsl}
-            hsv={hsv}
-            pointer={PhotoshopPointerCircle}
-            onChange={onChange}
-          />
-        </View>
-        <View style={styles.hue}>
-          <Hue
-            direction="vertical"
-            hsl={hsl}
-            pointer={PhotoshopPointer}
-            onChange={onChange}
-          />
+      <ScrollView style={styles.body}>
+        <View style={styles.pickers}>
+          <View style={styles.saturation}>
+            <Saturation
+              hsl={hsl}
+              hsv={hsv}
+              pointer={PhotoshopPointerCircle}
+              onChange={onChange}
+            />
+          </View>
+          <View style={styles.hue}>
+            <Hue
+              direction="vertical"
+              hsl={hsl}
+              pointer={PhotoshopPointer}
+              onChange={onChange}
+            />
+          </View>
         </View>
         <View style={styles.controls}>
           <View style={styles.top}>
-            <View style={styles.previews}>
-              <PhotoshopPreviews
-                rgb={rgb}
-                currentColor={currentColor}
-              />
+            <View style={styles.flexControls}>
+              <View style={styles.previews}>
+                <PhotoshopPreviews
+                  rgb={rgb}
+                  currentColor={currentColor}
+                />
+              </View>
+              <View style={styles.actionsButton}>
+                <PhotoshopButton label="OK" onClick={onAccept} active />
+                <PhotoshopButton label="Cancel" onClick={onCancel} />
+              </View>
             </View>
+
             <View style={styles.actions}>
-              <PhotoshopButton label="OK" onClick={onAccept} active />
-              <PhotoshopButton label="Cancel" onClick={onCancel} />
               <PhotoshopFields
                 onChange={onChange}
                 rgb={rgb}
@@ -150,7 +164,7 @@ const Photoshop = (props) => {
             </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };
@@ -170,9 +184,9 @@ Photoshop.propTypes = {
 Photoshop.defaultProps = {
   header: 'Color Picker',
   styles: {},
-  onCancel: () => {},
-  onAccept: () => {},
-  onChange: () => {},
+  onCancel: () => { },
+  onAccept: () => { },
+  onChange: () => { },
 };
 
 export default ColorWrap(Photoshop);

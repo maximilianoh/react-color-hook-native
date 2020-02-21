@@ -3,7 +3,7 @@ import reactCSS from 'reactcss';
 import PropTypes from 'prop-types';
 import { isValidHex } from '../../helpers/color';
 import EditableInput from '../common/EditableInput';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 const PhotoshopPicker = ({
   onChange, rgb, hsv, hex,
@@ -29,14 +29,7 @@ const PhotoshopPicker = ({
         borderColor:'#888888',
         borderStyle:'solid',
         borderWidth:1,
-        shadowColor: "#ECECEC",
-        shadowOffset: {
-          width: 0,
-          height: 1,
-        },
-        shadowRadius: 0,
-        shadowOpacity: 0,
-        elevation: 3,
+        
         marginBottom: 5,
         fontSize: 13,
         paddingLeft: 3,
@@ -61,14 +54,7 @@ const PhotoshopPicker = ({
         borderColor:'#888888',
         borderStyle:'solid',
         borderWidth:1,
-        shadowColor: "#ECECEC",
-        shadowOffset: {
-          width: 0,
-          height: 1,
-        },
-        shadowRadius: 0,
-        shadowOpacity: 0,
-        elevation: 3,
+        
         marginBottom: 6,
         fontSize: 13,
         paddingLeft: 3,
@@ -90,9 +76,10 @@ const PhotoshopPicker = ({
         fontSize: 13,
       },
       symbol: {
-        height: 20,
-        lineHeight: 22,
-        paddingBottom: 7,
+        height: 24,
+        lineHeight: 21,
+        paddingBottom: 6,
+        marginTop: -1,
       },
     },
   });
@@ -169,9 +156,9 @@ const PhotoshopPicker = ({
         onChange={handleChange}
       />
       <View style={styles.fieldSymbols}>
-        <View style={styles.symbol}>°</View>
-        <View style={styles.symbol}>%</View>
-        <View style={styles.symbol}>%</View>
+        <Text style={styles.symbol}>°</Text>
+        <Text style={styles.symbol}>%</Text>
+        <Text style={styles.symbol}>%</Text>
       </View>
     </View>
   );
