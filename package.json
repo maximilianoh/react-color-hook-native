@@ -29,7 +29,7 @@
     "popup"
   ],
   "dependencies": {
-    "chroma-js": "^2.1.0",
+    "chroma-js": "^2.1.1",
     "expo-linear-gradient": "~8.0.0",
     "material-colors": "^1.2.6",
     "react": "~16.9.0",
