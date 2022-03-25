@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --env.production --progress",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "main": "lib/index.js",
   "repository": {
@@ -36,7 +38,8 @@
     "react-dom": "~16.9.0",
     "react-native": "^0.62.0",
     "react-native-elements": "^1.2.7",
-    "reactcss": "^1.2.3"
+    "reactcss": "^1.2.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -59,5 +62,6 @@
       "js",
       "jsx"
     ]
-  }
+  },
+  "snyk": true
 }
